@@ -1,73 +1,50 @@
-# Turborepo starter
+# YOSHIKAWA CITY FC
 
-This is an official pnpm starter turborepo.
+吉川市のサッカーチーム HP
 
-## What's inside?
+## Tech Stacks
 
-This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages/apps:
+### [Turborepo](https://turbo.build/repo)
 
-### Apps and Packages
+Monorepo を構成する上で、 Next.js と親和性の高い Turborepo を利用しています。
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+### [Next.js](https://nextjs.org/)
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+TypeScript で開発する上で、情報量も多い Next.js を利用しています。
 
-### Utilities
+### [Tailwind CSS](https://tailwindcss.com/)
 
-This turborepo has some additional tools already setup for you:
+CSS を記述するにあたりカスタマイズ性に優れている Tailwind CSS を利用しています。
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+### [Supabase](https://supabase.com/)
 
-### Build
+バックエンド関連処理に Supabase を採用することで、初期の管理コスト削減を図っています。
 
-To build all apps and packages, run the following command:
+## GetStarted
 
-```
-cd my-turborepo
-pnpm run build
-```
+以下の手順を踏んで開発に参加しましょう。
 
-### Develop
+### 1. `git clone`
 
-To develop all apps and packages, run the following command:
+以下のコマンドを実行してクローンします。
 
-```
-cd my-turborepo
-pnpm run dev
+```shell
+$ git clone https://github.com/yoshikawacityfc-dev/yoshikawacityfc.git
 ```
 
-### Remote Caching
+### 3. `pnpm i`
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+`pnpm i`でパッケージをインストールします。
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-cd my-turborepo
-pnpm dlx turbo login
+```shell
+$ pnpm i
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+### 4. `pnpm run dev`
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
+`pnpm run dev`でローカルサーバーを立ち上げます。  
+表示された URL にアクセスすると、サイトが表示されます。
 
+```shell
+$ pnpm run dev
 ```
-pnpm dlx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
