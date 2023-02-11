@@ -1,4 +1,4 @@
-# YOSHIKAWA CITY FC
+# YOSHiKAWA CiTY FC
 
 吉川市のサッカーチーム HP
 
