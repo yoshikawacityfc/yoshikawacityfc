@@ -48,14 +48,14 @@ importers:
   packages/eslint-config-custom:
     specifiers:
       eslint: ^7.23.0
-      eslint-config-next: 13.0.7
+      eslint-config-next: 13.1.6
       eslint-config-prettier: ^8.3.0
       eslint-config-turbo: latest
       eslint-plugin-react: 7.32.2
       typescript: ^4.7.4
     dependencies:
       eslint: 7.32.0
-      eslint-config-next: 13.0.7_jofidmxrjzhj7l6vknpw5ecvfe
+      eslint-config-next: 13.1.6_jofidmxrjzhj7l6vknpw5ecvfe
       eslint-config-prettier: 8.6.0_eslint@7.32.0
       eslint-config-turbo: 0.0.7_eslint@7.32.0
       eslint-plugin-react: 7.32.2_eslint@7.32.0
@@ -324,8 +324,8 @@ packages:
     resolution: {integrity: sha512-s+W9Fdqh5MFk6ECrbnVmmAOwxKQuhGMT7xXHrkYIBMBcTiOqNWhv5KbJIboKR5STXxNXl32hllnvKaffzFaWQg==}
     dev: false
 
-  /@next/eslint-plugin-next/13.0.7:
-    resolution: {integrity: sha512-Q/Z0V3D3UpKhhzFU6/s17wD4rqJ+ZDGded8UpqNyzX1nUdD+/PnsZexPhSIZ2Yf/c8QESeirmJVRb3eAfCQkRQ==}
+  /@next/eslint-plugin-next/13.1.6:
+    resolution: {integrity: sha512-o7cauUYsXjzSJkay8wKjpKJf2uLzlggCsGUkPu3lP09Pv97jYlekTC20KJrjQKmSv5DXV0R/uks2ZXhqjNkqAw==}
     dependencies:
       glob: 7.1.7
     dev: false
@@ -1092,8 +1092,8 @@ packages:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
 
-  /eslint-config-next/13.0.7_jofidmxrjzhj7l6vknpw5ecvfe:
-    resolution: {integrity: sha512-X7DB7iDJ9iHi5DAZbnFdWm4M0dwarj5h5y6Vpm9INCYzFgAwSWslq3v0qjYEjtUO5IQ8n1WK6IU5FkOQ2HBhOA==}
+  /eslint-config-next/13.1.6_jofidmxrjzhj7l6vknpw5ecvfe:
+    resolution: {integrity: sha512-0cg7h5wztg/SoLAlxljZ0ZPUQ7i6QKqRiP4M2+MgTZtxWwNKb2JSwNc18nJ6/kXBI6xYvPraTbQSIhAuVw6czw==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
       typescript: '>=3.3.1'
@@ -1101,7 +1101,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@next/eslint-plugin-next': 13.0.7
+      '@next/eslint-plugin-next': 13.1.6
       '@rushstack/eslint-patch': 1.2.0
       '@typescript-eslint/parser': 5.51.0_jofidmxrjzhj7l6vknpw5ecvfe
       eslint: 7.32.0
