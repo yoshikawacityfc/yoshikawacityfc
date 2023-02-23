@@ -1,17 +1,11 @@
-import Image from "next/image";
-import { MainLayout } from "../components/Layout";
+import { MainLayout } from "@/components/Layout";
+import { Hero } from "@/features/Hero/components";
 
 export default function Web() {
   return (
     <MainLayout>
       <main>
-        {/* ヒーロー */}
-        <section className="h-screen">
-          <p className="z-10 absolute">
-            吉川市のフットボールの文化を創り・育む
-          </p>
-          <Image src="/hero.jpg" alt="hero" className="object-cover" fill />
-        </section>
+        <Hero />
 
         {/* YCFCとは */}
         <section>
