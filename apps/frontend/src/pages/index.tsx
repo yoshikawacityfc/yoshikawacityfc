@@ -1,29 +1,22 @@
 import { MainLayout } from "@/components/Layout";
+import { AboutTeam } from "@/features/AboutTeam/components";
 import { Hero } from "@/features/Hero/components";
 
 export default function Web() {
   return (
     <MainLayout>
       <main>
-        <Hero />
+        <section>
+          <Hero />
+        </section>
 
         {/* YCFCとは */}
-        <section>
-          <div>
-            <div>LOGO</div>
-            <h2>YCFCとは</h2>
-            <p>
-              YOSHiKAWA CiTY
-              FCは埼玉県吉川市にフットボール文化を創り育む事を理念として活動します。
-            </p>
-            <button>もっと詳しく</button>
-          </div>
-
-          <div>スパイクとボール画像</div>
+        <section className="mt-96">
+          <AboutTeam />
         </section>
 
         {/* Jr.ユース */}
-        <section>
+        <section className="mt-96">
           <h2>Jr.ユース</h2>
           <p>
             フットボールの力で、人、地域をもっと笑顔にするチームを目指します。
