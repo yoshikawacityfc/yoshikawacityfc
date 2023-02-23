@@ -1,26 +1,16 @@
+import Image from "next/image";
+import { MainLayout } from "../components/Layout";
+
 export default function Web() {
   return (
-    <>
-      {/* ヘッダー */}
-      <header>
-        <div>LOGO</div>
-
-        <nav>
-          <ul>
-            <li>YCFCとは</li>
-            <li>クラブコンセプト</li>
-            <li>事業</li>
-            <li>社会貢献活動</li>
-            <li>お問い合わせ</li>
-          </ul>
-        </nav>
-      </header>
-
+    <MainLayout>
       <main>
         {/* ヒーロー */}
-        <section>
-          <p>吉川市のフットボールの文化を創り・育む</p>
-          <div>ヒーロー画像</div>
+        <section className="h-screen">
+          <p className="z-10 absolute">
+            吉川市のフットボールの文化を創り・育む
+          </p>
+          <Image src="/hero.jpg" alt="hero" className="object-cover" fill />
         </section>
 
         {/* YCFCとは */}
@@ -117,6 +107,6 @@ export default function Web() {
 
         <p>Copyright© YOSHiKAWA CiTY FC All Rights Reserved.</p>
       </footer>
-    </>
+    </MainLayout>
   );
 }
