@@ -14,6 +14,9 @@ module.exports = {
         secondary: {
           DEFAULT: "#FFFFFF",
         },
+        tertiary: {
+          DEFAULT: "#EEEEEE",
+        },
       },
     },
   },

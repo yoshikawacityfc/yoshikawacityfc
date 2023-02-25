@@ -4,6 +4,7 @@ import { Hero } from "@/features/hero/components";
 import { JuniorYouth } from "@/features/junior-youth/components";
 import { News } from "@/features/news/components";
 import { SocialContribution } from "@/features/social-contribution/components";
+import { SponsorRecruiting } from "@/features/sponsor_recruiting/components";
 
 export default function Web() {
   return (
@@ -29,16 +30,8 @@ export default function Web() {
           <News />
         </section>
 
-        {/* スポンサー募集 */}
-        <section>
-          <div>サラリーマンイラスト画像</div>
-          <p>
-            クラブを支えて下さるパートナー様を募集しています。
-            <br />
-            クラブと共に新たな価値を創造するお手伝いが出来ればと考えています。
-            <br />
-            お問い合わせお待ちしています。
-          </p>
+        <section className="mt-96">
+          <SponsorRecruiting />
         </section>
       </main>
 
