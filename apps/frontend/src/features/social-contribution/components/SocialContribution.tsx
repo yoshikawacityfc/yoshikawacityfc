@@ -1,6 +1,6 @@
 export const SocialContribution = (): JSX.Element => {
   return (
-    <div className="max-w-[1000px] m-auto p-4 relative">
+    <div className="max-w-[1000px] m-auto relative">
       <div className="w-1/2 ml-[50%] absolute top-[45%] z-10">
         <h2 className="font-semibold text-6xl mb-24">社会貢献活動</h2>
 

@@ -20,7 +20,6 @@ export default function Web() {
           <JuniorYouth />
         </section>
 
-        {/* 社会貢献 */}
         <section className="mt-96">
           <SocialContribution />
         </section>
