@@ -2,7 +2,7 @@ import { Button } from "@/components/Elements";
 
 export const AboutTeam = (): JSX.Element => {
   return (
-    <div className="flex justify-center items-center max-w-[1000px] m-auto p-4">
+    <div className="flex justify-center items-center max-w-[1000px] m-auto">
       <div className="flex flex-col items-center w-1/2">
         <img src="../logo.webp" alt="logo" className="w-[100px]" />
 

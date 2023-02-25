@@ -2,6 +2,7 @@ import { MainLayout } from "@/components/Layout";
 import { AboutTeam } from "@/features/about-team/components";
 import { Hero } from "@/features/hero/components";
 import { JuniorYouth } from "@/features/junior-youth";
+import { SocialContribution } from "@/features/social-contribution/components";
 
 export default function Web() {
   return (
@@ -20,23 +21,12 @@ export default function Web() {
         </section>
 
         {/* 社会貢献 */}
-        <section>
-          <h2>社会貢献</h2>
-
-          <h3>”次世代のために”</h3>
-          <p>将来を担う子ども達が健全に成長出来る場・機会を提供します。</p>
-
-          <h3>”地域と共に”</h3>
-          <p>地域の美化活動を行います</p>
-
-          <h3>”誰もがフットボールに親しむ”</h3>
-          <p>
-            障がい・年齢・性別・LGBTQなどすべての壁を取り払い「誰もがありのままに、自分らしく」心からスポーツを楽しみ、誰も排除しない”多様性”触れる機会をつくります。
-          </p>
+        <section className="mt-96">
+          <SocialContribution />
         </section>
 
         {/* お知らせ */}
-        <section>
+        <section className="mt-96">
           <h2>お知らせ</h2>
 
           {[...Array(5)].map((i, index) => {
