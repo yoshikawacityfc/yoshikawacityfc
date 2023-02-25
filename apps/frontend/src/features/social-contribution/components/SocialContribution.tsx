@@ -1,7 +1,7 @@
 export const SocialContribution = (): JSX.Element => {
   return (
     <div className="max-w-[1000px] m-auto relative">
-      <div className="w-1/2 ml-[50%] absolute top-[45%] z-10">
+      <div className="mb-16 px-4 md:mb-0 md:w-1/2 md:ml-[50%] md:absolute md:top-[45%] md:z-10">
         <h2 className="font-semibold text-6xl mb-24">社会貢献活動</h2>
 
         <h3 className="font-medium text-2xl mb-6">”次世代のために”</h3>
@@ -23,7 +23,7 @@ export const SocialContribution = (): JSX.Element => {
       <img
         src="../social-contribution.jpg"
         alt="social-contribution"
-        className="w-2/3 scale-y-[1] scale-x-[-1]"
+        className="w-full md:w-2/3 scale-y-[1] scale-x-[-1]"
       />
     </div>
   );

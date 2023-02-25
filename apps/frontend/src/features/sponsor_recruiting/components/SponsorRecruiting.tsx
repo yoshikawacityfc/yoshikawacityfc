@@ -2,7 +2,7 @@ export const SponsorRecruiting = (): JSX.Element => {
   return (
     <div className="bg-tertiary w-full h-44 flex">
       <div className="max-w-[1000px] m-auto relative h-full flex items-center">
-        <p className="px-4">
+        <p className="px-4 text-sm sm:text-base">
           クラブを支えて下さるパートナー様を募集しています。
           <br />
           クラブと共に新たな価値を創造するお手伝いが出来ればと考えています。

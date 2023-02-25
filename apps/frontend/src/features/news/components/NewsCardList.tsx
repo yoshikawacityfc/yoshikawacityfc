@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { NEWS_CARD_MARGIN_RIGHT, NEWS_CARD_WIDTH } from "../constants";
 import { News } from "../types";
 import { NewsCard } from "./NewsCard";

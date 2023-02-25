@@ -12,7 +12,7 @@ export const Header = (): JSX.Element => {
       <div className="bg-white rounded-xl m-auto mt-12 px-6 py-2 w-11/12 flex justify-between shadow-lg">
         <img src="../logo.webp" alt="logo" className="w-10" />
 
-        <nav className="flex flex-col-reverse">
+        <nav className="md:flex md:flex-col-reverse hidden">
           <ul className="flex">
             {MENU.map((item, index) => {
               return (
@@ -23,6 +23,12 @@ export const Header = (): JSX.Element => {
             })}
           </ul>
         </nav>
+
+        <img
+          src="../bars-solid.svg"
+          alt="menu"
+          className="w-7 cursor-pointer md:hidden"
+        />
       </div>
     </header>
   );

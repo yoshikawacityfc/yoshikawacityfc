@@ -60,7 +60,7 @@ export const News = (): JSX.Element => {
 
       <NewsCardList news={NEWS_DEMO_DATA} />
 
-      <div className="mt-24 w-full max-w-[1000px]">
+      <div className="mt-24 max-w-[1000px] w-3/4">
         <Button label="もっと見る" fullWidth />
       </div>
     </div>
