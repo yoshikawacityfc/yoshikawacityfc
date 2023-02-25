@@ -2,8 +2,8 @@ import React from "react";
 import clsx from "clsx";
 
 const BUTTON_COLORS = {
-  primary: "text-primary border border-2 border-primary",
-  secondary: "text-secondary",
+  primary: "text-primary border-2 border-primary",
+  secondary: "text-secondary border-2 border-secondary",
 };
 
 const BUTTON_SIZE = {

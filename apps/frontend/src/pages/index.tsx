@@ -1,6 +1,7 @@
 import { MainLayout } from "@/components/Layout";
-import { AboutTeam } from "@/features/AboutTeam/components";
-import { Hero } from "@/features/Hero/components";
+import { AboutTeam } from "@/features/about-team/components";
+import { Hero } from "@/features/hero/components";
+import { JuniorYouth } from "@/features/junior-youth";
 
 export default function Web() {
   return (
@@ -10,30 +11,12 @@ export default function Web() {
           <Hero />
         </section>
 
-        {/* YCFCとは */}
         <section className="mt-96">
           <AboutTeam />
         </section>
 
-        {/* Jr.ユース */}
         <section className="mt-96">
-          <h2>Jr.ユース</h2>
-          <p>
-            フットボールの力で、人、地域をもっと笑顔にするチームを目指します。
-          </p>
-          <div>子どもサッカー画像</div>
-
-          <h3>2023年Jr.ユース（U-15始動）</h3>
-          <p>
-            2023年度から始動する、埼玉県吉川市を拠点に活動をするJr.ユースチームです。【大人の描く想像を超えていく】選手の育成を目指すクラブチームです。スポーツジムとの連携、テクノロジーの活用、各種専門家との交流など選手1人1人の成長の為に全力を尽くします。
-          </p>
-          <a>
-            <p>2023年度始動 第1期期生</p>
-            <p>選手募集</p>
-            <div>サッカーボール画像</div>
-          </a>
-
-          <button>Jr.ユースページへ</button>
+          <JuniorYouth />
         </section>
 
         {/* 社会貢献 */}
