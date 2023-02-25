@@ -1,7 +1,7 @@
 import { MainLayout } from "@/components/Layout";
 import { AboutTeam } from "@/features/about-team/components";
 import { Hero } from "@/features/hero/components";
-import { JuniorYouth } from "@/features/junior-youth";
+import { JuniorYouth } from "@/features/junior-youth/components";
 import { SocialContribution } from "@/features/social-contribution/components";
 
 export default function Web() {
