@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Footer } from "./Footer";
 import { Header } from "./Header";
 
 interface MainLayoutProps {
@@ -8,8 +9,9 @@ interface MainLayoutProps {
 export const MainLayout = ({ children }: MainLayoutProps): JSX.Element => {
   return (
     <>
-      <Header></Header>
+      <Header />
       {children}
+      <Footer />
     </>
   );
 };

@@ -16,7 +16,11 @@ export const AboutTeam = (): JSX.Element => {
         <Button label="もっと詳しく" fullWidth />
       </div>
 
-      <img src="../spike-and-ball.jpg" alt="spike-and-ball" className="w-1/2" />
+      <img
+        src="../spike-and-ball-yoshikawa.png"
+        alt="spike-and-ball"
+        className="w-1/2"
+      />
     </div>
   );
 };

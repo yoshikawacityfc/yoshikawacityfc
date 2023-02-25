@@ -1,4 +1,4 @@
-import { MainLayout } from "@/components/Layout";
+import { Footer, MainLayout } from "@/components/Layout";
 import { AboutTeam } from "@/features/about-team/components";
 import { Hero } from "@/features/hero/components";
 import { JuniorYouth } from "@/features/junior-youth/components";
@@ -34,19 +34,6 @@ export default function Web() {
           <SponsorRecruiting />
         </section>
       </main>
-
-      {/* フッター */}
-      <footer>
-        <ul>
-          <li>YCFCとは</li>
-          <li>クラブコンセプト</li>
-          <li>事業</li>
-          <li>社会貢献活動</li>
-          <li>お問い合わせ</li>
-        </ul>
-
-        <p>Copyright© YOSHiKAWA CiTY FC All Rights Reserved.</p>
-      </footer>
     </MainLayout>
   );
 }
