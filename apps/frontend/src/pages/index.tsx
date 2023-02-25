@@ -2,6 +2,7 @@ import { MainLayout } from "@/components/Layout";
 import { AboutTeam } from "@/features/about-team/components";
 import { Hero } from "@/features/hero/components";
 import { JuniorYouth } from "@/features/junior-youth/components";
+import { News } from "@/features/news/components";
 import { SocialContribution } from "@/features/social-contribution/components";
 
 export default function Web() {
@@ -24,21 +25,8 @@ export default function Web() {
           <SocialContribution />
         </section>
 
-        {/* お知らせ */}
         <section className="mt-96">
-          <h2>お知らせ</h2>
-
-          {[...Array(5)].map((i, index) => {
-            return (
-              <a key={index}>
-                <div>サムネイル画像</div>
-                <h4>記事タイトル：{i}</h4>
-                <p>日付</p>
-              </a>
-            );
-          })}
-
-          <button>もっと見る</button>
+          <News />
         </section>
 
         {/* スポンサー募集 */}

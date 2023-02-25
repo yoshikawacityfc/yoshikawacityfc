@@ -5,7 +5,7 @@ export const JuniorYouth = (): JSX.Element => {
     <>
       <div className="bg-primary text-secondary w-full">
         <div className="max-w-[1000px] m-auto p-4 flex items-center flex-col">
-          <h2 className="text-6xl text-center">Jr.ユース</h2>
+          <h2 className="font-semibold text-6xl text-center">Jr.ユース</h2>
 
           <p className="text-center my-12">
             フットボールの力で、人、地域をもっと笑顔にするチームを目指します。
