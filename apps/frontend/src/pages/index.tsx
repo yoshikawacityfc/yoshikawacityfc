@@ -14,23 +14,23 @@ export default function Web() {
           <Hero />
         </section>
 
-        <section className="mt-96">
+        <section className="mt-[420px]">
           <AboutTeam />
         </section>
 
-        <section className="mt-96">
+        <section className="mt-[420px]">
           <JuniorYouth />
         </section>
 
-        <section className="mt-96">
+        <section className="mt-[420px]">
           <SocialContribution />
         </section>
 
-        <section className="mt-96">
+        <section className="mt-[420px]">
           <News />
         </section>
 
-        <section className="mt-96">
+        <section className="mt-[520px]">
           <SponsorRecruiting />
         </section>
       </main>
