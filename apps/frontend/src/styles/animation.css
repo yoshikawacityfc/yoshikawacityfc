@@ -1,0 +1,20 @@
+.yoshikawa-city-outline {
+  fill: none;
+  stroke: #2e0075;
+  stroke-width: 1;
+  stroke-miterlimit: 50;
+  stroke-dasharray: 1662;
+  stroke-dashoffset: 1662;
+  animation: strokeAnimation 1.5s linear 0s forwards;
+}
+@keyframes strokeAnimation {
+  0% {
+    stroke-dashoffset: 1662;
+  }
+  80% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

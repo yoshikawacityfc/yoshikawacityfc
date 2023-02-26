@@ -1,9 +1,13 @@
-import { Button } from "@/components/Elements";
+import { Button, ScrollAnimation } from "@/components/Elements";
+import { YoshikawaCity } from "./YoshikawaCity";
 
 export const AboutTeam = (): JSX.Element => {
   return (
     <div className="flex justify-center items-center max-w-[1000px] m-auto flex-wrap-reverse px-4">
-      <div className="flex flex-col items-center md:w-1/2">
+      <ScrollAnimation
+        duration={1500}
+        className="flex flex-col items-center md:w-1/2"
+      >
         <img src="../logo.svg" alt="logo" className="w-[100px]" />
 
         <h2 className="font-semibold text-6xl my-10">YCFCとは</h2>
@@ -16,13 +20,9 @@ export const AboutTeam = (): JSX.Element => {
         <div className="w-3/4">
           <Button label="もっと詳しく" fullWidth />
         </div>
-      </div>
+      </ScrollAnimation>
 
-      <img
-        src="../spike-and-ball-yoshikawa.png"
-        alt="spike-and-ball"
-        className="w-1/2 min-w-[360px]"
-      />
+      <YoshikawaCity />
     </div>
   );
 };
