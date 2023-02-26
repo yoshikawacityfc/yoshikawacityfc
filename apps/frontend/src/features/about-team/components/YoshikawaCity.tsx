@@ -11,7 +11,7 @@ export const YoshikawaCity = (): JSX.Element => {
   };
 
   return (
-    <div className="w-1/2 min-w-[360px] relative">
+    <div className="w-1/2 min-w-[360px] relative drop-shadow-lg">
       <ScrollAnimation beforeReveal={startAnimation}>
         <svg
           className="absolute top-0 left-0 bottom-1 right-0 m-auto z-10 w-full h-full"

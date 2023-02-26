@@ -1,8 +1,34 @@
-import { Button } from "@/components/Elements";
+import { Button, ScrollAnimation } from "@/components/Elements";
+import { useRef } from "react";
 
 export const JuniorYouth = (): JSX.Element => {
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  const startAnimation = () => {
+    console.log("hoge");
+
+    if (imgRef.current === null) return;
+
+    imgRef.current.classList.add("ball-roll");
+  };
+
   return (
-    <>
+    <div className="overflow-hidden">
+      <ScrollAnimation beforeReveal={startAnimation}></ScrollAnimation>
+
+      <div className="relative h-16 flex items-end">
+        <img
+          src="/grass.svg"
+          alt="grass"
+          className="w-screen min-w-[1000px] mb-[-1px]"
+        />
+        <img
+          ref={imgRef}
+          src="/ball-illust.svg"
+          alt="ball-illust"
+          className="w-16 absolute bottom-0 left-4"
+        />
+      </div>
       <div className="bg-primary text-secondary w-full">
         <div className="max-w-[1000px] m-auto px-4 py-8 flex items-center flex-col">
           <h2 className="font-semibold text-6xl text-center">Jr.ユース</h2>
@@ -11,7 +37,19 @@ export const JuniorYouth = (): JSX.Element => {
             フットボールの力で、人、地域をもっと笑顔にするチームを目指します。
           </p>
 
-          <img src="../junior-football.jpg" alt="junior-football" />
+          <ScrollAnimation
+            distance="400px"
+            origin="left"
+            duration={500}
+            opacity={0}
+            easing="ease-out"
+          >
+            <img
+              src="../junior-football.jpg"
+              alt="junior-football"
+              className="max-w-none w-screen min-h-[300px] object-cover"
+            />
+          </ScrollAnimation>
 
           <h3 className="text-2xl text-center my-12">
             2023年Jr.ユース（U-15始動）
@@ -35,6 +73,6 @@ export const JuniorYouth = (): JSX.Element => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

@@ -5,6 +5,7 @@ export const AboutTeam = (): JSX.Element => {
   return (
     <div className="flex justify-center items-center max-w-[1000px] m-auto flex-wrap-reverse px-4">
       <ScrollAnimation
+        delay={500}
         duration={1500}
         className="flex flex-col items-center md:w-1/2"
       >

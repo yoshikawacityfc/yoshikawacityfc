@@ -3,7 +3,7 @@ import { ReactNode, useEffect, useRef } from "react";
 type ScrollrevealOptions = scrollReveal.ScrollRevealObjectOptions;
 
 type ScrollAnimationProps = {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
 } & ScrollrevealOptions;
 

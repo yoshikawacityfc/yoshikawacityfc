@@ -7,6 +7,7 @@
   stroke-dashoffset: 1662;
   animation: strokeAnimation 1.5s linear 0s forwards;
 }
+
 @keyframes strokeAnimation {
   0% {
     stroke-dashoffset: 1662;
@@ -16,5 +17,27 @@
   }
   100% {
     stroke-dashoffset: 0;
+  }
+}
+
+.ball-roll {
+  animation: roll 3s ease-out 0s forwards, spin 800ms linear 0s infinite;
+}
+
+@keyframes roll {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100vw;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
