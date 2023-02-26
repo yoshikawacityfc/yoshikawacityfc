@@ -1,6 +1,6 @@
 import { MainLayout } from "@/components/Layout";
 import { AboutTeam } from "@/features/about-team/components";
-import { HeroContent } from "@/features/hero/components";
+import { HeroContent } from "@/features/hero-content/components";
 import { JuniorYouth } from "@/features/junior-youth/components";
 import { News } from "@/features/news/components";
 import { SocialContribution } from "@/features/social-contribution/components";
