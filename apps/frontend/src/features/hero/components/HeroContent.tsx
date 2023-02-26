@@ -1,4 +1,4 @@
-export const Hero = (): JSX.Element => {
+export const HeroContent = (): JSX.Element => {
   return (
     <div className="h-screen flex justify-center items-center">
       <div className="absolute z-10 flex flex-col items-center">
