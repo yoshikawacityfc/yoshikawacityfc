@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #262626;
+}
+
+p {
+  line-height: 1.5rem;
+}
