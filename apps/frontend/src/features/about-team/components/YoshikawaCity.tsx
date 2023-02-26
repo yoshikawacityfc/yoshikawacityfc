@@ -32,7 +32,7 @@ export const YoshikawaCity = (): JSX.Element => {
 
       <ScrollAnimation delay={1500}>
         <img
-          src="../spike-and-ball-yoshikawa.png"
+          src="/spike-and-ball-yoshikawa.png"
           alt="spike-and-ball"
           className="w-full"
         />

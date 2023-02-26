@@ -22,7 +22,7 @@ export default function Web() {
           <JuniorYouth />
         </section>
 
-        <section className="mt-[420px]">
+        <section className="mt-[-100px]">
           <SocialContribution />
         </section>
 

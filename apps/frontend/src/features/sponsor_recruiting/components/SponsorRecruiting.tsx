@@ -1,7 +1,12 @@
+import { ScrollAnimation } from "@/components/Elements";
+
 export const SponsorRecruiting = (): JSX.Element => {
   return (
     <div className="bg-tertiary w-full h-44 flex">
-      <div className="max-w-[1000px] m-auto relative h-full flex items-center">
+      <ScrollAnimation
+        delay={100}
+        className="max-w-[1000px] m-auto relative h-full flex items-center"
+      >
         <p className="px-4 text-sm sm:text-base">
           クラブを支えて下さるパートナー様を募集しています。
           <br />
@@ -15,7 +20,7 @@ export const SponsorRecruiting = (): JSX.Element => {
           alt="sponsor-recruiting"
           className="h-[256px] transform translate-y-[-40px]"
         />
-      </div>
+      </ScrollAnimation>
     </div>
   );
 };

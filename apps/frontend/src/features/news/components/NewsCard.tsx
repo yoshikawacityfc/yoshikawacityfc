@@ -5,7 +5,7 @@ interface NewsCardProps {
 }
 
 export const NewsCard = ({
-  thumbnailSrc = "../social-contribution.jpg",
+  thumbnailSrc = "/social-contribution.jpg",
   title,
   updateDate,
 }: NewsCardProps): JSX.Element => {

@@ -39,7 +39,7 @@ export const SocialContribution = (): JSX.Element => {
         easing="ease-out"
       >
         <img
-          src="../social-contribution.jpg"
+          src="/social-contribution.jpg"
           alt="social-contribution"
           className="w-full md:w-2/3 scale-y-[1] scale-x-[-1]"
         />
