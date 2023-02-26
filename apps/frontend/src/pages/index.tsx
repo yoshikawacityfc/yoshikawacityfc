@@ -1,4 +1,4 @@
-import { Footer, MainLayout } from "@/components/Layout";
+import { MainLayout } from "@/components/Layout";
 import { AboutTeam } from "@/features/about-team/components";
 import { Hero } from "@/features/hero/components";
 import { JuniorYouth } from "@/features/junior-youth/components";
