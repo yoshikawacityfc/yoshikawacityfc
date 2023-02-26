@@ -3,5 +3,6 @@ module.exports = {
   extends: ["custom"],
   rules: {
     "@next/next/no-img-element": "off",
+    "react/display-name": "off",
   },
 };
