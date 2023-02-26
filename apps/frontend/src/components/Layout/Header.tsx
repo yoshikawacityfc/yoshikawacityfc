@@ -16,7 +16,10 @@ export const Header = (): JSX.Element => {
           <ul className="flex">
             {MENU.map((item, index) => {
               return (
-                <li key={index} className="ml-7 font-semibold text-primary">
+                <li
+                  key={index}
+                  className="ml-7 font-medium text-primary cursor-pointer"
+                >
                   {item.label}
                 </li>
               );
