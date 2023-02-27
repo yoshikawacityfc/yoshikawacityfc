@@ -55,7 +55,7 @@ const NEWS_DEMO_DATA: NewsType[] = [
 
 export const News = (): JSX.Element => {
   return (
-    <ScrollAnimation delay={500} className="flex flex-col items-center">
+    <ScrollAnimation delay={300} className="flex flex-col items-center">
       <h2 className="font-semibold text-6xl text-center mb-24">お知らせ</h2>
 
       <NewsCardList news={NEWS_DEMO_DATA} />
