@@ -14,11 +14,11 @@ export default function Web() {
           <HeroContent />
         </section>
 
-        <section className="mt-[420px]">
+        <section className="mt-[220px]">
           <AboutTeam />
         </section>
 
-        <section className="mt-[420px]">
+        <section className="mt-[220px]">
           <JuniorYouth />
         </section>
 
@@ -26,11 +26,11 @@ export default function Web() {
           <SocialContribution />
         </section>
 
-        <section className="mt-[420px]">
+        <section className="mt-[320px]">
           <News />
         </section>
 
-        <section className="mt-[520px]">
+        <section className="mt-[320px]">
           <SponsorRecruiting />
         </section>
       </main>
