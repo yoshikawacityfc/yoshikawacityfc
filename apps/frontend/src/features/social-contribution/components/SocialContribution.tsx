@@ -7,7 +7,7 @@ export const SocialContribution = (): JSX.Element => {
         origin="bottom"
         distance="400px"
         opacity={0}
-        duration={1000}
+        duration={800}
         viewFactor={0.3}
         easing="ease-out"
         className="mb-16 px-4 md:mb-0 md:w-1/2 md:ml-[50%] md:absolute md:top-[45%] md:z-10"
@@ -34,7 +34,7 @@ export const SocialContribution = (): JSX.Element => {
         origin="top"
         distance="400px"
         opacity={0}
-        duration={1000}
+        duration={800}
         viewFactor={0.3}
         easing="ease-out"
       >

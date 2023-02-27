@@ -21,12 +21,14 @@
 }
 
 .ball-roll {
-  animation: roll 3s ease-out 0s forwards, spin 800ms linear 0s infinite;
+  animation: roll 4s cubic-bezier(0.075, 0.82, 0.75, 1.26) 0s forwards,
+    spin 800ms linear 0s infinite;
 }
 
 @media (min-width: 768px) {
   .ball-roll {
-    animation: roll 8s ease-out 0s forwards, spin 800ms linear 0s infinite;
+    animation: roll 6s cubic-bezier(0.16, 0.83, 0.92, 1.205) 0s forwards,
+      spin 800ms linear 0s infinite;
   }
 }
 
