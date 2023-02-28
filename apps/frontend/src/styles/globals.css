@@ -2,8 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Mugen plus";
+  src: url(./font/mgenplus-1p-thin.ttf);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Mugen plus";
+  src: url(./font/mgenplus-1p-light.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Mugen plus";
+  src: url(./font/mgenplus-1p-regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Mugen plus";
+  src: url(./font/mgenplus-1p-medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Mugen plus";
+  src: url(./font/mgenplus-1p-bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Mugen plus";
+  src: url(./font/mgenplus-1p-heavy.ttf);
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "Mugen plus";
+  src: url(./font/mgenplus-1p-black.ttf);
+  font-weight: 900;
+}
+
 body {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "Mugen plus", sans-serif;
   color: #262626;
 }
 
