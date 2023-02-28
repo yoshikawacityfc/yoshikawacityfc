@@ -14,7 +14,7 @@ export default function Web() {
           <HeroContent />
         </section>
 
-        <section className="mt-[220px]">
+        <section className="mt-[160px]">
           <AboutTeam />
         </section>
 
@@ -26,7 +26,7 @@ export default function Web() {
           <SocialContribution />
         </section>
 
-        <section className="mt-[320px]">
+        <section className="mt-[220px] sm:mt-[320px]">
           <News />
         </section>
 
