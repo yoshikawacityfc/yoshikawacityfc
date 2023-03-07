@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: "M+ C Type-1 (basic latin) Regular",
+    "M+ Type-1 (general-j) Regular", sans-serif;
   color: #262626;
 }
 

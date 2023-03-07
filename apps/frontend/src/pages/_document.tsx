@@ -5,8 +5,14 @@ export default function Document() {
     <Html lang="ja" dir="ltr">
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
           rel="stylesheet"
+          type="text/css"
+          href="http://mplus-fonts.sourceforge.jp/webfonts/basic_latin/mplus_webfonts.css"
+        />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="http://mplus-fonts.sourceforge.jp/webfonts/general-j/mplus_webfonts.css"
         />
       </Head>
 
