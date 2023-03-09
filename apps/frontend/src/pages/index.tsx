@@ -4,7 +4,7 @@ import { HeroContent } from "@/features/hero-content/components";
 import { JuniorYouth } from "@/features/junior-youth/components";
 import { News } from "@/features/news/components";
 import { SocialContribution } from "@/features/social-contribution/components";
-import { SponsorRecruiting } from "@/features/sponsor_recruiting/components";
+import { SponsorRecruiting } from "@/features/sponsor-recruiting/components";
 
 export default function Web() {
   return (
@@ -14,23 +14,23 @@ export default function Web() {
           <HeroContent />
         </section>
 
-        <section className="mt-[420px]">
+        <section className="mt-[160px]">
           <AboutTeam />
         </section>
 
-        <section className="mt-[420px]">
+        <section className="mt-[220px]">
           <JuniorYouth />
         </section>
 
-        <section className="mt-[-100px]">
+        <section className="mt-[-150px]">
           <SocialContribution />
         </section>
 
-        <section className="mt-[420px]">
+        <section className="mt-[220px] sm:mt-[320px]">
           <News />
         </section>
 
-        <section className="mt-[520px]">
+        <section className="mt-[320px]">
           <SponsorRecruiting />
         </section>
       </main>

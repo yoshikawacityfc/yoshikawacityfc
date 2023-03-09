@@ -84,7 +84,7 @@ export const JuniorYouth = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="bg-gradient-to-b from-primary w-full h-[520px] mt-[-1px]"></div>
+      <div className="bg-gradient-to-b from-primary w-full h-[420px] mt-[-1px]"></div>
     </div>
   );
 };
