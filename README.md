@@ -24,23 +24,15 @@ CSS を記述するにあたりカスタマイズ性に優れている Tailwind 
 
 以下の手順を踏んで開発に参加しましょう。
 
-### 1. `git clone`
+### 1. Bootstrap
 
-以下のコマンドを実行してクローンします。
-
-```shell
-$ git clone https://github.com/yoshikawacityfc-dev/yoshikawacityfc.git
-```
-
-### 3. `pnpm i`
-
-`pnpm i`でパッケージをインストールします。
+以下のコマンドを実行して開発環境を整えます。
 
 ```shell
-$ pnpm i
+$ make bs
 ```
 
-### 4. `pnpm run dev`
+### 2. `pnpm run dev`
 
 `pnpm run dev`でローカルサーバーを立ち上げます。  
 表示された URL にアクセスすると、サイトが表示されます。
