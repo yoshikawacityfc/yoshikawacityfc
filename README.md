@@ -1,3 +1,5 @@
+[![Vercel Staging Deployment](https://github.com/yoshikawacityfc/yoshikawacityfc/actions/workflows/staging.yml/badge.svg)](https://github.com/yoshikawacityfc/yoshikawacityfc/actions/workflows/staging.yml)
+
 # YOSHiKAWA CiTY FC
 
 吉川市のサッカーチーム HP
