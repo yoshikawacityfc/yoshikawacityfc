@@ -12,4 +12,4 @@ jobs:
         with:
           project: YOSHiKAWA CiTY FC Backlog
           column: Backlog
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.YCFC_ISSUES_INTO_PROJECTS_TOKEN }}
