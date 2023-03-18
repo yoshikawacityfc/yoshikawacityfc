@@ -1,7 +1,7 @@
 export const Advisor = (): JSX.Element => {
   return (
     <div className="bg-primary py-24">
-      <div className="max-w-[700px] m-auto px-4">
+      <div className="max-w-[1000px] m-auto px-4">
         <img
           src="/suzuki-takayuki.jpeg"
           alt="鈴木隆行"
