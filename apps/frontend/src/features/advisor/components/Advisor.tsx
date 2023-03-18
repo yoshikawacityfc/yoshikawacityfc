@@ -38,7 +38,7 @@ export const Advisor = (): JSX.Element => {
           FCの選手達と共にコーチ陣も成長しながらチームを創り上げていきます。
         </p>
 
-        <div className="mt-48 text-secondary">
+        <div className="mt-24 text-secondary">
           <h3 className="text-4xl mb-8">“サッカー以外でも交流していきます”</h3>
 
           <p className="mb-4">
