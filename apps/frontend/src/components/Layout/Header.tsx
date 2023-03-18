@@ -1,10 +1,13 @@
+import { PagePaths } from "@/lib/pagePaths";
+import Link from "next/link";
+
 export const Header = (): JSX.Element => {
   const MENU = [
-    { label: "YCFCとは" },
-    { label: "クラブコンセプト" },
-    { label: "事業" },
-    { label: "社会貢献活動" },
-    { label: "お問い合わせ" },
+    { label: "クラブコンセプト", href: PagePaths.concept() },
+    { label: "チーム", href: PagePaths.team() },
+    { label: "お知らせ", href: PagePaths.news() },
+    { label: "入会案内", href: PagePaths.entry() },
+    { label: "お問い合わせ", href: PagePaths.contact() },
   ];
 
   return (
@@ -20,7 +23,7 @@ export const Header = (): JSX.Element => {
                   key={index}
                   className="ml-7 font-medium text-primary cursor-pointer"
                 >
-                  {item.label}
+                  <Link href={item.href}>{item.label}</Link>
                 </li>
               );
             })}
