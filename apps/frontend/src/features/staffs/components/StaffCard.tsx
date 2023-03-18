@@ -22,9 +22,9 @@ export const StaffCard = ({
       onClick={() => onClick(staffProfile.id)}
     >
       <img
+        className="object-cover w-[150px] h-[150px] rounded-[50%]"
         src={staffProfile.profileImage}
         alt={staffProfile.name}
-        className="max-w-[150px]"
       />
 
       <div className="flex flex-col items-center my-4">

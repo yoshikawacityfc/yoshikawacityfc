@@ -1,4 +1,4 @@
-import { Modal } from "@/components/Elements";
+import { Button, Modal } from "@/components/Elements";
 import { StaffProfile } from "../types";
 
 interface StaffProfileProps {
@@ -14,11 +14,11 @@ export const StaffProfileModal = ({
 }: StaffProfileProps): JSX.Element => {
   return (
     <Modal visible={visible} onClose={onClose}>
-      <div className="w-[75vw] max-w-[700px]">
+      <div className="w-[90vw] max-w-[700px] h-[90vh] overflow-scroll p-6">
         <img
           src={staffProfile.profileImage}
           alt={staffProfile.name}
-          className="max-w-[200px] m-auto mb-4"
+          className="object-cover w-[200px] h-[200px] rounded-[50%] m-auto mb-4"
         />
 
         <div className="flex flex-col items-center mb-8">
@@ -30,16 +30,16 @@ export const StaffProfileModal = ({
           {staffProfile.oneWord}
         </p>
 
-        <p className="mb-8">{staffProfile.description}</p>
+        <p className="mb-8 whitespace-pre-line">{staffProfile.description}</p>
 
         <div className="bg-gray-200 px-6 py-8 rounded-lg">
           {/* TODO: リストコンポーネント化 */}
-          {staffProfile.coachingHistory && (
+          {staffProfile.career && (
             <div className="mb-6">
-              <h3 className="text-xl font-semibold mb-2">指導歴</h3>
+              <h3 className="text-xl font-semibold mb-2">経歴</h3>
 
               <ul>
-                {staffProfile.coachingHistory.map((item, index) => (
+                {staffProfile.career.map((item, index) => (
                   <li className="mb-1" key={index}>
                     {item}
                   </li>
@@ -63,7 +63,7 @@ export const StaffProfileModal = ({
           )}
 
           {staffProfile.license && (
-            <div>
+            <div className="mb-6">
               <h3 className="text-xl font-semibold mb-2">資格</h3>
 
               <ul>
@@ -75,6 +75,39 @@ export const StaffProfileModal = ({
               </ul>
             </div>
           )}
+
+          {staffProfile.playerHistory && (
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold mb-2">選手歴</h3>
+
+              <ul>
+                {staffProfile.playerHistory.map((item, index) => (
+                  <li className="mb-1" key={index}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {staffProfile.playerAchievement && (
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold mb-2">選手実績</h3>
+
+              <ul>
+                {staffProfile.playerAchievement.map((item, index) => (
+                  <li className="mb-1" key={index}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        <div className="w-3/4 m-auto mt-8 px-4">
+          {/* NOTE: モーダルを開くタイミングで強制的にボタンまでスクロールしてしまうためtabIndexに負の値を渡す */}
+          <Button label="閉じる" fullWidth tabIndex={-1} onClick={onClose} />
         </div>
       </div>
     </Modal>

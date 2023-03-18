@@ -13,8 +13,8 @@ export interface StaffProfile {
   description: string;
   /** ライセンス */
   license?: string[];
-  /** 指導歴 */
-  coachingHistory?: string[];
+  /** 経歴 */
+  career?: string[];
   /** 指導実績 */
   coachingAchievement?: string[];
   /** 選手歴 */
