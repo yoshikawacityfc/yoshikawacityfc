@@ -1,10 +1,14 @@
 import { MainLayout } from "@/components/Layout";
+
+import { Staffs } from "@/features/staffs/components";
 import { NextPage } from "next";
 
 const Team: NextPage = () => {
   return (
     <MainLayout>
-      <div>Team</div>
+      <section className="pt-64">
+        <Staffs />
+      </section>
     </MainLayout>
   );
 };
