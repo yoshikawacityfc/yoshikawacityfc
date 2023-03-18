@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.13",
     "next": "^13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -20,14 +21,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
-    "@types/node": "^18.0.0",
     "@tailwindcss/line-clamp": "^0.4.2",
+    "@types/node": "^18.0.0",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
     "@types/scrollreveal": "^0.0.8",
     "autoprefixer": "^10.4.13",
-    "eslint": "8.36.0",
     "clsx": "^1.2.1",
+    "eslint": "8.36.0",
     "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.21",
     "scrollreveal": "^4.0.9",
