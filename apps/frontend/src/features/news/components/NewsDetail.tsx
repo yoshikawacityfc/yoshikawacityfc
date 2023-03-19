@@ -39,6 +39,7 @@ export const NewsDetail = ({ id }: NewDetailProps): JSX.Element => {
             className="mb-32"
           ></div>
 
+          {/* TODO：以下コンポーネント化 */}
           <div className="border-t-[1px] border-gray-400 py-4 flex justify-between">
             <div>
               {prevNews && (

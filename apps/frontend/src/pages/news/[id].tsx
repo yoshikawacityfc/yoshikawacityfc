@@ -8,7 +8,7 @@ const News: NextPage = () => {
 
   return (
     <MainLayout>
-      <section className="pt-64 min-h-screen">
+      <section className="pt-64 min-h-[70vh]">
         <NewsDetail id={Number(router.query.id)} />
       </section>
     </MainLayout>
