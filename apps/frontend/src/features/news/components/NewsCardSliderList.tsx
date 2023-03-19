@@ -1,4 +1,6 @@
+import { PagePaths } from "@/lib/pagePaths";
 import clsx from "clsx";
+import { useRouter } from "next/router";
 import { useRef } from "react";
 import { NEWS_CARD_MARGIN_RIGHT, NEWS_CARD_WIDTH } from "../constants";
 import { NewsType } from "../types";
@@ -13,6 +15,11 @@ export const NewsCardSliderList = ({
 }: NewsCardSliderListProps): JSX.Element => {
   const MOVE_SCROLL_LEFT = NEWS_CARD_WIDTH + NEWS_CARD_MARGIN_RIGHT;
   const newsCardList = useRef<HTMLDivElement>(null);
+
+  const router = useRouter();
+  const handleCardClick = (id: number) => {
+    router.push(`${PagePaths.news()}/${id}`);
+  };
 
   const handlePrevClick = () => {
     if (newsCardList.current === null) return;
@@ -39,11 +46,7 @@ export const NewsCardSliderList = ({
               key={index}
               className={clsx(news.length - 1 > index && "mr-2", "w-[300px]")}
             >
-              <NewsCard
-                thumbnailSrc={item.thumbnailSrc}
-                title={item.title}
-                updateDate={item.updateDate}
-              />
+              <NewsCard news={item} onClick={handleCardClick} />
             </div>
           );
         })}

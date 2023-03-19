@@ -1,15 +1,18 @@
 import { MainLayout } from "@/components/Layout";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
+import { NewsDetail } from "@/features/news/components";
 
-const NewsDetail: NextPage = () => {
+const News: NextPage = () => {
   const router = useRouter();
 
   return (
     <MainLayout>
-      <div>{router.query.id}</div>
+      <section className="pt-64 min-h-screen">
+        <NewsDetail id={Number(router.query.id)} />
+      </section>
     </MainLayout>
   );
 };
 
-export default NewsDetail;
+export default News;
