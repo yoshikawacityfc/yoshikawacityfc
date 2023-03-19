@@ -3,7 +3,7 @@ import { StaffProfile } from "../types";
 export const staffProfiles: StaffProfile[] = [
   {
     id: 1,
-    profileImage: "/user-icon.svg",
+    profileImage: "",
     position: "Jr.ユース代表",
     name: "大山 将司",
     oneWord:
@@ -48,7 +48,7 @@ export const staffProfiles: StaffProfile[] = [
   },
   {
     id: 2,
-    profileImage: "/user-icon.svg",
+    profileImage: "",
     position: "コーチ",
     name: "坪井 秀斗",
     oneWord:
@@ -86,10 +86,10 @@ export const staffProfiles: StaffProfile[] = [
   },
   {
     id: 3,
-    profileImage: "/user-icon.svg",
-    position: "アシスタントコーチ",
+    profileImage: "",
+    position: "サポートコーチ",
     name: "塩崎 巧巳",
-    oneWord: "この度、アシスタントコーチに就任しました、塩崎です。",
+    oneWord: "この度、サポートコーチに就任しました、塩崎です。",
     description: `現在、中学、高校、大学、社会人カテゴリーのサッカー・フットサルの指導に関わり、フットサル選手としても活動しています。
 
       幼い頃、吉川でサッカーを始めましたが、このような形で地元のチームに関わる事ができ嬉しく思います。
@@ -122,7 +122,7 @@ export const staffProfiles: StaffProfile[] = [
   },
   {
     id: 4,
-    profileImage: "/user-icon.svg",
+    profileImage: "",
     position: "Jr.ユース・アドバイザー",
     name: "久野 孝太",
     oneWord:
@@ -166,5 +166,12 @@ export const staffProfiles: StaffProfile[] = [
       "2011／2012 クラブW杯カップ FIFAレフリーチーム",
       "2018〜 SC フライブルク女子トップチーム",
     ],
+  },
+  {
+    id: 6,
+    profileImage: "",
+    position: "サポートコーチ",
+    name: "北村 謙太",
+    oneWord: "吉川から高みを目指せるチームを共に創っていきましょう！",
   },
 ];
