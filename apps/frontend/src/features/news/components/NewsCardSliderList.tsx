@@ -37,7 +37,7 @@ export const NewsCardSliderList = ({
             // TODO: インデックスが配列の最大値かどうか判定するUtil関数を作成する
             <div
               key={index}
-              className={clsx(news.length - 1 > index && "mr-2")}
+              className={clsx(news.length - 1 > index && "mr-2", "w-[300px]")}
             >
               <NewsCard
                 thumbnailSrc={item.thumbnailSrc}
