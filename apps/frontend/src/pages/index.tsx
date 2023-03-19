@@ -5,8 +5,9 @@ import { JuniorYouth } from "@/features/junior-youth/components";
 import { News } from "@/features/news/components";
 import { SocialContribution } from "@/features/social-contribution/components";
 import { SponsorRecruiting } from "@/features/sponsor-recruiting/components";
+import { NextPage } from "next";
 
-export default function Web() {
+const Top: NextPage = () => {
   return (
     <MainLayout>
       <main>
@@ -36,4 +37,6 @@ export default function Web() {
       </main>
     </MainLayout>
   );
-}
+};
+
+export default Top;

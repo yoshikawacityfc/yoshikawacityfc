@@ -1,16 +1,18 @@
-export const Header = (): JSX.Element => {
-  const MENU = [
-    { label: "YCFCとは" },
-    { label: "クラブコンセプト" },
-    { label: "事業" },
-    { label: "社会貢献活動" },
-    { label: "お問い合わせ" },
-  ];
+import { MENU } from "@/constants";
+import { PagePaths } from "@/lib/pagePaths";
+import Link from "next/link";
 
+interface HeaderProps {
+  onMenuClick: () => void;
+}
+
+export const Header = ({ onMenuClick }: HeaderProps): JSX.Element => {
   return (
     <header className="fixed z-50 w-full">
       <div className="bg-white rounded-xl m-auto mt-12 px-6 py-2 w-11/12 flex justify-between shadow-lg">
-        <img src="/logo.svg" alt="logo" className="w-10" />
+        <Link href={PagePaths.index()}>
+          <img src="/logo.svg" alt="logo" className="w-10" />
+        </Link>
 
         <nav className="md:flex md:flex-col-reverse hidden">
           <ul className="flex">
@@ -20,7 +22,7 @@ export const Header = (): JSX.Element => {
                   key={index}
                   className="ml-7 font-medium text-primary cursor-pointer"
                 >
-                  {item.label}
+                  <Link href={item.href}>{item.label}</Link>
                 </li>
               );
             })}
@@ -31,6 +33,7 @@ export const Header = (): JSX.Element => {
           src="/bars-solid.svg"
           alt="menu"
           className="w-7 cursor-pointer md:hidden"
+          onClick={onMenuClick}
         />
       </div>
     </header>
