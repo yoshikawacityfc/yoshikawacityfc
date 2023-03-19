@@ -1,6 +1,6 @@
 import { Button, Modal } from "@/components/Elements";
+import { EMPTY_USER_IMAGE_PATH } from "@/constants/image";
 import { useMemo } from "react";
-import { STAFF_EMPTY_IMG_PATH } from "../constants";
 import { StaffProfile } from "../types";
 
 interface StaffProfileProps {
@@ -26,9 +26,9 @@ export const StaffProfileModal = ({
 
   return (
     <Modal visible={visible} onClose={onClose}>
-      <div className="w-[90vw] max-w-[700px] h-[90vh] overflow-scroll p-6">
+      <div className="w-[90vw] max-w-[700px] overflow-scroll p-6">
         <img
-          src={staffProfile.profileImage || STAFF_EMPTY_IMG_PATH}
+          src={staffProfile.profileImage || EMPTY_USER_IMAGE_PATH}
           alt={staffProfile.name}
           className="object-cover w-[200px] h-[200px] rounded-[50%] m-auto mb-4"
         />

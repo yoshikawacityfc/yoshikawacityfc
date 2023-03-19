@@ -1,5 +1,5 @@
+import { EMPTY_USER_IMAGE_PATH } from "@/constants/image";
 import clsx from "clsx";
-import { STAFF_EMPTY_IMG_PATH } from "../constants";
 import { StaffProfile } from "../types";
 
 interface StaffCardProps {
@@ -24,7 +24,7 @@ export const StaffCard = ({
     >
       <img
         className="object-cover w-[150px] h-[150px] rounded-[50%]"
-        src={staffProfile.profileImage || STAFF_EMPTY_IMG_PATH}
+        src={staffProfile.profileImage || EMPTY_USER_IMAGE_PATH}
         alt={staffProfile.name}
       />
 

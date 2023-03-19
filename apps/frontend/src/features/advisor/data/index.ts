@@ -1,7 +1,8 @@
-import { Advisor } from "../types";
+import { AdvisorProfile } from "../types";
 
-export const advisors: Advisor[] = [
+export const advisors: AdvisorProfile[] = [
   {
+    id: 1,
     name: "鈴木 隆行",
     position: "テクニカルアドバイザー",
     profileImage: "/suzuki-takayuki.jpeg",
@@ -16,6 +17,7 @@ export const advisors: Advisor[] = [
     YOSHiKAWA CiTY FCの選手達と共にコーチ陣も成長しながらチームを創り上げていきます。`,
   },
   {
+    id: 2,
     name: "重村 優輝",
     position: "アスレティック•メディカルアドバイザー",
     profileImage: "/shigemura-yuki.jpeg",

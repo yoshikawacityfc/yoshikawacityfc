@@ -1,29 +1,29 @@
+import { useState } from "react";
 import { advisors } from "../data";
+import { AdvisorProfile } from "../types";
+import { AdvisorCard } from "./AdvisorCard";
+import { AdvisorProfileModal } from "./AdvisorProfileModal";
 
 export const Advisor = (): JSX.Element => {
+  const [isAdvisorProfileModalVisible, setIsAdvisorProfileModalVisible] =
+    useState(false);
+  const [selectedAdvisorProfile, setSelectedAdvisorProfile] =
+    useState<AdvisorProfile>();
+
+  const handleAdvisorCardClick = (id: number) => {
+    setIsAdvisorProfileModalVisible(true);
+
+    setSelectedAdvisorProfile(advisors.find((item) => item.id === id));
+  };
+
   return (
     <div className="bg-primary py-24">
       <div className="max-w-[1000px] m-auto px-4">
-        {advisors.map((advisor, index) => (
-          <div key={index} className="mb-32">
-            <img
-              src={advisor.profileImage}
-              alt={advisor.name}
-              className="w-[300px] h-[400px] object-cover shadow-2xl rounded m-auto mb-16"
-            />
+        <h2 className="text-secondary font-semibold text-6xl text-center mb-16">
+          Advisor
+        </h2>
 
-            <div className="text-secondary flex flex-col items-center mb-16">
-              <span className="text-2xl mb-4">{advisor.position}</span>
-              <p className="text-4xl whitespace-pre-line">{advisor.name}</p>
-            </div>
-
-            <p className="text-secondary whitespace-pre-line">
-              {advisor.description}
-            </p>
-          </div>
-        ))}
-
-        <div className="text-secondary">
+        <div className="text-secondary mb-16">
           <h3 className="text-4xl mb-8">“サッカー以外でも交流していきます”</h3>
 
           <p className="mb-4">
@@ -38,6 +38,25 @@ export const Advisor = (): JSX.Element => {
             一見、サッカーとは関係のないような活動にも一生懸命、前向きに取り組める選手を待っています。
           </p>
         </div>
+
+        <div className="flex flex-wrap justify-center">
+          {advisors.map((advisor, index) => (
+            <AdvisorCard
+              className="mx-2 mb-4"
+              key={index}
+              advisorProfile={advisor}
+              onClick={handleAdvisorCardClick}
+            />
+          ))}
+        </div>
+
+        {selectedAdvisorProfile && (
+          <AdvisorProfileModal
+            visible={isAdvisorProfileModalVisible}
+            advisorProfile={selectedAdvisorProfile}
+            onClose={() => setIsAdvisorProfileModalVisible(false)}
+          />
+        )}
       </div>
     </div>
   );
