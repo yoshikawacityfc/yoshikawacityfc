@@ -2,50 +2,66 @@ import { NewsType } from "../types";
 
 export const NEWS_DEMO_DATA: NewsType[] = [
   {
-    thumbnailSrc: "/social-contribution.jpg",
-    title: "ウェアのサイズ合わせを行いました",
-    updateDate: "2023.01.28",
+    thumbnailSrc: "https://picsum.photos/800/534?random=11",
+    title: "新体制発表！",
+    updateDate: "2022-09-01",
+    description:
+      "<p>このたび、サッカー部は新しい監督を迎え、新たなチーム体制を発表いたします。</p><p>新監督は、選手とコーチ陣との密なコミュニケーションを図り、選手一人ひとりの力を最大限に引き出すことを目指しています。</p><p>今後ともサッカー部へのご支援、ご声援をよろしくお願いいたします。</p>",
   },
   {
-    thumbnailSrc: "/social-contribution.jpg",
-    title: "スポーツクラブルネサンス様とのタイアップ",
-    updateDate: "2023.01.28",
+    thumbnailSrc: "https://picsum.photos/800/534?random=12",
+    title: "練習試合のお知らせ",
+    updateDate: "2022-09-15",
+    description:
+      "<p>サッカー部は、都内のチームと練習試合を行います。この試合は、新しいチーム体制を確認するためのものであり、選手たちにとっても大変重要な機会です。</p><p>なお、試合の日程と場所は以下の通りです。</p><ul><li>日程：9月25日（日）</li><li>場所：東京都立代々木競技場第二球技場</li></ul>",
   },
   {
-    thumbnailSrc: "/social-contribution.jpg",
-    title: "2023年 第一回練習会",
-    updateDate: "2023.01.28",
+    thumbnailSrc: "https://picsum.photos/800/534?random=13",
+    title: "秋季大会出場決定！",
+    updateDate: "2022-10-01",
+    description:
+      "<p>このたび、サッカー部は秋季大会に出場することが決定いたしました。</p><p>今年のチームは、新しい監督のもと、選手一人ひとりが持つ力を最大限に引き出すチーム作りを進めてきました。ぜひ、会場で応援していただければ幸いです。</p><p>なお、秋季大会の詳細な日程と場所は、改めてお知らせいたします。</p>",
   },
   {
-    thumbnailSrc: "/social-contribution.jpg",
-    title: "ウェアのサイズ合わせを行いました",
-    updateDate: "2023.01.28",
+    thumbnailSrc: "https://picsum.photos/800/534?random=14",
+    title: "注目の新人選手が入部！",
+    updateDate: "2022-11-01",
+    description:
+      "<p>サッカー部に、注目の新人選手が入部しました。</p><p>この新人選手は、高校時代から数多くの賞を受賞しており、将来的には日本代表に選ばれる可能性もある逸材です。今後のチームの活躍に期待が高まります。</p>",
   },
   {
-    thumbnailSrc: "/social-contribution.jpg",
-    title:
-      "スポーツクラブルネサンス様とのタイアップスポーツクラブルネサンス様とのタイアップスポーツクラブルネサンス様とのタイアップ",
-    updateDate: "2023.01.28",
+    thumbnailSrc: "",
+    title: "地元開催のトーナメントに参加",
+    updateDate: "2022-11-15",
+    description:
+      "<p>サッカー部は、地元で開催されるトーナメントに参加します。</p><p>このトーナメントは、地元のチームが参加する大会であり、サッカー部にとっても、地元の人たちとの交流を深める良い機会です。</p><p>試合の日程や場所は以下の通りです。</p><ul><li>日程：11月20日（日）</li><li>場所：〇〇市〇〇スポーツセンター</li></ul>",
   },
   {
-    thumbnailSrc: "/social-contribution.jpg",
-    title: "2023年 第一回練習会",
-    updateDate: "2023.01.28",
+    thumbnailSrc: "",
+    title: "応援バスツアーのお知らせ",
+    updateDate: "2022-12-01",
+    description:
+      "<p>サッカー部の応援バスツアーを企画しました。</p><p>このツアーでは、チームの応援をするため、選手たちが出場する試合の会場まで、応援バスで移動します。バス内では、選手たちへの応援メッセージを書いた看板を持参することもできます。</p><p>詳細については、サッカー部のホームページをご確認ください。</p>",
   },
   {
-    thumbnailSrc: "/social-contribution.jpg",
-    title: "ウェアのサイズ合わせを行いました",
-    updateDate: "2023.01.28",
+    thumbnailSrc: "https://picsum.photos/800/534?random=17",
+    title: "新入生歓迎会のお知らせ",
+    updateDate: "2023-04-01",
+    description:
+      "<p>サッカー部では、新入生歓迎会を開催します。</p><p>このイベントは、新入生の方にサッカー部の活動や、チームの雰囲気を知っていただくために行われます。</p><p>日程や場所など詳細については、後日、新入生の方々への案内にてお知らせします。</p>",
   },
   {
-    thumbnailSrc: "/social-contribution.jpg",
-    title:
-      "スポーツクラブルネサンス様とのタイアップスポーツクラブルネサンス様とのタイアップスポーツクラブルネサンス様とのタイアップ",
-    updateDate: "2023.01.28",
+    thumbnailSrc: "https://picsum.photos/800/534?random=18",
+    title: "チームカラー変更のお知らせ",
+    updateDate: "2023-04-15",
+    description:
+      "<p>サッカー部のチームカラーを変更することになりました。</p><p>これまでの赤色から、ブルーを基調とした新しいカラーに変更します。</p><p>新しいユニフォームは、5月1日から着用開始となります。選手の皆さんは、新しいユニフォームに慣れるよう、トレーニングや練習試合などで着用してください。</p>",
   },
   {
-    thumbnailSrc: "/social-contribution.jpg",
-    title: "2023年 第一回練習会",
-    updateDate: "2023.01.28",
+    thumbnailSrc: "",
+    title: "新入生勧誘のお知らせ",
+    updateDate: "2023-05-01",
+    description:
+      "<p>サッカー部では、新入生を募集しています。</p><p>サッカー部は、初心者でも大歓迎です。また、部活動を通じて、スポーツを通じた友情や仲間づくりができます。</p><p>入部希望の方は、学校の掲示板やサッカー部ホームページをチェックして、詳細を確認してください。</p>",
   },
 ];

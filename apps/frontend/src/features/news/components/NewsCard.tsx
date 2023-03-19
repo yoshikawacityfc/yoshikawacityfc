@@ -21,7 +21,7 @@ export const NewsCard = ({
       )}
     >
       <img
-        src={thumbnailSrc}
+        src={thumbnailSrc || "/logo-gray.svg"}
         alt="thumbnail"
         className={clsx(
           fullWidth ? "w-full" : "w-[300px]",
