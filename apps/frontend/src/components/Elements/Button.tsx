@@ -15,12 +15,20 @@ interface ButtonProps {
   color?: ButtonColor;
   disabled?: boolean;
   fullWidth?: boolean;
+  tabIndex?: number;
   onClick?: () => void;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
-    { label, color = "primary", disabled = false, fullWidth = false, onClick },
+    {
+      label,
+      color = "primary",
+      disabled = false,
+      fullWidth = false,
+      tabIndex,
+      onClick,
+    },
     ref
   ) => {
     const styles: string[] = [];
@@ -35,6 +43,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         disabled={disabled}
+        tabIndex={tabIndex}
         onClick={onClick}
         className={clsx(styles, "font-medium", "p-2", "rounded", "transition")}
       >
