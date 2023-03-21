@@ -33,8 +33,6 @@ export const Pagination = ({
   if (pagesToShow < totalPages) {
     // 最初に表示するページ番号が1より小さい場合は、最後に表示するページ番号を修正する
     if (firstPageToShow < 1) {
-      console.log(Math.abs(firstPageToShow));
-
       lastPageToShow += Math.abs(firstPageToShow) + 1;
       firstPageToShow = 1;
     }
