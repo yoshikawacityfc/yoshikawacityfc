@@ -8,7 +8,7 @@ const News: NextPage = () => {
 
   return (
     <MainLayout>
-      <section className="py-64">
+      <section className="py-44">
         <NewsList />
       </section>
     </MainLayout>
