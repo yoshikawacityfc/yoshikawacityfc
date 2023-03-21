@@ -6,8 +6,8 @@ const Contact: NextPage = () => {
   return (
     <MainLayout>
       <section className="pt-64">
-        <div className="max-w-[1000px] m-auto">
-          <h2 className="font-semibold text-6xl text-center mb-16">
+        <div className="max-w-[800px] m-auto px-4">
+          <h2 className="font-semibold text-6xl text-center mb-24">
             お問い合わせ
           </h2>
 
@@ -15,7 +15,7 @@ const Contact: NextPage = () => {
         </div>
 
         <div className="py-8 bg-tertiary mt-24">
-          <div className="max-w-[1000px] m-auto">
+          <div className="max-w-[800px] m-auto">
             <p className="mb-2">
               送信後、m.oyama@yoshikawa-fc.com（大山）からご返信させて頂きます。
             </p>
