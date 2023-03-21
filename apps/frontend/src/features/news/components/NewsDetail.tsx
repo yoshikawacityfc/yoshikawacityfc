@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
 import { NEWS_DEMO_DATA } from "../data";
+import "zenn-content-css";
 
 interface NewDetailProps {
   id: number;
@@ -34,7 +35,7 @@ export const NewsDetail = ({ id }: NewDetailProps): JSX.Element => {
   return (
     <>
       {news ? (
-        <div className="max-w-[1000px] px-4 m-auto mb-32">
+        <div className="znc max-w-[1000px] px-4 m-auto mb-32">
           <h1 className="text-3xl mb-1">{news.title}</h1>
           <p className="text-xl text-gray-400 mb-16">{news.updateDate}</p>
 
