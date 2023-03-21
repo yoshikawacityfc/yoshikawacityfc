@@ -21,6 +21,7 @@ importers:
       '@fortawesome/free-solid-svg-icons': 6.3.0
       '@fortawesome/react-fontawesome': 0.2.0
       '@headlessui/react': ^1.7.13
+      '@hookform/resolvers': ^3.0.0
       '@tailwindcss/line-clamp': ^0.4.2
       '@types/node': ^18.0.0
       '@types/react': ^18.0.22
@@ -40,6 +41,7 @@ importers:
       tsconfig: workspace:*
       typescript: ^5.0.0
       zenn-content-css: ^0.1.141
+      zod: ^3.21.4
     dependencies:
       '@fortawesome/fontawesome-svg-core': 6.3.0
       '@fortawesome/free-brands-svg-icons': 6.3.0
@@ -47,11 +49,13 @@ importers:
       '@fortawesome/free-solid-svg-icons': 6.3.0
       '@fortawesome/react-fontawesome': 0.2.0_d5rbrisxfyemehbvmdbryvgjte
       '@headlessui/react': 1.7.13_biqbaboplfbrettd7655fr4n2y
+      '@hookform/resolvers': 3.0.0_react-hook-form@7.43.7
       next: 13.1.6_pjwopsidmaokadturxaafygjp4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-hook-form: 7.43.7_react@18.2.0
       zenn-content-css: 0.1.141
+      zod: 3.21.4
     devDependencies:
       '@babel/core': 7.20.12
       '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.6
@@ -391,6 +395,14 @@ packages:
       client-only: 0.0.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@hookform/resolvers/3.0.0_react-hook-form@7.43.7:
+    resolution: {integrity: sha512-SQPefakODpyq25b/phHXDKCdRrEfPcCXV7B4nAa139wE1DxufYbbNAjeo0T04ZXBokRxZ+wD8iA1kkVMa3QwjQ==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
+    dependencies:
+      react-hook-form: 7.43.7_react@18.2.0
     dev: false
 
   /@humanwhocodes/config-array/0.11.8:
@@ -3018,4 +3030,8 @@ packages:
 
   /zenn-content-css/0.1.141:
     resolution: {integrity: sha512-mvFrU9MHg9eJyJJ07iSfzGkRxlEmQZeZUMhyTDoomlnfz6A+5I2eLDbOmH5vALh399F1lyF5HwP1ci7UrQOlYg==}
+    dev: false
+
+  /zod/3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
     dev: false
