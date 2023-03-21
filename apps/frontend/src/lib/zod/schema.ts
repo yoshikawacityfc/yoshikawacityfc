@@ -2,10 +2,10 @@ import * as z from "zod";
 
 export namespace ZodSchema {
   /**
-   * 名前
+   * 氏名
    */
   export const name = () => {
-    return z.string().min(1, { message: "名前を入力してください" });
+    return z.string().min(1, { message: "氏名を入力してください" });
   };
 
   /**
@@ -23,10 +23,10 @@ export namespace ZodSchema {
   };
 
   /**
-   * 保護者名
+   * 保護者氏名
    */
   export const parentName = () => {
-    return z.string().min(1, { message: "保護者名を入力してください" });
+    return z.string().min(1, { message: "保護者氏名を入力してください" });
   };
 
   /**
