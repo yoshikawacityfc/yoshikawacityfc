@@ -16,27 +16,6 @@ export namespace ZodSchema {
   };
 
   /**
-   * 所属チーム/スクール名
-   */
-  export const team = () => {
-    return z.string().max(200, { message: "200文字以内で入力してください" });
-  };
-
-  /**
-   * 保護者氏名
-   */
-  export const parentName = () => {
-    return z.string().min(1, { message: "保護者氏名を入力してください" });
-  };
-
-  /**
-   * 住所
-   */
-  export const address = () => {
-    return z.string().min(1, { message: "住所を入力してください" });
-  };
-
-  /**
    * メールアドレス
    */
   export const email = () => {
@@ -54,9 +33,9 @@ export namespace ZodSchema {
   };
 
   /**
-   * 質問内容
+   * お問い合わせ内容
    */
-  export const question = () => {
+  export const contact = () => {
     return z.string().max(1000, { message: "1000文字以内で入力してください" });
   };
 }
