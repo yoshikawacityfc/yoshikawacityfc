@@ -40,4 +40,11 @@ export namespace PagePaths {
   export const contact = (): string => {
     return "/contact";
   };
+
+  /**
+   * お問い合わせ完了
+   */
+  export const contactComplete = (): string => {
+    return "/contact/complete";
+  };
 }

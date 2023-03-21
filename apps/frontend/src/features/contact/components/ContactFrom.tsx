@@ -4,6 +4,8 @@ import * as z from "zod";
 import { ZodSchema } from "@/lib/zod/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import { PagePaths } from "@/lib/pagePaths";
 
 interface ContactInput {
   name: string;
@@ -31,6 +33,8 @@ export const ContactForm = (): JSX.Element => {
   const [errorMessages, setErrorMessages] =
     useState<FieldErrors<ContactInput>>();
 
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -43,7 +47,10 @@ export const ContactForm = (): JSX.Element => {
     setErrorMessages(errors);
   }, [errors]);
 
-  const onSubmit = (formData: ContactInput) => console.log(formData);
+  const onSubmit = (_: ContactInput) => {
+    // TODO: 入力情報をDBに追加
+    router.push(PagePaths.contactComplete());
+  };
 
   return (
     <form className="m-auto" onSubmit={handleSubmit(onSubmit)}>
