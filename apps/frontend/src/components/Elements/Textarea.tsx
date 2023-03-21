@@ -8,7 +8,10 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <textarea
         ref={ref}
-        className={clsx("p-2", "placeholder:text-gray-300", className)}
+        className={clsx(
+          "p-2 block w-full border-2 focus:border-primary focus:outline-none placeholder:text-gray-300",
+          className
+        )}
         {...props}
       />
     );

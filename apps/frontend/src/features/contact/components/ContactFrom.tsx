@@ -1,80 +1,82 @@
-import { Button, FormInput } from "@/components/Elements";
-import { FormTextarea } from "@/components/Elements/Textarea";
+import { Button, FormLabel, Input, Textarea } from "@/components/Elements";
+import { useForm } from "react-hook-form";
 
 export const ContactForm = (): JSX.Element => {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data: any) => console.log(data);
+
   return (
-    <form className="m-auto">
+    <form className="m-auto" onSubmit={handleSubmit(onSubmit)}>
       <div className="mb-8 max-w-[20rem]">
-        <FormInput
-          label="氏名"
-          htmlFor="name"
-          placeholder="吉川 太郎"
-          required
-        />
+        <FormLabel label="氏名" htmlFor="name" required>
+          <Input required placeholder="吉川 太郎" {...register("name")} />
+        </FormLabel>
       </div>
 
       <div className="mb-8 max-w-[20rem]">
-        <FormInput
-          label="フリガナ"
-          htmlFor="kana-name"
-          placeholder="ヨシカワ タロウ"
-          required
-        />
+        <FormLabel label="フリガナ" htmlFor="kana-name" required>
+          <Input
+            required
+            placeholder="ヨシカワ タロウ"
+            {...register("kana-name")}
+          />
+        </FormLabel>
       </div>
 
       <div className="mb-8 max-w-[40rem]">
-        <FormInput
+        <FormLabel
           label="所属チーム/スクール名"
           htmlFor="team"
           description="所属のない方は無記入で問題ありません"
-          placeholder="YOSHiKAWA CiTY FC"
-        />
+        >
+          <Input placeholder="YOSHiKAWA CiTY FC" {...register("team")} />
+        </FormLabel>
       </div>
 
       <div className="mb-8 max-w-[20rem]">
-        <FormInput
-          label="保護者氏名"
-          htmlFor="parent-name"
-          placeholder="ヨシカワ サトル"
-          required
-        />
+        <FormLabel label="保護者氏名" htmlFor="parent-name" required>
+          <Input
+            required
+            placeholder="ヨシカワ サトル"
+            {...register("parent-name")}
+          />
+        </FormLabel>
       </div>
 
       <div className="mb-8">
-        <FormInput
-          label="住所"
-          htmlFor="address"
-          placeholder="埼玉県吉川市XX X-X XXXマンション XXX号室"
-          required
-        />
+        <FormLabel label="住所" htmlFor="address" required>
+          <Input
+            required
+            placeholder="埼玉県吉川市XX X-X XXXマンション XXX号室"
+            {...register("address")}
+          />
+        </FormLabel>
       </div>
 
       <div className="mb-8 max-w-[30rem]">
-        <FormInput
-          label="メールアドレス"
-          htmlFor="email"
-          placeholder="yoshikawa.city@example.com"
-          required
-        />
+        <FormLabel label="メールアドレス" htmlFor="email" required>
+          <Input
+            required
+            placeholder="yoshikawa.city@example.com"
+            {...register("email")}
+          />
+        </FormLabel>
       </div>
 
       <div className="mb-8 max-w-[15rem]">
-        <FormInput
-          label="緊急連絡先"
-          htmlFor="tel"
-          placeholder="000-0000-0000"
-          required
-        />
+        <FormLabel label="緊急連絡先" htmlFor="tel" required>
+          <Input required placeholder="000-0000-0000" {...register("tel")} />
+        </FormLabel>
       </div>
 
       <div className="mb-16">
-        <FormTextarea
+        <FormLabel
           label="ご質問内容"
           htmlFor="question"
           description="ご質問内容等をご記入下さい"
-          rows={10}
-          required
-        />
+        >
+          <Textarea rows={10} {...register("question")} />
+        </FormLabel>
       </div>
 
       <div className="w-3/4 m-auto">

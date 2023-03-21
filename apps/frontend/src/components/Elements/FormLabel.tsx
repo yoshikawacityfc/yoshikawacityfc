@@ -1,30 +1,20 @@
-import { Textarea, TextareaProps } from "./Textarea";
+import { ReactNode } from "react";
 
-type FormTextareaProps = Pick<
-  TextareaProps,
-  | "id"
-  | "name"
-  | "autoComplete"
-  | "maxLength"
-  | "required"
-  | "placeholder"
-  | "className"
-  | "rows"
-  | "value"
-  | "onChange"
-> & {
+interface FormLabelProps {
   label: string;
   htmlFor: string;
+  required?: boolean;
   description?: string;
-};
+  children: ReactNode;
+}
 
-export const FormTextarea = ({
+export const FormLabel = ({
   label,
   htmlFor,
   description,
   required,
-  ...props
-}: FormTextareaProps): JSX.Element => {
+  children,
+}: FormLabelProps): JSX.Element => {
   return (
     <>
       <label htmlFor={htmlFor} className="mb-2 block font-bold">
@@ -39,10 +29,7 @@ export const FormTextarea = ({
         )}
       </label>
 
-      <Textarea
-        className="block w-full border-2 focus:border-primary focus:outline-none"
-        {...props}
-      />
+      {children}
     </>
   );
 };
