@@ -22,7 +22,7 @@ export const FormItem = ({
       <label htmlFor={htmlFor} className="mb-2 block font-bold">
         <span>{label}</span>
         {required && (
-          <span className="ml-2 text-sm text-secondary px-2 rounded-md bg-red-500">
+          <span className="ml-2 text-sm text-secondary px-2 py-1 rounded-md bg-red-500">
             必須
           </span>
         )}
