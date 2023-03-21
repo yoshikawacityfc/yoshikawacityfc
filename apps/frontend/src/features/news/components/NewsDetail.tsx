@@ -20,10 +20,14 @@ export const NewsDetail = ({ id }: NewDetailProps): JSX.Element => {
   const router = useRouter();
 
   const handlePrevNews = (id: number) => {
-    router.push(`${PagePaths.news()}/${id}`);
+    goToNewsPage(id);
   };
 
   const handleNextNews = (id: number) => {
+    goToNewsPage(id);
+  };
+
+  const goToNewsPage = (id: number) => {
     router.push(`${PagePaths.news()}/${id}`);
   };
 
@@ -45,7 +49,7 @@ export const NewsDetail = ({ id }: NewDetailProps): JSX.Element => {
               {prevNews && (
                 <span
                   className="text-primary cursor-pointer flex items-center"
-                  onClick={() => handleNextNews(prevNews.id)}
+                  onClick={() => handlePrevNews(prevNews.id)}
                 >
                   <Icon className="mr-2" icon={faChevronLeft} />
                   <span className="max-w-[150px] md:max-w-[400px] overflow-hidden whitespace-nowrap text-ellipsis">
