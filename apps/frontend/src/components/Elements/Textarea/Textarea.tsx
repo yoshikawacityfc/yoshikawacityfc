@@ -8,7 +8,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <textarea
         ref={ref}
-        className={clsx("border", "p-2", className)}
+        className={clsx("p-2", "placeholder:text-gray-300", className)}
         {...props}
       />
     );

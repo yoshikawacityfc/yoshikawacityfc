@@ -5,6 +5,12 @@ export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className = "", ...props }, ref) => {
-    return <input ref={ref} className={clsx("p-2", className)} {...props} />;
+    return (
+      <input
+        ref={ref}
+        className={clsx("p-2", "placeholder:text-gray-300", className)}
+        {...props}
+      />
+    );
   }
 );

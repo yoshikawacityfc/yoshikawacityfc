@@ -36,7 +36,7 @@ export const FormInput = ({
           </span>
         )}
         {description && (
-          <p className="text-gray-300 text-sm font-light">{description}</p>
+          <p className="text-gray-400 text-sm font-light">{description}</p>
         )}
       </label>
 
