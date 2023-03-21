@@ -14,7 +14,7 @@ const Contact: NextPage = () => {
           <ContactForm />
         </div>
 
-        <div className="py-8 bg-tertiary mt-24">
+        <div className="py-8 px-4 bg-tertiary mt-24">
           <div className="max-w-[800px] m-auto">
             <p className="mb-2">
               送信後、m.oyama@yoshikawa-fc.com（大山）からご返信させて頂きます。
