@@ -1,20 +1,22 @@
 import { ReactNode } from "react";
 
-interface FormLabelProps {
+interface FormItemProps {
   label: string;
   htmlFor: string;
   required?: boolean;
   description?: string;
+  errorMessage?: string;
   children: ReactNode;
 }
 
-export const FormLabel = ({
+export const FormItem = ({
   label,
   htmlFor,
   description,
   required,
+  errorMessage,
   children,
-}: FormLabelProps): JSX.Element => {
+}: FormItemProps): JSX.Element => {
   return (
     <>
       <label htmlFor={htmlFor} className="mb-2 block font-bold">
@@ -30,6 +32,8 @@ export const FormLabel = ({
       </label>
 
       {children}
+
+      <p className="text-red-500 mt-2 text-sm">{errorMessage}</p>
     </>
   );
 };
