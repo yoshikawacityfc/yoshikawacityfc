@@ -9,7 +9,9 @@ export const NewsPreview = (): JSX.Element => {
 
   return (
     <ScrollAnimation delay={300} className="flex flex-col items-center">
-      <h2 className="font-semibold text-6xl text-center mb-24">お知らせ</h2>
+      <h2 className="font-semibold text-5xl sm:text-6xl text-center mb-24">
+        お知らせ
+      </h2>
 
       <NewsCardSliderList news={NEWS_DEMO_DATA} />
 

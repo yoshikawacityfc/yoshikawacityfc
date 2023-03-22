@@ -12,7 +12,9 @@ export const SocialContribution = (): JSX.Element => {
         easing="ease-out"
         className="mb-16 px-4 md:mb-0 md:w-1/2 md:ml-[50%] md:absolute md:top-[45%] md:z-10"
       >
-        <h2 className="font-semibold text-6xl mb-24">社会貢献活動</h2>
+        <h2 className="font-semibold text-5xl sm:text-6xl mb-24">
+          社会貢献活動
+        </h2>
 
         <h3 className="font-medium text-2xl mb-6">”次世代のために”</h3>
         <p className="font-medium mb-14">

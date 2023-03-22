@@ -40,7 +40,9 @@ export const JuniorYouth = (): JSX.Element => {
 
       <div className="bg-primary text-secondary w-full">
         <div className="max-w-[1000px] m-auto px-4 py-8 flex items-center flex-col">
-          <h2 className="font-semibold text-6xl text-center">Jr.ユース</h2>
+          <h2 className="font-semibold text-5xl sm:text-6xl text-center">
+            Jr.ユース
+          </h2>
 
           <p className="text-center my-12">
             フットボールの力で、人、地域をもっと笑顔にするチームを目指します。

@@ -15,7 +15,7 @@ export const NewsList = (): JSX.Element => {
   return (
     <>
       <div className="max-w-[1000px] m-auto px-4">
-        <h2 className="font-semibold text-6xl text-center mb-24">
+        <h2 className="font-semibold text-5xl sm:text-6xl text-center mb-24">
           お知らせ一覧
         </h2>
 
