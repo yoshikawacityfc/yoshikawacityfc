@@ -1,24 +1,36 @@
+import clsx from "clsx";
+import { NewsType } from "../types";
+
 interface NewsCardProps {
-  thumbnailSrc?: string;
-  title: string;
-  updateDate: string;
+  news: NewsType;
+  fullWidth?: boolean;
+  onClick: (id: number) => void;
 }
 
 export const NewsCard = ({
-  thumbnailSrc = "/social-contribution.jpg",
-  title,
-  updateDate,
+  news,
+  fullWidth,
+  onClick,
 }: NewsCardProps): JSX.Element => {
   return (
-    <div className="w-[300px] h-[400px] shadow text-secondary">
+    <div
+      className={clsx(
+        fullWidth ? "w-full" : "w-[300px]",
+        "h-[400px] shadow text-secondary cursor-pointer"
+      )}
+      onClick={() => onClick(news.id)}
+    >
       <img
-        src={thumbnailSrc}
+        src={news.thumbnailSrc || "/logo-gray.svg"}
         alt="thumbnail"
-        className="h-[300px] w-[300px] object-cover"
+        className={clsx(
+          fullWidth ? "w-full" : "w-[300px]",
+          "h-[300px] object-cover"
+        )}
       />
       <div className="bg-primary h-[100px] p-3 text-xs flex flex-col justify-between">
-        <h4 className="text-base font-light line-clamp-2">{title}</h4>
-        <p className="text-right font-light">{updateDate}</p>
+        <h4 className="text-base font-light line-clamp-2">{news.title}</h4>
+        <p className="text-right font-light">{news.updateDate}</p>
       </div>
     </div>
   );

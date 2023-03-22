@@ -1,3 +1,3 @@
-export * from "./News";
-export * from "./NewsCard";
-export * from "./NewsCardList";
+export * from "./NewsPreview";
+export * from "./NewsList";
+export * from "./NewsDetail";

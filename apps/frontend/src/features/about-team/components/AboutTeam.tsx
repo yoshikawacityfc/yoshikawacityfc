@@ -11,7 +11,7 @@ export const AboutTeam = (): JSX.Element => {
       >
         <img src="/logo.svg" alt="logo" className="w-[100px]" />
 
-        <h2 className="font-semibold text-6xl my-10">YCFCとは</h2>
+        <h2 className="font-semibold text-5xl sm:text-6xl my-10">YCFCとは</h2>
 
         <p className="font-medium mb-16">
           YOSHiKAWA CiTY

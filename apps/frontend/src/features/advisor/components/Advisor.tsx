@@ -19,7 +19,7 @@ export const Advisor = (): JSX.Element => {
   return (
     <div className="bg-primary py-24">
       <div className="max-w-[1000px] m-auto px-4">
-        <h2 className="text-secondary font-semibold text-6xl text-center mb-16">
+        <h2 className="text-secondary font-semibold text-5xl sm:text-6xl text-center mb-16">
           Advisor
         </h2>
 
