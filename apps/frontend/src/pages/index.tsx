@@ -10,31 +10,29 @@ import { NextPage } from "next";
 const Top: NextPage = () => {
   return (
     <MainLayout>
-      <main>
-        <section>
-          <HeroContent />
-        </section>
+      <section>
+        <HeroContent />
+      </section>
 
-        <section className="mt-[160px]">
-          <AboutTeam />
-        </section>
+      <section className="mt-[160px]">
+        <AboutTeam />
+      </section>
 
-        <section className="mt-[220px]">
-          <JuniorYouth />
-        </section>
+      <section className="mt-[220px]">
+        <JuniorYouth />
+      </section>
 
-        <section className="mt-[-150px]">
-          <SocialContribution />
-        </section>
+      <section className="mt-[-150px]">
+        <SocialContribution />
+      </section>
 
-        <section className="mt-[220px] sm:mt-[320px]">
-          <NewsPreview />
-        </section>
+      <section className="mt-[220px] sm:mt-[320px]">
+        <NewsPreview />
+      </section>
 
-        <section className="mt-[320px]">
-          <SponsorRecruiting />
-        </section>
-      </main>
+      <section className="mt-[320px]">
+        <SponsorRecruiting />
+      </section>
     </MainLayout>
   );
 };

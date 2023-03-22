@@ -18,7 +18,7 @@ export const AdvisorCard = ({
     <div
       className={clsx(
         className,
-        "py-8 px-4 bg-secondary shadow-md rounded-md min-w-[300px] flex flex-col items-center cursor-pointer hover:shadow-xl"
+        "py-8 px-4 bg-secondary shadow-md rounded-md min-w-[300px] w-full flex flex-col items-center cursor-pointer hover:shadow-xl"
       )}
       onClick={() => onClick(advisorProfile.id)}
     >
