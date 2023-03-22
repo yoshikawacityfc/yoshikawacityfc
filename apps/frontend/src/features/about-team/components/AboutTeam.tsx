@@ -1,7 +1,11 @@
 import { Button, ScrollAnimation } from "@/components/Elements";
+import { PagePaths } from "@/lib/pagePaths";
+import { useRouter } from "next/router";
 import { YoshikawaCity } from "./YoshikawaCity";
 
 export const AboutTeam = (): JSX.Element => {
+  const router = useRouter();
+
   return (
     <div className="flex justify-center items-center max-w-[1000px] m-auto flex-wrap-reverse px-4">
       <ScrollAnimation
@@ -19,7 +23,11 @@ export const AboutTeam = (): JSX.Element => {
         </p>
 
         <div className="w-3/4">
-          <Button label="もっと詳しく" fullWidth />
+          <Button
+            label="もっと詳しく"
+            fullWidth
+            onClick={() => router.push(PagePaths.concept())}
+          />
         </div>
       </ScrollAnimation>
 
