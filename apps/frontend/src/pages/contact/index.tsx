@@ -7,7 +7,7 @@ const Contact: NextPage = () => {
     <MainLayout>
       <section className="pt-64">
         <div className="max-w-[800px] m-auto px-4">
-          <h2 className="font-semibold text-6xl text-center mb-24">
+          <h2 className="font-semibold text-5xl sm:text-6xl text-center mb-24">
             お問い合わせ
           </h2>
 
