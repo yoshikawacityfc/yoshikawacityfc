@@ -28,7 +28,7 @@ export const AdvisorProfileModal = ({
         </div>
 
         {advisorProfile.description && (
-          <p className="mb-8 whitespace-pre-line">
+          <p className="mb-12 whitespace-pre-line">
             {advisorProfile.description}
           </p>
         )}

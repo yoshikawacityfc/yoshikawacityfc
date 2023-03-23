@@ -1,7 +1,10 @@
 import { Button, ScrollAnimation } from "@/components/Elements";
+import { PagePaths } from "@/lib/pagePaths";
+import { useRouter } from "next/router";
 import { useRef } from "react";
 
 export const JuniorYouth = (): JSX.Element => {
+  const router = useRouter();
   const imgRef = useRef<HTMLImageElement>(null);
 
   const startAnimation = () => {
@@ -66,22 +69,21 @@ export const JuniorYouth = (): JSX.Element => {
             2023年Jr.ユース（U-15始動）
           </h3>
 
-          <p className="text-center">
+          <p className="text-justify">
             2023年度から始動する、埼玉県吉川市を拠点に活動をするJr.ユースチームです。【大人の描く想像を超えていく】選手の育成を目指すクラブチームです。スポーツジムとの連携、テクノロジーの活用、各種専門家との交流など選手1人1人の成長の為に全力を尽くします。
           </p>
 
-          <ScrollAnimation delay={300}>
-            <a className="relative my-12 block shadow-2xl">
-              <img
-                src="/player-recruiting.png"
-                alt="ball"
-                className="rounded"
-              />
-            </a>
-          </ScrollAnimation>
+          <div className="relative my-12 block shadow-2xl">
+            <img src="/player-recruiting.png" alt="ball" className="rounded" />
+          </div>
 
           <div className="w-3/4">
-            <Button label="Jr.ユースページへ" color="secondary" fullWidth />
+            <Button
+              label="入会案内"
+              color="secondary"
+              fullWidth
+              onClick={() => router.push(PagePaths.entry())}
+            />
           </div>
         </div>
       </div>

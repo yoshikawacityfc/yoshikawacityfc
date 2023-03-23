@@ -39,10 +39,9 @@ export const Advisor = (): JSX.Element => {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center">
+        <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(300px,_1fr))]">
           {advisors.map((advisor, index) => (
             <AdvisorCard
-              className="mx-2 mb-4"
               key={index}
               advisorProfile={advisor}
               onClick={handleAdvisorCardClick}
