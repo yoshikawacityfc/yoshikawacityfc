@@ -34,7 +34,7 @@ export const StaffProfileModal = ({
         />
 
         <div className="flex flex-col items-center mb-8">
-          <span className="text-sm">{staffProfile.position}</span>
+          <span className="text-sm font-medium">{staffProfile.position}</span>
           <p className="text-xl font-semibold">{staffProfile.name}</p>
         </div>
 

@@ -19,7 +19,7 @@ export const FormItem = ({
 }: FormItemProps): JSX.Element => {
   return (
     <>
-      <label htmlFor={htmlFor} className="mb-2 block font-bold">
+      <label htmlFor={htmlFor} className="mb-2 block font-medium">
         <span>{label}</span>
         {required && (
           <span className="ml-2 text-sm text-secondary px-2 py-1 rounded-md bg-red-500">

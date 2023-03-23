@@ -12,7 +12,7 @@ const Concept: NextPage = () => {
           <h2 className="font-semibold text-5xl sm:text-6xl mb-12">
             PHILOSOPHY
           </h2>
-          <h4 className="text-2xl font-semibold mb-6">
+          <h4 className="text-2xl font-medium mb-6">
             大人の描く想像を超える選手の育成を
           </h4>
           <p>
@@ -23,7 +23,7 @@ const Concept: NextPage = () => {
         {/* CONCEPT */}
         <div className="mb-32">
           <h2 className="font-semibold text-5xl sm:text-6xl mb-12">CONCEPT</h2>
-          <h4 className="text-2xl font-semibold mb-6">
+          <h4 className="text-2xl font-medium mb-6">
             選手一人ひとりの成長の為に全力を尽くす
           </h4>
           <ul>
@@ -37,9 +37,7 @@ const Concept: NextPage = () => {
         <div>
           <h2 className="font-semibold text-5xl sm:text-6xl mb-12">VISION</h2>
 
-          <h4 className="text-2xl font-semibold mb-6">
-            人間性と社会性を高める
-          </h4>
+          <h4 className="text-2xl font-medium mb-6">人間性と社会性を高める</h4>
           <ul className="mb-12">
             <li className="mb-4">
               サッカーは自分の性格やその時のメンタルがプレーに大きく影響するスポーツです。挨拶や身だしなみを整える事でプレーでやるべき事が整理できます。
@@ -52,7 +50,7 @@ const Concept: NextPage = () => {
             </li>
           </ul>
 
-          <h4 className="text-2xl font-semibold mb-6">進路を自ら切り拓く</h4>
+          <h4 className="text-2xl font-medium mb-6">進路を自ら切り拓く</h4>
           <ul>
             <li className="mb-4">
               文武両道。サッカーだけでなく学校生活や学業を疎かにしない。自分の進みたい進路には必ず成績が関わります。家庭での生活も含め時間の使い方を考えましょう。

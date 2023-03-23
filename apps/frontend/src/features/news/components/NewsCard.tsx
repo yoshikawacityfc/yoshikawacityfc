@@ -29,7 +29,7 @@ export const NewsCard = ({
         )}
       />
       <div className="bg-primary h-[100px] p-3 text-xs flex flex-col justify-between">
-        <h4 className="text-base font-light line-clamp-2">{news.title}</h4>
+        <h4 className="text-base font-normal line-clamp-2">{news.title}</h4>
         <p className="text-right font-light">{news.updateDate}</p>
       </div>
     </div>

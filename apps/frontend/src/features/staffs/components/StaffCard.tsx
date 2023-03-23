@@ -29,7 +29,7 @@ export const StaffCard = ({
       />
 
       <div className="flex flex-col items-center my-4">
-        <span className="text-sm">{staffProfile.position}</span>
+        <span className="text-sm font-medium">{staffProfile.position}</span>
         <p className="text-xl font-semibold">{staffProfile.name}</p>
       </div>
 

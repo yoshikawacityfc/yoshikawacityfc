@@ -4,15 +4,11 @@ export default function Document() {
   return (
     <Html lang="ja" dir="ltr">
       <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
+          href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
-          type="text/css"
-          href="http://mplus-fonts.sourceforge.jp/webfonts/basic_latin/mplus_webfonts.css"
-        />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="http://mplus-fonts.sourceforge.jp/webfonts/general-j/mplus_webfonts.css"
         />
       </Head>
 

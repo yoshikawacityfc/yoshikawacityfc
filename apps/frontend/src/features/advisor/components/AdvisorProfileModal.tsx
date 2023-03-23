@@ -23,7 +23,7 @@ export const AdvisorProfileModal = ({
         />
 
         <div className="flex flex-col items-center mb-8">
-          <span className="text-sm">{advisorProfile.position}</span>
+          <span className="text-sm font-medium">{advisorProfile.position}</span>
           <p className="text-xl font-semibold">{advisorProfile.name}</p>
         </div>
 

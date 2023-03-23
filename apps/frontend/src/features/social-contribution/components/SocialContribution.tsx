@@ -17,17 +17,17 @@ export const SocialContribution = (): JSX.Element => {
         </h2>
 
         <h3 className="font-medium text-2xl mb-6">”次世代のために”</h3>
-        <p className="font-medium mb-14">
+        <p className="font-normal mb-14">
           将来を担う子ども達が健全に成長出来る場・機会を提供します。
         </p>
 
         <h3 className="font-medium text-2xl mb-6">”地域と共に”</h3>
-        <p className="font-medium mb-14">地域の美化活動を行います</p>
+        <p className="font-normal mb-14">地域の美化活動を行います</p>
 
         <h3 className="font-medium text-2xl mb-6">
           ”誰もがフットボールに親しむ”
         </h3>
-        <p className="font-medium">
+        <p className="font-normal">
           障がい・年齢・性別・LGBTQなどすべての壁を取り払い「誰もがありのままに、自分らしく」心からスポーツを楽しみ、誰も排除しない”多様性”触れる機会をつくります。
         </p>
       </ScrollAnimation>
