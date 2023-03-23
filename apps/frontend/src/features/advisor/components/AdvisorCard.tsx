@@ -29,7 +29,7 @@ export const AdvisorCard = ({
       />
 
       <div className="flex flex-col items-center my-4">
-        <span className="text-sm">{advisorProfile.position}</span>
+        <span className="text-sm font-medium">{advisorProfile.position}</span>
         <p className="text-xl font-semibold">{advisorProfile.name}</p>
       </div>
     </div>

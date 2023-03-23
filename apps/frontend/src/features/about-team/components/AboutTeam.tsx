@@ -17,7 +17,7 @@ export const AboutTeam = (): JSX.Element => {
 
         <h2 className="font-semibold text-5xl sm:text-6xl my-10">YCFCとは</h2>
 
-        <p className="font-medium mb-16">
+        <p className="mb-16">
           YOSHiKAWA CiTY
           FCは埼玉県吉川市にフットボール文化を創り育む事を理念として活動します。
         </p>

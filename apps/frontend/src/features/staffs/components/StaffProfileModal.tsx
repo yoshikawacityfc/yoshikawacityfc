@@ -34,13 +34,11 @@ export const StaffProfileModal = ({
         />
 
         <div className="flex flex-col items-center mb-8">
-          <span className="text-sm">{staffProfile.position}</span>
+          <span className="text-sm font-medium">{staffProfile.position}</span>
           <p className="text-xl font-semibold">{staffProfile.name}</p>
         </div>
 
-        <p className="text-primary font-semibold mb-8">
-          {staffProfile.oneWord}
-        </p>
+        <p className="text-primary font-medium mb-8">{staffProfile.oneWord}</p>
 
         {staffProfile.description && (
           <p className="mb-8 whitespace-pre-line">{staffProfile.description}</p>

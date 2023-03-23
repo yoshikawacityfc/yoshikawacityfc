@@ -15,7 +15,7 @@ export const NewsPreview = (): JSX.Element => {
 
       <NewsCardSliderList news={NEWS_DEMO_DATA} />
 
-      <div className="mt-24 max-w-[1000px] w-3/4">
+      <div className="mt-24 max-w-[800px] w-3/4">
         <Button
           label="もっと見る"
           fullWidth
