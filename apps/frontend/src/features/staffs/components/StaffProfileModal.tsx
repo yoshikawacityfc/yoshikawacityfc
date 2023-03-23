@@ -38,9 +38,7 @@ export const StaffProfileModal = ({
           <p className="text-xl font-semibold">{staffProfile.name}</p>
         </div>
 
-        <p className="text-primary font-semibold mb-8">
-          {staffProfile.oneWord}
-        </p>
+        <p className="text-primary font-medium mb-8">{staffProfile.oneWord}</p>
 
         {staffProfile.description && (
           <p className="mb-8 whitespace-pre-line">{staffProfile.description}</p>
