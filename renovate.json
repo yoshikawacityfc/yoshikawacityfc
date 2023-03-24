@@ -30,6 +30,5 @@
       ]
     }
   ],
-  "packageManager": "pnpm",
   "lockFileMaintenance": true
 }
