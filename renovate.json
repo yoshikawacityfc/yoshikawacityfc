@@ -29,5 +29,7 @@
         "pin"
       ]
     }
-  ]
+  ],
+  "packageManager": "pnpm",
+  "lockFileMaintenance": true
 }
