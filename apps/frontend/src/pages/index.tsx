@@ -3,6 +3,7 @@ import { AboutTeam } from "@/features/about-team/components";
 import { HeroContent } from "@/features/hero-content/components";
 import { JuniorYouth } from "@/features/junior-youth/components";
 import { NewsPreview } from "@/features/news/components";
+import { School } from "@/features/school/components";
 import { SocialContribution } from "@/features/social-contribution/components";
 import { SponsorRecruiting } from "@/features/sponsor-recruiting/components";
 import { NextPage } from "next";
@@ -22,7 +23,11 @@ const Top: NextPage = () => {
         <JuniorYouth />
       </section>
 
-      <section className="mt-[-150px]">
+      <section className="mt-[-280px]">
+        <School />
+      </section>
+
+      <section className="mt-[220px]">
         <SocialContribution />
       </section>
 
