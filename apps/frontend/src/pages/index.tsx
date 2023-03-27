@@ -23,7 +23,7 @@ const Top: NextPage = () => {
         <JuniorYouth />
       </section>
 
-      <section className="mt-[-280px]">
+      <section className="mt-[-280px] mx-4">
         <School />
       </section>
 

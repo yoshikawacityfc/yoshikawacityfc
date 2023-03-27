@@ -1,14 +1,29 @@
+import { Button, Icon } from "@/components/Elements";
+import { PagePaths } from "@/lib/pagePaths";
+import { faArrowTrendUp, faFutbol } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
+
 export const School = (): JSX.Element => {
+  const router = useRouter();
+
   return (
-    <div className="p-16 shadow-lg rounded-md max-w-[1000px] m-auto bg-secondary">
-      <h2 className="font-semibold text-5xl sm:text-6xl text-center">
+    <div className="px-4 py-8 shadow-lg rounded-md max-w-[1000px] m-auto bg-secondary">
+      <h2 className="font-semibold text-5xl sm:text-6xl text-center mb-12">
         CiTY SCHOOL
       </h2>
 
-      <div>
-        <div>
-          <h3>通常コース</h3>
-          <p>
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-4 mb-12">
+        <div className="p-4 bg-tertiary rounded">
+          <h3 className="font-medium text-2xl mb-4">
+            <Icon
+              icon={faFutbol}
+              color="text"
+              size="2xlarge"
+              className="mr-2"
+            />
+            通常コース
+          </h3>
+          <p className="mb-8">
             ウォーミングアップ後、様々な条件、形を用いて試合を行います。試合をする中で、個人戦術、技術を習得できるようにしていきます。
           </p>
           <ul>
@@ -21,9 +36,17 @@ export const School = (): JSX.Element => {
           </ul>
         </div>
 
-        <div>
-          <h3>スキルアップコース</h3>
-          <p>
+        <div className="p-4 bg-tertiary rounded">
+          <h3 className="font-medium text-2xl mb-4">
+            <Icon
+              icon={faArrowTrendUp}
+              color="text"
+              size="2xlarge"
+              className="mr-2"
+            />
+            スキルアップコース
+          </h3>
+          <p className="mb-8">
             身体の向き、ボールを置く位置、パスの質、ゴールを奪うシュート、動き出し、ドリブル、ボールを奪う攻撃的な守備、細かいプレーの部分はもちろんのこと、サッカーに対しての向き合い方も細かく指導します！
           </p>
           <ul>
@@ -34,6 +57,14 @@ export const School = (): JSX.Element => {
             <li>月会費: 6,000円（※1回2,000円で参加可能）</li>
           </ul>
         </div>
+      </div>
+
+      <div className="w-80 m-auto">
+        <Button
+          label="入会案内"
+          fullWidth
+          onClick={() => router.push(PagePaths.entry())}
+        />
       </div>
     </div>
   );

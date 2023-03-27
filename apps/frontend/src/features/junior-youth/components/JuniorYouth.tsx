@@ -1,10 +1,7 @@
-import { Button, ScrollAnimation } from "@/components/Elements";
-import { PagePaths } from "@/lib/pagePaths";
-import { useRouter } from "next/router";
+import { ScrollAnimation } from "@/components/Elements";
 import { useRef } from "react";
 
 export const JuniorYouth = (): JSX.Element => {
-  const router = useRouter();
   const imgRef = useRef<HTMLImageElement>(null);
 
   const startAnimation = () => {
@@ -75,15 +72,6 @@ export const JuniorYouth = (): JSX.Element => {
 
           <div className="relative my-12 block shadow-2xl">
             <img src="/player-recruiting.png" alt="ball" className="rounded" />
-          </div>
-
-          <div className="w-3/4">
-            <Button
-              label="入会案内"
-              color="secondary"
-              fullWidth
-              onClick={() => router.push(PagePaths.entry())}
-            />
           </div>
         </div>
       </div>
