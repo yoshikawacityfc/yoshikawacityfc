@@ -38,7 +38,7 @@ export const JuniorYouth = (): JSX.Element => {
         />
       </div>
 
-      <div className="bg-primary text-secondary w-full">
+      <div className="bg-gradient-to-b from-primary via-primary text-secondary w-full pb-64">
         <div className="max-w-[1000px] m-auto px-4 py-8 flex items-center flex-col">
           <h2 className="font-semibold text-5xl sm:text-6xl text-center">
             Jr.ユース
@@ -75,8 +75,6 @@ export const JuniorYouth = (): JSX.Element => {
           </div>
         </div>
       </div>
-
-      <div className="bg-gradient-to-b from-primary w-full h-[420px] mt-[-1px]"></div>
     </div>
   );
 };
