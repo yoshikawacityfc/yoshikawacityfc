@@ -21,6 +21,11 @@ const SIZES = {
   "2xlarge": "text-2xl",
   "3xlarge": "text-3xl",
   "4xlarge": "text-4xl",
+  "5xlarge": "text-5xl",
+  "6xlarge": "text-6xl",
+  "7xlarge": "text-7xl",
+  "8xlarge": "text-8xl",
+  "9xlarge": "text-9xl",
 } as const;
 
 export type IconColor = keyof typeof COLORS;
