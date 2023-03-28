@@ -6,11 +6,11 @@ import { NextPage } from "next";
 const Entry: NextPage = () => {
   return (
     <MainLayout>
-      <section className="pt-64 max-w-[1000px] m-auto px-4">
+      <section className="pt-64 max-w-[1000px] m-auto px-8">
         <h2 className="font-semibold text-5xl sm:text-6xl text-center mb-32">
           入会案内
         </h2>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div>
             <p className="text-primary font-bold text-7xl mb-8">01</p>
             <h3 className="font-semibold text-4xl mb-4">入会体験申込</h3>
@@ -22,7 +22,7 @@ const Entry: NextPage = () => {
           <img src="/entry.png" alt="entry" className="m-auto" />
         </div>
 
-        {/* TODO: アイコン自作 */}
+        {/* TODO: サイズ追加 */}
         <Icon
           icon={faAnglesDown}
           size="4xlarge"
