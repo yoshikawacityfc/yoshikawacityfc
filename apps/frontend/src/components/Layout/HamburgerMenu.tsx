@@ -19,12 +19,12 @@ export const HamburgerMenu = ({ onClose }: HamburgerMenuProps): JSX.Element => {
         <img src="/logo.svg" alt="logo" className="w-20 mb-12 m-auto" />
       </Link>
 
-      <nav>
+      <nav className="ml-4">
         <ul>
           {MENU.map((item, index) => {
             return (
               <Link href={item.href} key={index}>
-                <li className="text-primary text-2xl cursor-pointer py-4 border-b-[1px] border-gray-600">
+                <li className="text-primary text-2xl cursor-pointer py-4">
                   <Icon icon={item.icon} size="xlarge" className="mr-4" />
                   <span className="">{item.label}</span>
                 </li>

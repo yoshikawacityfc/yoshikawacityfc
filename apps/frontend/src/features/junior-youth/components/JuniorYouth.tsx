@@ -1,10 +1,7 @@
-import { Button, ScrollAnimation } from "@/components/Elements";
-import { PagePaths } from "@/lib/pagePaths";
-import { useRouter } from "next/router";
+import { ScrollAnimation } from "@/components/Elements";
 import { useRef } from "react";
 
 export const JuniorYouth = (): JSX.Element => {
-  const router = useRouter();
   const imgRef = useRef<HTMLImageElement>(null);
 
   const startAnimation = () => {
@@ -41,7 +38,7 @@ export const JuniorYouth = (): JSX.Element => {
         />
       </div>
 
-      <div className="bg-primary text-secondary w-full">
+      <div className="bg-gradient-to-b from-primary via-primary text-secondary w-full pb-64">
         <div className="max-w-[1000px] m-auto px-4 py-8 flex items-center flex-col">
           <h2 className="font-semibold text-5xl sm:text-6xl text-center">
             Jr.ユース
@@ -76,19 +73,8 @@ export const JuniorYouth = (): JSX.Element => {
           <div className="relative my-12 block shadow-2xl">
             <img src="/player-recruiting.png" alt="ball" className="rounded" />
           </div>
-
-          <div className="w-3/4">
-            <Button
-              label="入会案内"
-              color="secondary"
-              fullWidth
-              onClick={() => router.push(PagePaths.entry())}
-            />
-          </div>
         </div>
       </div>
-
-      <div className="bg-gradient-to-b from-primary w-full h-[420px] mt-[-1px]"></div>
     </div>
   );
 };
