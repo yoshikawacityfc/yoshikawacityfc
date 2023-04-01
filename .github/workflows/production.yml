@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Deploy-Staging:
+  Deploy-Production:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/v')
 
