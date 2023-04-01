@@ -1,4 +1,5 @@
-[![Vercel Staging Deployment](https://github.com/yoshikawacityfc/yoshikawacityfc/actions/workflows/staging.yml/badge.svg)](https://github.com/yoshikawacityfc/yoshikawacityfc/actions/workflows/staging.yml)
+[![Staging Deployment](https://github.com/yoshikawacityfc/yoshikawacityfc/actions/workflows/staging.yml/badge.svg)](https://github.com/yoshikawacityfc/yoshikawacityfc/actions/workflows/staging.yml)
+[![Production Deployment](https://github.com/yoshikawacityfc/yoshikawacityfc/actions/workflows/production.yml/badge.svg)](https://github.com/yoshikawacityfc/yoshikawacityfc/actions/workflows/production.yml)
 
 # YOSHiKAWA CiTY FC
 
