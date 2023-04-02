@@ -1,5 +1,10 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "NEXT_PUBLIC_ENVIRONMENT",
+    "NEXT_PUBLIC_GRAPHQL_ENDPOINT",
+    "NEXT_PUBLIC_API_KEY"
+  ],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
