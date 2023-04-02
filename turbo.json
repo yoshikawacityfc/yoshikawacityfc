@@ -1,6 +1,5 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
   "globalEnv": [
     "NEXT_PUBLIC_ENVIRONMENT",
     "NEXT_PUBLIC_GRAPHQL_ENDPOINT",
