@@ -1,11 +1,10 @@
-import { envVar } from "@/lib/envVar";
 import { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
   schema: {
-    [envVar.graphqlEndpoint]: {
+    [process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT!]: {
       headers: {
-        apiKey: envVar.apiKey,
+        apiKey: process.env.NEXT_PUBLIC_API_KEY!,
       },
     },
   },
