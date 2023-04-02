@@ -1,7 +1,10 @@
 export interface AdvisorProfile {
-  id: number;
-  name: string;
   position: string;
-  profileImage: string;
+  name: string;
+  id: any;
   description: string;
+  assets?: {
+    src: string;
+    file_name: string;
+  } | null;
 }

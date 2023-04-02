@@ -1,24 +1,16 @@
 export interface StaffProfile {
-  /** id */
-  id: number;
-  /** プロフィール画像 */
-  profileImage: string;
-  /** 役職 */
+  id: any;
   position: string;
-  /** 氏名 */
   name: string;
-  /** 一言 */
-  oneWord: string;
-  /** 説明 */
-  description?: string;
-  /** ライセンス */
-  license?: string[];
-  /** 経歴 */
-  career?: string[];
-  /** 指導実績 */
-  coachingAchievement?: string[];
-  /** 選手歴 */
-  playerHistory?: string[];
-  /** 選手実績 */
-  playerAchievement?: string[];
+  one_word: string;
+  description: string;
+  license: (string | null)[];
+  career: (string | null)[];
+  coaching_achievement: (string | null)[];
+  player_history: (string | null)[];
+  player_achievement: (string | null)[];
+  assets?: {
+    src: string;
+    file_name: string;
+  } | null;
 }

@@ -2,9 +2,9 @@ import { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
   schema: {
-    [process.env.NEXT_PUBLIC_SUPABASE_URL!]: {
+    [process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT!]: {
       headers: {
-        apiKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        apiKey: process.env.NEXT_PUBLIC_API_KEY!,
       },
     },
   },

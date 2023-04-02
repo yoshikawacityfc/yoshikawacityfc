@@ -630,6 +630,7 @@ export type Assets = Node & {
   nodeId: Scalars['ID'];
   size: Scalars['Int'];
   src: Scalars['String'];
+  staffsCollection?: Maybe<StaffsConnection>;
   updated_at: Scalars['Datetime'];
   width: Scalars['Int'];
 };
@@ -642,6 +643,16 @@ export type AssetsNewsCollectionArgs = {
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<Array<NewsOrderBy>>;
+};
+
+
+export type AssetsStaffsCollectionArgs = {
+  after?: InputMaybe<Scalars['Cursor']>;
+  before?: InputMaybe<Scalars['Cursor']>;
+  filter?: InputMaybe<StaffsFilter>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<StaffsOrderBy>>;
 };
 
 export type AssetsConnection = {
@@ -1517,6 +1528,7 @@ export type Staff_CategoriesUpdateResponse = {
 
 export type Staffs = Node & {
   __typename?: 'staffs';
+  assets?: Maybe<Assets>;
   career: Array<Maybe<Scalars['String']>>;
   category_id?: Maybe<Scalars['UUID']>;
   coaching_achievement: Array<Maybe<Scalars['String']>>;
@@ -1727,10 +1739,26 @@ export type TagsUpdateResponse = {
   records: Array<Tags>;
 };
 
-export type QueryStaffCollectionQueryVariables = Exact<{ [key: string]: never; }>;
+export type QueryStaffCategoryCollectionQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type QueryStaffCollectionQuery = { __typename?: 'Query', staffsCollection?: { __typename?: 'staffsConnection', edges: Array<{ __typename?: 'staffsEdge', node: { __typename?: 'staffs', name: string, career: Array<string | null>, category_id?: any | null, coaching_achievement: Array<string | null>, created_at: any, deleted_at?: any | null, description: string, id: any, license: Array<string | null>, nodeId: string, one_word: string, player_achievement: Array<string | null>, player_history: Array<string | null>, position: string, profile_image_asset_id?: any | null, updated_at: any } }> } | null };
+export type QueryStaffCategoryCollectionQuery = { __typename?: 'Query', staff_categoriesCollection?: { __typename?: 'staff_categoriesConnection', edges: Array<{ __typename?: 'staff_categoriesEdge', node: { __typename?: 'staff_categories', id: any, name: string } }> } | null };
+
+export type QueryStaffCollectionQueryVariables = Exact<{
+  filter?: InputMaybe<StaffsFilter>;
+}>;
 
 
-export const QueryStaffCollectionDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"queryStaffCollection"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"staffsCollection"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"career"}},{"kind":"Field","name":{"kind":"Name","value":"category_id"}},{"kind":"Field","name":{"kind":"Name","value":"coaching_achievement"}},{"kind":"Field","name":{"kind":"Name","value":"created_at"}},{"kind":"Field","name":{"kind":"Name","value":"deleted_at"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"license"}},{"kind":"Field","name":{"kind":"Name","value":"nodeId"}},{"kind":"Field","name":{"kind":"Name","value":"one_word"}},{"kind":"Field","name":{"kind":"Name","value":"player_achievement"}},{"kind":"Field","name":{"kind":"Name","value":"player_history"}},{"kind":"Field","name":{"kind":"Name","value":"position"}},{"kind":"Field","name":{"kind":"Name","value":"profile_image_asset_id"}},{"kind":"Field","name":{"kind":"Name","value":"updated_at"}}]}}]}}]}}]}}]} as unknown as DocumentNode<QueryStaffCollectionQuery, QueryStaffCollectionQueryVariables>;
+export type QueryStaffCollectionQuery = { __typename?: 'Query', staffsCollection?: { __typename?: 'staffsConnection', edges: Array<{ __typename?: 'staffsEdge', node: { __typename?: 'staffs', id: any, position: string, name: string, one_word: string, description: string, license: Array<string | null>, career: Array<string | null>, coaching_achievement: Array<string | null>, player_history: Array<string | null>, player_achievement: Array<string | null>, assets?: { __typename?: 'assets', src: string, file_name: string } | null } }> } | null };
+
+export type QueryAdvisorCollectionQueryVariables = Exact<{
+  filter?: InputMaybe<StaffsFilter>;
+}>;
+
+
+export type QueryAdvisorCollectionQuery = { __typename?: 'Query', staffsCollection?: { __typename?: 'staffsConnection', edges: Array<{ __typename?: 'staffsEdge', node: { __typename?: 'staffs', position: string, name: string, id: any, description: string, assets?: { __typename?: 'assets', src: string, file_name: string } | null } }> } | null };
+
+
+export const QueryStaffCategoryCollectionDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"QueryStaffCategoryCollection"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"staff_categoriesCollection"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]}}]}}]} as unknown as DocumentNode<QueryStaffCategoryCollectionQuery, QueryStaffCategoryCollectionQueryVariables>;
+export const QueryStaffCollectionDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"QueryStaffCollection"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filter"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"staffsFilter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"staffsCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"assets"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"file_name"}}]}},{"kind":"Field","name":{"kind":"Name","value":"position"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"one_word"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"license"}},{"kind":"Field","name":{"kind":"Name","value":"career"}},{"kind":"Field","name":{"kind":"Name","value":"coaching_achievement"}},{"kind":"Field","name":{"kind":"Name","value":"player_history"}},{"kind":"Field","name":{"kind":"Name","value":"player_achievement"}}]}}]}}]}}]}}]} as unknown as DocumentNode<QueryStaffCollectionQuery, QueryStaffCollectionQueryVariables>;
+export const QueryAdvisorCollectionDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"QueryAdvisorCollection"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filter"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"staffsFilter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"staffsCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"position"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"assets"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"file_name"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<QueryAdvisorCollectionQuery, QueryAdvisorCollectionQueryVariables>;

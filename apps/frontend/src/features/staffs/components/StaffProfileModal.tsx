@@ -2,6 +2,7 @@ import { Button, Modal } from "@/components/Elements";
 import { EMPTY_USER_IMAGE_PATH } from "@/constants/image";
 import { useMemo } from "react";
 import { StaffProfile } from "../types";
+import { StaffCareerList } from "./StaffCareerList";
 
 interface StaffProfileProps {
   visible: boolean;
@@ -18,18 +19,18 @@ export const StaffProfileModal = ({
     return ![
       staffProfile.career,
       staffProfile.license,
-      staffProfile.coachingAchievement,
-      staffProfile.playerHistory,
-      staffProfile.playerAchievement,
-    ].every((item) => !item);
+      staffProfile.coaching_achievement,
+      staffProfile.player_history,
+      staffProfile.player_achievement,
+    ].every((item) => item.length === 0);
   }, [staffProfile]);
 
   return (
     <Modal visible={visible} onClose={onClose}>
       <div className="w-[90vw] max-w-[700px] overflow-scroll p-6">
         <img
-          src={staffProfile.profileImage || EMPTY_USER_IMAGE_PATH}
-          alt={staffProfile.name}
+          src={staffProfile.assets?.src || EMPTY_USER_IMAGE_PATH}
+          alt={staffProfile.assets?.file_name}
           className="object-cover w-[200px] h-[200px] rounded-[50%] m-auto mb-4"
         />
 
@@ -38,7 +39,7 @@ export const StaffProfileModal = ({
           <p className="text-xl font-semibold">{staffProfile.name}</p>
         </div>
 
-        <p className="text-primary font-medium mb-8">{staffProfile.oneWord}</p>
+        <p className="text-primary font-medium mb-8">{staffProfile.one_word}</p>
 
         {staffProfile.description && (
           <p className="mb-8 whitespace-pre-line">{staffProfile.description}</p>
@@ -46,75 +47,33 @@ export const StaffProfileModal = ({
 
         {isCareerProfile && (
           <div className="bg-gray-200 px-6 py-8 rounded-lg">
-            {/* TODO: リストコンポーネント化 */}
-            {staffProfile.career && (
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-2">経歴</h3>
-
-                <ul>
-                  {staffProfile.career.map((item, index) => (
-                    <li className="mb-1" key={index}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {staffProfile.career.length > 0 && (
+              <StaffCareerList label="経歴" career={staffProfile.career} />
             )}
 
-            {staffProfile.coachingAchievement && (
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-2">指導実績</h3>
-
-                <ul>
-                  {staffProfile.coachingAchievement.map((item, index) => (
-                    <li className="mb-1" key={index}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {staffProfile.coaching_achievement.length > 0 && (
+              <StaffCareerList
+                label="指導実績"
+                career={staffProfile.coaching_achievement}
+              />
             )}
 
-            {staffProfile.license && (
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-2">資格</h3>
-
-                <ul>
-                  {staffProfile.license.map((item, index) => (
-                    <li className="mb-1" key={index}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {staffProfile.license.length > 0 && (
+              <StaffCareerList label="資格" career={staffProfile.license} />
             )}
 
-            {staffProfile.playerHistory && (
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-2">選手歴</h3>
-
-                <ul>
-                  {staffProfile.playerHistory.map((item, index) => (
-                    <li className="mb-1" key={index}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {staffProfile.player_history.length > 0 && (
+              <StaffCareerList
+                label="選手歴"
+                career={staffProfile.player_history}
+              />
             )}
 
-            {staffProfile.playerAchievement && (
-              <div className="mb-6">
-                <h3 className="text-xl font-semibold mb-2">選手実績</h3>
-
-                <ul>
-                  {staffProfile.playerAchievement.map((item, index) => (
-                    <li className="mb-1" key={index}>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {staffProfile.player_achievement.length > 0 && (
+              <StaffCareerList
+                label="選手実績"
+                career={staffProfile.player_achievement}
+              />
             )}
           </div>
         )}

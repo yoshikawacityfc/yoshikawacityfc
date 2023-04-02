@@ -13,7 +13,9 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "query queryStaffCollection {\n    staffsCollection {\n      edges {\n        node {\n          name\n          career\n          category_id\n          coaching_achievement\n          created_at\n          deleted_at\n          description\n          id\n          license\n          nodeId\n          one_word\n          player_achievement\n          player_history\n          position\n          profile_image_asset_id\n          updated_at\n        }\n      }\n    }\n  }": types.QueryStaffCollectionDocument,
+    "query QueryStaffCategoryCollection {\n    staff_categoriesCollection {\n      edges {\n        node {\n          id\n          name\n        }\n      }\n    }\n  }\n": types.QueryStaffCategoryCollectionDocument,
+    "query QueryStaffCollection($filter: staffsFilter) {\n    staffsCollection(filter: $filter) {\n      edges {\n        node {\n          id\n          assets {\n            src\n            file_name\n          }\n          position\n          name\n          one_word\n          description\n          license\n          career\n          coaching_achievement\n          player_history\n          player_achievement\n        }\n      }\n    }\n  }": types.QueryStaffCollectionDocument,
+    "query QueryAdvisorCollection($filter: staffsFilter) {\n  staffsCollection(filter: $filter) {\n    edges {\n      node {\n        position\n        name\n        id\n        description\n        assets {\n          src\n          file_name\n        }\n      }\n    }\n  }\n}": types.QueryAdvisorCollectionDocument,
 };
 
 /**
@@ -33,7 +35,15 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "query queryStaffCollection {\n    staffsCollection {\n      edges {\n        node {\n          name\n          career\n          category_id\n          coaching_achievement\n          created_at\n          deleted_at\n          description\n          id\n          license\n          nodeId\n          one_word\n          player_achievement\n          player_history\n          position\n          profile_image_asset_id\n          updated_at\n        }\n      }\n    }\n  }"): (typeof documents)["query queryStaffCollection {\n    staffsCollection {\n      edges {\n        node {\n          name\n          career\n          category_id\n          coaching_achievement\n          created_at\n          deleted_at\n          description\n          id\n          license\n          nodeId\n          one_word\n          player_achievement\n          player_history\n          position\n          profile_image_asset_id\n          updated_at\n        }\n      }\n    }\n  }"];
+export function gql(source: "query QueryStaffCategoryCollection {\n    staff_categoriesCollection {\n      edges {\n        node {\n          id\n          name\n        }\n      }\n    }\n  }\n"): (typeof documents)["query QueryStaffCategoryCollection {\n    staff_categoriesCollection {\n      edges {\n        node {\n          id\n          name\n        }\n      }\n    }\n  }\n"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "query QueryStaffCollection($filter: staffsFilter) {\n    staffsCollection(filter: $filter) {\n      edges {\n        node {\n          id\n          assets {\n            src\n            file_name\n          }\n          position\n          name\n          one_word\n          description\n          license\n          career\n          coaching_achievement\n          player_history\n          player_achievement\n        }\n      }\n    }\n  }"): (typeof documents)["query QueryStaffCollection($filter: staffsFilter) {\n    staffsCollection(filter: $filter) {\n      edges {\n        node {\n          id\n          assets {\n            src\n            file_name\n          }\n          position\n          name\n          one_word\n          description\n          license\n          career\n          coaching_achievement\n          player_history\n          player_achievement\n        }\n      }\n    }\n  }"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "query QueryAdvisorCollection($filter: staffsFilter) {\n  staffsCollection(filter: $filter) {\n    edges {\n      node {\n        position\n        name\n        id\n        description\n        assets {\n          src\n          file_name\n        }\n      }\n    }\n  }\n}"): (typeof documents)["query QueryAdvisorCollection($filter: staffsFilter) {\n  staffsCollection(filter: $filter) {\n    edges {\n      node {\n        position\n        name\n        id\n        description\n        assets {\n          src\n          file_name\n        }\n      }\n    }\n  }\n}"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};
