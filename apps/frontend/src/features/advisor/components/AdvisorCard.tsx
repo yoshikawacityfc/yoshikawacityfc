@@ -24,8 +24,8 @@ export const AdvisorCard = ({
     >
       <img
         className="object-cover w-[150px] h-[150px] rounded-[50%]"
-        src={advisorProfile.profile_image_asset_id || EMPTY_USER_IMAGE_PATH}
-        alt={advisorProfile.name}
+        src={advisorProfile.assets?.src || EMPTY_USER_IMAGE_PATH}
+        alt={advisorProfile.assets?.src}
       />
 
       <div className="flex flex-col items-center my-4">

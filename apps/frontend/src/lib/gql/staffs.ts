@@ -15,24 +15,27 @@ export const queryStaffCategoryCollection =
 
 export const queryStaffCollection =
   gql(`query QueryStaffCollection($filter: staffsFilter) {
-  staffsCollection(filter: $filter) {
-    edges {
-      node {
-        position
-        one_word
-        name
-        id
-        profile_image_asset_id
-        player_history
-        player_achievement
-        license
-        description
-        coaching_achievement
-        career
+    staffsCollection(filter: $filter) {
+      edges {
+        node {
+          id
+          assets {
+            src
+            file_name
+          }
+          position
+          name
+          one_word
+          description
+          license
+          career
+          coaching_achievement
+          player_history
+          player_achievement
+        }
       }
     }
-  }
-}`);
+  }`);
 
 export const queryAdvisorCollection =
   gql(`query QueryAdvisorCollection($filter: staffsFilter) {
@@ -43,7 +46,10 @@ export const queryAdvisorCollection =
         name
         id
         description
-        profile_image_asset_id
+        assets {
+          src
+          file_name
+        }
       }
     }
   }

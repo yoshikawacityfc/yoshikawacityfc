@@ -1,13 +1,16 @@
 export interface StaffProfile {
-  position: string;
-  one_word: string;
-  name: string;
   id: any;
-  profile_image_asset_id?: any;
+  position: string;
+  name: string;
+  one_word: string;
+  description: string;
+  license: (string | null)[];
+  career: (string | null)[];
+  coaching_achievement: (string | null)[];
   player_history: (string | null)[];
   player_achievement: (string | null)[];
-  license: (string | null)[];
-  description: string;
-  coaching_achievement: (string | null)[];
-  career: (string | null)[];
+  assets?: {
+    src: string;
+    file_name: string;
+  } | null;
 }

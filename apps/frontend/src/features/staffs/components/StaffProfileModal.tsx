@@ -29,8 +29,8 @@ export const StaffProfileModal = ({
     <Modal visible={visible} onClose={onClose}>
       <div className="w-[90vw] max-w-[700px] overflow-scroll p-6">
         <img
-          src={staffProfile.profile_image_asset_id || EMPTY_USER_IMAGE_PATH}
-          alt={staffProfile.name}
+          src={staffProfile.assets?.src || EMPTY_USER_IMAGE_PATH}
+          alt={staffProfile.assets?.file_name}
           className="object-cover w-[200px] h-[200px] rounded-[50%] m-auto mb-4"
         />
 

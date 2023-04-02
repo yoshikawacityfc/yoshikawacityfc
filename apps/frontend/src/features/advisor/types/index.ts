@@ -3,5 +3,8 @@ export interface AdvisorProfile {
   name: string;
   id: any;
   description: string;
-  profile_image_asset_id?: any;
+  assets?: {
+    src: string;
+    file_name: string;
+  } | null;
 }

@@ -24,8 +24,8 @@ export const StaffCard = ({
     >
       <img
         className="object-cover w-[150px] h-[150px] rounded-[50%]"
-        src={staffProfile.profile_image_asset_id || EMPTY_USER_IMAGE_PATH}
-        alt={staffProfile.name}
+        src={staffProfile.assets?.src || EMPTY_USER_IMAGE_PATH}
+        alt={staffProfile.assets?.file_name}
       />
 
       <div className="flex flex-col items-center my-4">
