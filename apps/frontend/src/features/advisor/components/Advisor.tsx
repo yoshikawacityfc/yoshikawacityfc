@@ -1,20 +1,43 @@
+import { queryAdvisorCollection } from "@/lib/gql/staffs";
+import { useQuery } from "@apollo/client";
 import { useState } from "react";
-import { advisors } from "../data";
 import { AdvisorProfile } from "../types";
 import { AdvisorCard } from "./AdvisorCard";
 import { AdvisorProfileModal } from "./AdvisorProfileModal";
 
-export const Advisor = (): JSX.Element => {
+interface AdvisorProps {
+  categoryId: string;
+}
+
+export const Advisor = ({ categoryId }: AdvisorProps): JSX.Element => {
+  const { loading, error, data } = useQuery(queryAdvisorCollection, {
+    variables: {
+      filter: {
+        category_id: {
+          eq: categoryId,
+        },
+      },
+    },
+  });
+
   const [isAdvisorProfileModalVisible, setIsAdvisorProfileModalVisible] =
     useState(false);
   const [selectedAdvisorProfile, setSelectedAdvisorProfile] =
     useState<AdvisorProfile>();
 
-  const handleAdvisorCardClick = (id: number) => {
+  const handleAdvisorCardClick = (id: string) => {
     setIsAdvisorProfileModalVisible(true);
 
-    setSelectedAdvisorProfile(advisors.find((item) => item.id === id));
+    const selectAdvisorProfile = data?.staffsCollection?.edges.find(
+      (item) => item.node.id === id
+    );
+
+    setSelectedAdvisorProfile(selectAdvisorProfile?.node);
   };
+
+  if (loading) return <p>Loading...</p>;
+
+  if (error) return <p>Error: {JSON.stringify(error)}</p>;
 
   return (
     <div className="bg-primary py-24">
@@ -40,10 +63,10 @@ export const Advisor = (): JSX.Element => {
         </div>
 
         <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(300px,_1fr))]">
-          {advisors.map((advisor, index) => (
+          {data?.staffsCollection?.edges.map((advisor) => (
             <AdvisorCard
-              key={index}
-              advisorProfile={advisor}
+              key={advisor.node.id}
+              advisorProfile={advisor.node}
               onClick={handleAdvisorCardClick}
             />
           ))}

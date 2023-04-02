@@ -5,7 +5,7 @@ import { AdvisorProfile } from "../types";
 interface AdvisorCardProps {
   advisorProfile: AdvisorProfile;
   className?: string;
-  onClick: (id: number) => void;
+  onClick: (id: string) => void;
 }
 
 export const AdvisorCard = ({
@@ -24,7 +24,7 @@ export const AdvisorCard = ({
     >
       <img
         className="object-cover w-[150px] h-[150px] rounded-[50%]"
-        src={advisorProfile.profileImage || EMPTY_USER_IMAGE_PATH}
+        src={advisorProfile.profile_image_asset_id || EMPTY_USER_IMAGE_PATH}
         alt={advisorProfile.name}
       />
 

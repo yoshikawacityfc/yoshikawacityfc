@@ -5,7 +5,7 @@ import { StaffProfile } from "../types";
 interface StaffCardProps {
   staffProfile: StaffProfile;
   className?: string;
-  onClick: (id: number) => void;
+  onClick: (id: string) => void;
 }
 
 export const StaffCard = ({
@@ -24,7 +24,7 @@ export const StaffCard = ({
     >
       <img
         className="object-cover w-[150px] h-[150px] rounded-[50%]"
-        src={staffProfile.profileImage || EMPTY_USER_IMAGE_PATH}
+        src={staffProfile.profile_image_asset_id || EMPTY_USER_IMAGE_PATH}
         alt={staffProfile.name}
       />
 
@@ -33,7 +33,7 @@ export const StaffCard = ({
         <p className="text-xl font-semibold">{staffProfile.name}</p>
       </div>
 
-      <p>{staffProfile.oneWord}</p>
+      <p>{staffProfile.one_word}</p>
     </div>
   );
 };

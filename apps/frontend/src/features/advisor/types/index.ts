@@ -1,7 +1,7 @@
 export interface AdvisorProfile {
-  id: number;
-  name: string;
   position: string;
-  profileImage: string;
+  name: string;
+  id: any;
   description: string;
+  profile_image_asset_id?: any;
 }

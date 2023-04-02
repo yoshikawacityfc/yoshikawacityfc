@@ -17,7 +17,7 @@ export const AdvisorProfileModal = ({
     <Modal visible={visible} onClose={onClose}>
       <div className="w-[90vw] max-w-[700px] overflow-scroll p-6">
         <img
-          src={advisorProfile.profileImage || EMPTY_USER_IMAGE_PATH}
+          src={advisorProfile.profile_image_asset_id || EMPTY_USER_IMAGE_PATH}
           alt={advisorProfile.name}
           className="object-cover w-[200px] h-[200px] rounded-[50%] m-auto mb-4"
         />
