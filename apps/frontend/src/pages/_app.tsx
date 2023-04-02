@@ -12,6 +12,7 @@ const client = new ApolloClient({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={client}>
+      {process.env.NEXT_PUBLIC_SUPABASE_URL || "false"}
       <Component {...pageProps} />
     </ApolloProvider>
   );
