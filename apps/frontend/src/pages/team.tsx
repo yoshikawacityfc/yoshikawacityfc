@@ -34,7 +34,7 @@ const TeamPage: NextPage<TeamPageProps> = ({
 
 export default TeamPage;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
   const { data } = await client.query({
     query: queryStaffCategoryCollection,
   });
