@@ -1,9 +1,10 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { envVar } from "./envVar";
 
 const client = new ApolloClient({
-  uri: process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  uri: envVar.graphqlEndpoint,
   cache: new InMemoryCache(),
-  headers: { apiKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY! },
+  headers: { apiKey: envVar.apiKey },
 });
 
 export default client;
