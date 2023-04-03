@@ -23,15 +23,18 @@ export const queryNewsCollection =
     }
   }`);
 
-export const queryNews = gql(`query Query($filter: newsFilter) {
-    newsCollection(filter: $filter) {
-      edges {
-        node {
-          id
-          title
-          published_at
-          content
-        }
+export const queryNews = gql(`query QueryNews($filter: newsFilter) {
+  newsCollection(filter: $filter) {
+    edges {
+      node {
+        id
+        title
+        published_at
+        content
       }
     }
-  }`);
+    pageInfo {
+      endCursor
+    }
+  }
+}`);
