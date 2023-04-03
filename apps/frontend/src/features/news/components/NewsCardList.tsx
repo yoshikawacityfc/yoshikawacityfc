@@ -1,10 +1,10 @@
 import { PagePaths } from "@/lib/pagePaths";
 import { useRouter } from "next/router";
-import { NewsType } from "../types";
+import { NewsNodeType } from "../types";
 import { NewsCard } from "./NewsCard";
 
 interface NewsCardListProps {
-  news: NewsType[];
+  news: NewsNodeType[];
 }
 
 export const NewsCardList = ({ news }: NewsCardListProps): JSX.Element => {
@@ -15,8 +15,13 @@ export const NewsCardList = ({ news }: NewsCardListProps): JSX.Element => {
 
   return (
     <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(300px,_1fr))]">
-      {news.map((item, index) => (
-        <NewsCard key={index} news={item} fullWidth onClick={handleCardClick} />
+      {news.map((item) => (
+        <NewsCard
+          key={item.node.id}
+          news={item.node}
+          fullWidth
+          onClick={handleCardClick}
+        />
       ))}
     </div>
   );

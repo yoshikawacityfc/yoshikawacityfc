@@ -13,6 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
+    "query QueryNewsCollection($first: Int, $after: Cursor) {\n    newsCollection(first: $first, after: $after) {\n      edges {\n        node {\n          title\n          id\n          published_at\n          assets {\n            src\n            file_name\n          }\n        }\n        cursor\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n        startCursor\n      }\n    }\n  }": types.QueryNewsCollectionDocument,
     "query QueryStaffCategoryCollection {\n    staff_categoriesCollection {\n      edges {\n        node {\n          id\n          name\n        }\n      }\n    }\n  }\n": types.QueryStaffCategoryCollectionDocument,
     "query QueryStaffCollection($filter: staffsFilter) {\n    staffsCollection(filter: $filter) {\n      edges {\n        node {\n          id\n          assets {\n            src\n            file_name\n          }\n          position\n          name\n          one_word\n          description\n          license\n          career\n          coaching_achievement\n          player_history\n          player_achievement\n        }\n      }\n    }\n  }": types.QueryStaffCollectionDocument,
     "query QueryAdvisorCollection($filter: staffsFilter) {\n  staffsCollection(filter: $filter) {\n    edges {\n      node {\n        position\n        name\n        id\n        description\n        assets {\n          src\n          file_name\n        }\n      }\n    }\n  }\n}": types.QueryAdvisorCollectionDocument,
@@ -32,6 +33,10 @@ const documents = {
  */
 export function gql(source: string): unknown;
 
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "query QueryNewsCollection($first: Int, $after: Cursor) {\n    newsCollection(first: $first, after: $after) {\n      edges {\n        node {\n          title\n          id\n          published_at\n          assets {\n            src\n            file_name\n          }\n        }\n        cursor\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n        startCursor\n      }\n    }\n  }"): (typeof documents)["query QueryNewsCollection($first: Int, $after: Cursor) {\n    newsCollection(first: $first, after: $after) {\n      edges {\n        node {\n          title\n          id\n          published_at\n          assets {\n            src\n            file_name\n          }\n        }\n        cursor\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n        startCursor\n      }\n    }\n  }"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
