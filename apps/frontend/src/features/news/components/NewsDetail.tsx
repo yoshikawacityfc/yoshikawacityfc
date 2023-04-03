@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import "zenn-content-css";
 import { useQuery } from "@apollo/client";
 import { queryNews } from "@/lib/gql/news";
+import { formatDate } from "@/utils/date";
 
 interface NewDetailProps {
   id: any;
@@ -34,7 +35,7 @@ export const NewsDetail = ({ id }: NewDetailProps): JSX.Element => {
             {data.newsCollection.edges[0].node.title}
           </h1>
           <p className="text-xl text-gray-400 mb-16">
-            {data.newsCollection.edges[0].node.published_at}
+            {formatDate(data.newsCollection.edges[0].node.published_at)}
           </p>
 
           <div

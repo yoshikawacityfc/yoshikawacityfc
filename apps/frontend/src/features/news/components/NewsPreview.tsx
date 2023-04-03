@@ -3,13 +3,14 @@ import { queryNewsCollection } from "@/lib/gql/news";
 import { PagePaths } from "@/lib/pagePaths";
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
+import { NEWS_PER_PAGE } from "../constants";
 import { NewsCardSliderList } from "./NewsCardSliderList";
 
 export const NewsPreview = (): JSX.Element => {
   const { loading, error, data } = useQuery(queryNewsCollection, {
     variables: {
       after: null,
-      first: 10,
+      first: NEWS_PER_PAGE,
     },
   });
 
