@@ -7,14 +7,24 @@ import {
 import { useRouter } from "next/router";
 import { NEWS_DEMO_DATA } from "../data";
 import "zenn-content-css";
+import { useQuery } from "@apollo/client";
+import { queryNews } from "@/lib/gql/news";
 
 interface NewDetailProps {
-  id: number;
+  id: any;
 }
 
 export const NewsDetail = ({ id }: NewDetailProps): JSX.Element => {
-  // TODO: DBからデータ取得
-  const news = NEWS_DEMO_DATA.find((item) => item.id === id);
+  const { loading, error, data } = useQuery(queryNews, {
+    variables: {
+      filter: {
+        id: {
+          eq: id,
+        },
+      },
+    },
+  });
+
   const prevNews = NEWS_DEMO_DATA.find((item) => item.id === id - 1);
   const nextNews = NEWS_DEMO_DATA.find((item) => item.id === id + 1);
 
@@ -32,16 +42,26 @@ export const NewsDetail = ({ id }: NewDetailProps): JSX.Element => {
     router.push(`${PagePaths.news()}/${id}`);
   };
 
+  if (loading) return <p>Loading...</p>;
+
+  if (error) return <p>Error: {JSON.stringify(error)}</p>;
+
   return (
     <>
-      {news ? (
+      {data?.newsCollection?.edges[0] ? (
         <div className="znc max-w-[1000px] px-4 m-auto mb-32">
-          <h1 className="text-3xl mb-1">{news.title}</h1>
-          <p className="text-xl text-gray-400 mb-16">{news.updateDate}</p>
+          <h1 className="text-3xl mb-1">
+            {data.newsCollection.edges[0].node.title}
+          </h1>
+          <p className="text-xl text-gray-400 mb-16">
+            {data.newsCollection.edges[0].node.published_at}
+          </p>
 
           <div
-            dangerouslySetInnerHTML={{ __html: news.description }}
-            className="mb-32"
+            dangerouslySetInnerHTML={{
+              __html: data.newsCollection.edges[0].node.content,
+            }}
+            className="mb-32 whitespace-pre-line"
           ></div>
 
           {/* TODO：以下コンポーネント化 */}

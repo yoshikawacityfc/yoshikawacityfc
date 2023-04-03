@@ -4,7 +4,7 @@ import { NewsType } from "../types";
 interface NewsCardProps {
   news: NewsType;
   fullWidth?: boolean;
-  onClick: (id: number) => void;
+  onClick: (id: any) => void;
 }
 
 export const NewsCard = ({
