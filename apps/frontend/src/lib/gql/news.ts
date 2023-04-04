@@ -23,6 +23,24 @@ export const queryNewsCollection =
     }
   }`);
 
+export const queryPreviewNewsCollection = gql(`
+query QueryPreviewNewsCollection($first: Int) {
+  newsCollection(first: $first) {
+    edges {
+      node {
+        id
+        title
+        published_at
+        assets {
+          src
+          file_name
+        }
+      }
+    }
+  }
+}
+`);
+
 export const queryNews = gql(`query QueryNews($filter: newsFilter) {
   newsCollection(filter: $filter) {
     edges {
@@ -32,9 +50,6 @@ export const queryNews = gql(`query QueryNews($filter: newsFilter) {
         published_at
         content
       }
-    }
-    pageInfo {
-      endCursor
     }
   }
 }`);

@@ -1,5 +1,5 @@
-import { NewsConnection } from "@/__generated__/graphql";
 import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { relayStylePagination } from "@apollo/client/utilities";
 import { envVar } from "./envVar";
 
 const client = new ApolloClient({
@@ -8,15 +8,7 @@ const client = new ApolloClient({
     typePolicies: {
       Query: {
         fields: {
-          newsCollection: {
-            keyArgs: false,
-            merge(existing: NewsConnection, incoming: NewsConnection) {
-              return {
-                ...(incoming ?? {}),
-                edges: [...(existing?.edges ?? []), ...(incoming?.edges ?? [])],
-              };
-            },
-          },
+          newsCollection: relayStylePagination(["first", "filter"]),
         },
       },
     },
