@@ -1,7 +1,13 @@
 export interface NewsType {
-  id: number;
-  thumbnailSrc: string;
   title: string;
-  updateDate: string;
-  description: string;
+  id: any;
+  published_at?: any;
+  assets?: {
+    src: string;
+    file_name: string;
+  } | null;
+}
+
+export interface NewsNodeType {
+  node: NewsType;
 }

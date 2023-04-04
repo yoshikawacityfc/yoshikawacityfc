@@ -3,11 +3,11 @@ import clsx from "clsx";
 import { useRouter } from "next/router";
 import { useRef } from "react";
 import { NEWS_CARD_MARGIN_RIGHT, NEWS_CARD_WIDTH } from "../constants";
-import { NewsType } from "../types";
+import { NewsNodeType, NewsType } from "../types";
 import { NewsCard } from "./NewsCard";
 
 interface NewsCardSliderListProps {
-  news: NewsType[];
+  news: NewsNodeType[];
 }
 
 export const NewsCardSliderList = ({
@@ -18,7 +18,7 @@ export const NewsCardSliderList = ({
 
   const router = useRouter();
   const handleCardClick = (id: number) => {
-    router.push(`${PagePaths.news()}/${id}`);
+    router.push(PagePaths.news(id));
   };
 
   const handlePrevClick = () => {
@@ -46,7 +46,7 @@ export const NewsCardSliderList = ({
               key={index}
               className={clsx(news.length - 1 > index && "mr-2", "w-[300px]")}
             >
-              <NewsCard news={item} onClick={handleCardClick} />
+              <NewsCard news={item.node} onClick={handleCardClick} />
             </div>
           );
         })}

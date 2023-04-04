@@ -1,16 +1,29 @@
-import { Pagination } from "@/components/Elements";
-import { PagePaths } from "@/lib/pagePaths";
-import { useRouter } from "next/router";
-import { NEWS_DEMO_DATA } from "../data";
+import { Button } from "@/components/Elements";
+import { queryNewsCollection } from "@/lib/gql/news";
+import { useQuery } from "@apollo/client";
+import { useCallback, useEffect } from "react";
+import { NEWS_PER_PAGE } from "../constants";
 import { NewsCardList } from "./NewsCardList";
 
 export const NewsList = (): JSX.Element => {
-  const router = useRouter();
-  const currentPage = Number(router.query.page || 1);
+  const { loading, error, data, fetchMore } = useQuery(queryNewsCollection, {
+    variables: {
+      after: null,
+      first: NEWS_PER_PAGE,
+    },
+  });
 
-  const handlePageChange = (pageNumber: number) => {
-    router.push(`${PagePaths.news()}?page=${pageNumber}`);
-  };
+  const loadMore = useCallback(async () => {
+    await fetchMore({
+      variables: {
+        after: data?.newsCollection?.pageInfo.endCursor,
+      },
+    });
+  }, [data, fetchMore]);
+
+  if (loading) return <p>Loading...</p>;
+
+  if (error) return <p>Error: {JSON.stringify(error)}</p>;
 
   return (
     <>
@@ -19,15 +32,15 @@ export const NewsList = (): JSX.Element => {
           お知らせ一覧
         </h2>
 
-        <NewsCardList news={NEWS_DEMO_DATA} />
+        {data?.newsCollection?.edges && (
+          <NewsCardList news={data?.newsCollection?.edges} />
+        )}
 
-        <div className="mt-16 flex justify-center">
-          <Pagination
-            currentPage={currentPage}
-            totalPages={10}
-            onPageChange={handlePageChange}
-          />
-        </div>
+        {data?.newsCollection?.pageInfo.hasNextPage && (
+          <div className="m-auto w-3/4 mt-16">
+            <Button label="もっと見る" fullWidth onClick={() => loadMore()} />
+          </div>
+        )}
       </div>
     </>
   );

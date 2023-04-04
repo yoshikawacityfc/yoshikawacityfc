@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import clsx from "clsx";
 
 const BUTTON_COLORS = {
@@ -16,6 +16,7 @@ interface ButtonProps {
   disabled?: boolean;
   fullWidth?: boolean;
   tabIndex?: number;
+  children?: ReactNode;
   onClick?: () => void;
 }
 
@@ -27,6 +28,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled = false,
       fullWidth = false,
       tabIndex,
+      children,
       onClick,
     },
     ref
@@ -47,7 +49,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         onClick={onClick}
         className={clsx(styles, "font-medium", "p-2", "rounded", "transition")}
       >
-        {label}
+        {label || children}
       </button>
     );
   }

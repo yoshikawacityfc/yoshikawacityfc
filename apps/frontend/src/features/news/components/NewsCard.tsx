@@ -1,10 +1,11 @@
+import { formatDate } from "@/utils/date";
 import clsx from "clsx";
 import { NewsType } from "../types";
 
 interface NewsCardProps {
   news: NewsType;
   fullWidth?: boolean;
-  onClick: (id: number) => void;
+  onClick: (id: any) => void;
 }
 
 export const NewsCard = ({
@@ -21,8 +22,8 @@ export const NewsCard = ({
       onClick={() => onClick(news.id)}
     >
       <img
-        src={news.thumbnailSrc || "/logo-gray.svg"}
-        alt="thumbnail"
+        src={news.assets?.src || "/logo-gray.svg"}
+        alt={news.assets?.file_name}
         className={clsx(
           fullWidth ? "w-full" : "w-[300px]",
           "h-[300px] object-cover"
@@ -30,7 +31,7 @@ export const NewsCard = ({
       />
       <div className="bg-primary h-[100px] p-3 text-xs flex flex-col justify-between">
         <h4 className="text-base font-normal line-clamp-2">{news.title}</h4>
-        <p className="text-right font-light">{news.updateDate}</p>
+        <p className="text-right font-light">{formatDate(news.published_at)}</p>
       </div>
     </div>
   );

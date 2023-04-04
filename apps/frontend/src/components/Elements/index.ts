@@ -6,4 +6,3 @@ export * from "./Input";
 export * from "./FormItem";
 export * from "./Textarea";
 export * from "./Select";
-export * from "./Pagination";

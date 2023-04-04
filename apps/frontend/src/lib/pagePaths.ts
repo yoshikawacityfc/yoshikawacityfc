@@ -23,7 +23,11 @@ export namespace PagePaths {
   /**
    * お知らせ
    */
-  export const news = (): string => {
+  export const news = (id?: any): string => {
+    if (id) {
+      return `/news/${id}`;
+    }
+
     return "/news";
   };
 
