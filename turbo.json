@@ -2,7 +2,8 @@
   "$schema": "https://turbo.build/schema.json",
   "globalEnv": [
     "NEXT_PUBLIC_ENVIRONMENT",
-    "NEXT_PUBLIC_GRAPHQL_ENDPOINT",
+    "NEXT_PUBLIC_SUPABASE_ENDPOINT",
+    "NEXT_PUBLIC_SUPABASE_GRAPHQL_ENDPOINT",
     "NEXT_PUBLIC_API_KEY"
   ],
   "pipeline": {

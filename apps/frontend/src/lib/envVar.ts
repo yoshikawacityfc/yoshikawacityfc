@@ -22,6 +22,6 @@ const resolveEnvironment: () => Environment = () => {
 export const envVar: EnvVar = {
   env: resolveEnvironment(),
   supabaseEndpoint: process.env.NEXT_PUBLIC_SUPABASE_ENDPOINT!,
-  graphqlEndpoint: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT!,
+  graphqlEndpoint: process.env.NEXT_PUBLIC_SUPABASE_GRAPHQL_ENDPOINT!,
   apiKey: process.env.NEXT_PUBLIC_API_KEY!,
 };
