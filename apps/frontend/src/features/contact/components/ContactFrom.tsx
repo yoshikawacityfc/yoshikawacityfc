@@ -15,25 +15,24 @@ import { useRouter } from "next/router";
 import { PagePaths } from "@/lib/pagePaths";
 import { CONTACT_TEMPLATE, CONTACT_TYPE } from "../constants";
 import { supabase } from "@/lib/supabase";
-import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 interface ContactInput {
   name: string;
-  kanaName: string;
+  nameKana: string;
   team: string;
   parentName: string;
   address: string;
   email: string;
-  emergencyContact: string;
-  contact: string;
+  phoneNumber: string;
+  contactContent: string;
 }
 
 const schema = z.object({
   name: ZodSchema.name(),
-  kanaName: ZodSchema.kanaName(),
+  nameKana: ZodSchema.nameKana(),
   email: ZodSchema.email(),
-  emergencyContact: ZodSchema.emergencyContact(),
-  contact: ZodSchema.contact(),
+  phoneNumber: ZodSchema.phoneNumber(),
+  contactContent: ZodSchema.contactContent(),
 });
 
 export const ContactForm = (): JSX.Element => {
@@ -66,10 +65,10 @@ export const ContactForm = (): JSX.Element => {
     // NOTE: SupabaseのGraphQLの仕様でInsertだけPolicyをpublicにできないためSupabaseClientを使用
     const { error } = await supabase.from("contacts").insert({
       name: contactInput.name,
-      name_kana: contactInput.kanaName,
+      name_kana: contactInput.nameKana,
       email: contactInput.email,
-      phone_number: contactInput.emergencyContact,
-      content: contactInput.contact,
+      phone_number: contactInput.phoneNumber,
+      content: contactInput.contactContent,
     });
 
     if (error) {
@@ -94,7 +93,7 @@ export const ContactForm = (): JSX.Element => {
 
   const handleContactDetailChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     // TODO: バリデーション条件クリア後にエラーをクリアする
-    clearErrors("contact");
+    clearErrors("contactContent");
     setContactDetail(e.target.value);
   };
 
@@ -128,14 +127,14 @@ export const ContactForm = (): JSX.Element => {
       <div className="mb-8 max-w-[20rem]">
         <FormItem
           label="フリガナ"
-          htmlFor="kanaName"
+          htmlFor="nameKana"
           required
-          errorMessage={errorMessages?.kanaName?.message}
+          errorMessage={errorMessages?.nameKana?.message}
         >
           <Input
             placeholder="ヨシカワ タロウ"
-            isError={!!errorMessages?.kanaName?.message}
-            {...register("kanaName")}
+            isError={!!errorMessages?.nameKana?.message}
+            {...register("nameKana")}
           />
         </FormItem>
       </div>
@@ -158,14 +157,14 @@ export const ContactForm = (): JSX.Element => {
       <div className="mb-8 max-w-[15rem]">
         <FormItem
           label="緊急連絡先"
-          htmlFor="emergencyContact"
+          htmlFor="phoneNumber"
           required
-          errorMessage={errorMessages?.emergencyContact?.message}
+          errorMessage={errorMessages?.phoneNumber?.message}
         >
           <Input
             placeholder="000-0000-0000"
-            isError={!!errorMessages?.emergencyContact?.message}
-            {...register("emergencyContact")}
+            isError={!!errorMessages?.phoneNumber?.message}
+            {...register("phoneNumber")}
           />
         </FormItem>
       </div>
@@ -175,13 +174,13 @@ export const ContactForm = (): JSX.Element => {
           label="お問い合わせ内容"
           htmlFor="contact"
           description="お問い合わせ内容等をご記入下さい"
-          errorMessage={errorMessages?.contact?.message}
+          errorMessage={errorMessages?.contactContent?.message}
         >
           <Textarea
             rows={10}
-            isError={!!errorMessages?.contact?.message}
+            isError={!!errorMessages?.contactContent?.message}
             value={contactDetail}
-            {...register("contact")}
+            {...register("contactContent")}
             onChange={handleContactDetailChange}
           />
         </FormItem>
