@@ -10,6 +10,7 @@ const COLORS = {
   white: "text-white",
   text: "text-black",
   warning: "text-yellow-400",
+  danger: "text-red-500",
 } as const;
 
 const SIZES = {

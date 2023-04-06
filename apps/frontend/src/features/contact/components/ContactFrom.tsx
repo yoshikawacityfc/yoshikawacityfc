@@ -1,6 +1,7 @@
 import {
   Button,
   FormItem,
+  Icon,
   Input,
   Select,
   Textarea,
@@ -13,6 +14,8 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { PagePaths } from "@/lib/pagePaths";
 import { CONTACT_TEMPLATE, CONTACT_TYPE } from "../constants";
+import { supabase } from "@/lib/supabase";
+import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 interface ContactInput {
   name: string;
@@ -41,6 +44,7 @@ export const ContactForm = (): JSX.Element => {
   );
   const [errorMessages, setErrorMessages] =
     useState<FieldErrors<ContactInput>>();
+  const [apiErrorMessage, setApiErrorMessage] = useState("");
   const [contactDetail, setContactDetail] = useState("");
 
   const {
@@ -56,8 +60,23 @@ export const ContactForm = (): JSX.Element => {
     setErrorMessages(errors);
   }, [errors]);
 
-  const onSubmit = (_: ContactInput) => {
-    // TODO: 入力情報をDBに追加
+  const onSubmit = async (contactInput: ContactInput) => {
+    setApiErrorMessage("");
+
+    // NOTE: SupabaseのGraphQLの仕様でInsertだけPolicyをpublicにできないためSupabaseClientを使用
+    const { error } = await supabase.from("contacts").insert({
+      name: contactInput.name,
+      name_kana: contactInput.kanaName,
+      email: contactInput.email,
+      phone_number: contactInput.emergencyContact,
+      content: contactInput.contact,
+    });
+
+    if (error) {
+      setApiErrorMessage("お問い合わせの送信が失敗しました。");
+      return;
+    }
+
     router.push(PagePaths.contactComplete());
   };
 
@@ -171,6 +190,13 @@ export const ContactForm = (): JSX.Element => {
       <div className="w-3/4 m-auto">
         <Button label="送信" color="primary" fullWidth />
       </div>
+
+      {apiErrorMessage && (
+        <p className="text-red-500 mt-4 text-center">
+          {/* <Icon icon={faCircleExclamation} color="danger" /> */}
+          <span className="ml-2">{apiErrorMessage}</span>
+        </p>
+      )}
     </form>
   );
 };
