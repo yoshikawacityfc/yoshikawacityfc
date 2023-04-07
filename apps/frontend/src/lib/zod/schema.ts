@@ -11,7 +11,7 @@ export namespace ZodSchema {
   /**
    * フリガナ
    */
-  export const kanaName = () => {
+  export const nameKana = () => {
     return z.string().min(1, { message: "フリガナを入力してください" });
   };
 
@@ -28,14 +28,14 @@ export namespace ZodSchema {
   /**
    * 緊急連絡先
    */
-  export const emergencyContact = () => {
+  export const phoneNumber = () => {
     return z.string().min(1, { message: "緊急連絡先を入力してください" });
   };
 
   /**
    * お問い合わせ内容
    */
-  export const contact = () => {
+  export const contactContent = () => {
     return z.string().max(1000, { message: "1000文字以内で入力してください" });
   };
 }

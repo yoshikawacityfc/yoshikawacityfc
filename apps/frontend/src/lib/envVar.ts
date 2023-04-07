@@ -2,6 +2,7 @@ import { Environment } from "@/types/environment";
 
 interface EnvVar {
   env: Environment;
+  supabaseEndpoint: string;
   graphqlEndpoint: string;
   apiKey: string;
 }
@@ -20,6 +21,7 @@ const resolveEnvironment: () => Environment = () => {
 
 export const envVar: EnvVar = {
   env: resolveEnvironment(),
-  graphqlEndpoint: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT!,
+  supabaseEndpoint: process.env.NEXT_PUBLIC_SUPABASE_ENDPOINT!,
+  graphqlEndpoint: process.env.NEXT_PUBLIC_SUPABASE_GRAPHQL_ENDPOINT!,
   apiKey: process.env.NEXT_PUBLIC_API_KEY!,
 };
