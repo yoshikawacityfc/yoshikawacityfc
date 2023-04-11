@@ -3,7 +3,7 @@ import { NextPage } from "next";
 
 const Concept: NextPage = () => {
   return (
-    <MainLayout>
+    <MainLayout title="クラブコンセプト">
       <section className="pt-64 max-w-[800px] m-auto px-4 mb-40">
         <img src="/logo.svg" alt="logo" className="w-[200px] m-auto mb-40" />
 

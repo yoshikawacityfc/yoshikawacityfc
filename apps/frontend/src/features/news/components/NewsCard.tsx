@@ -23,7 +23,7 @@ export const NewsCard = ({
     >
       <img
         src={news.assets?.src || "/logo-gray.svg"}
-        alt={news.assets?.file_name}
+        alt={news.assets?.file_name || "gray-scale"}
         className={clsx(
           fullWidth ? "w-full" : "w-[300px]",
           "h-[300px] object-cover"
