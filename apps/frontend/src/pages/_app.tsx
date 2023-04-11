@@ -32,6 +32,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             },
           ],
         }}
+        twitter={{
+          cardType: "summary_large_image",
+        }}
       />
       <ApolloProvider client={client}>
         <Component {...pageProps} />

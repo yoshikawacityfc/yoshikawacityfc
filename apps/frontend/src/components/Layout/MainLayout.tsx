@@ -25,9 +25,6 @@ export const MainLayout = ({
         openGraph={{
           title,
         }}
-        twitter={{
-          cardType: "summary_large_image",
-        }}
       />
       {isMenuVisible && (
         <HamburgerMenu onClose={() => setIsMenuVisible(false)} />
