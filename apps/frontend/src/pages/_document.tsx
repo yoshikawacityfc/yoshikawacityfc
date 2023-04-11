@@ -4,6 +4,8 @@ export default function Document() {
   return (
     <Html lang="ja" dir="ltr">
       <Head>
+        {/* TODO: リリース時に削除する */}
+        <meta name="robots" content="noindex" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
