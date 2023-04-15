@@ -8,7 +8,7 @@ import { SocialContribution } from "@/features/social-contribution/components";
 import { SponsorRecruiting } from "@/features/sponsor-recruiting/components";
 import { NextPage } from "next";
 
-const Top: NextPage = () => {
+const TopPage: NextPage = () => {
   return (
     <MainLayout>
       <section>
@@ -42,4 +42,4 @@ const Top: NextPage = () => {
   );
 };
 
-export default Top;
+export default TopPage;

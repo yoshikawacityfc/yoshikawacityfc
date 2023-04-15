@@ -3,7 +3,7 @@ import { NewsList } from "@/features/news/components";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 
-const News: NextPage = () => {
+const NewsPage: NextPage = () => {
   const router = useRouter();
 
   return (
@@ -15,4 +15,4 @@ const News: NextPage = () => {
   );
 };
 
-export default News;
+export default NewsPage;

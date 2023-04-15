@@ -2,7 +2,7 @@ import { MainLayout } from "@/components/Layout";
 import { ContactForm } from "@/features/contact/components";
 import { NextPage } from "next";
 
-const Contact: NextPage = () => {
+const ContactPage: NextPage = () => {
   return (
     <MainLayout>
       <section className="pt-64">
@@ -35,4 +35,4 @@ const Contact: NextPage = () => {
   );
 };
 
-export default Contact;
+export default ContactPage;

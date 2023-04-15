@@ -1,7 +1,7 @@
 import { MainLayout } from "@/components/Layout";
 import { NextPage } from "next";
 
-const Concept: NextPage = () => {
+const ConceptPage: NextPage = () => {
   return (
     <MainLayout title="クラブコンセプト">
       <section className="pt-64 max-w-[800px] m-auto px-4 mb-40">
@@ -65,4 +65,4 @@ const Concept: NextPage = () => {
   );
 };
 
-export default Concept;
+export default ConceptPage;

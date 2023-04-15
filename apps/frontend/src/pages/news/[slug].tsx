@@ -3,7 +3,7 @@ import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { NewsDetail } from "@/features/news/components";
 
-const News: NextPage = () => {
+const NewsDetailPage: NextPage = () => {
   const router = useRouter();
   const slug = typeof router.query.slug === "string" ? router.query.slug : "";
 
@@ -16,4 +16,4 @@ const News: NextPage = () => {
   );
 };
 
-export default News;
+export default NewsDetailPage;

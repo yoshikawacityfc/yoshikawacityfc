@@ -4,7 +4,7 @@ import { EntryContent } from "@/features/entry/components";
 import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
 import { NextPage } from "next";
 
-const EntrySchool: NextPage = () => {
+const EntrySchoolPage: NextPage = () => {
   return (
     <MainLayout>
       <section className="pt-64 max-w-[1000px] m-auto px-8 pb-32">
@@ -62,4 +62,4 @@ const EntrySchool: NextPage = () => {
   );
 };
 
-export default EntrySchool;
+export default EntrySchoolPage;

@@ -4,7 +4,7 @@ import { PagePaths } from "@/lib/pagePaths";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 
-const Entry: NextPage = () => {
+const EntryPage: NextPage = () => {
   const router = useRouter();
 
   return (
@@ -62,4 +62,4 @@ const Entry: NextPage = () => {
   );
 };
 
-export default Entry;
+export default EntryPage;

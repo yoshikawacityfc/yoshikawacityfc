@@ -5,7 +5,7 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { NextPage } from "next";
 import Link from "next/link";
 
-const ContactComplete: NextPage = () => {
+const ContactCompletePage: NextPage = () => {
   return (
     <MainLayout>
       <section className="pt-64 m-auto max-w-[1000px] mb-24 px-4">
@@ -43,4 +43,4 @@ const ContactComplete: NextPage = () => {
   );
 };
 
-export default ContactComplete;
+export default ContactCompletePage;
