@@ -19,7 +19,6 @@ export const queryNewsCollection =
       pageInfo {
         endCursor
         hasNextPage
-        startCursor
       }
     }
   }`);
