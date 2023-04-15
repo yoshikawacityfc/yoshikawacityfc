@@ -1,8 +1,8 @@
 import { gql } from "@/__generated__";
 
 export const queryNewsCollection =
-  gql(`query QueryNewsCollection($first: Int, $after: Cursor) {
-    newsCollection(first: $first, after: $after) {
+  gql(`query QueryNewsCollection($first: Int, $after: Cursor, $orderBy: [newsOrderBy!]) {
+    newsCollection(first: $first, after: $after, orderBy: $orderBy) {
       edges {
         node {
           title
@@ -25,8 +25,8 @@ export const queryNewsCollection =
   }`);
 
 export const queryPreviewNewsCollection = gql(`
-query QueryPreviewNewsCollection($first: Int) {
-  newsCollection(first: $first) {
+query QueryPreviewNewsCollection($first: Int, $orderBy: [newsOrderBy!]) {
+  newsCollection(first: $first, orderBy: $orderBy) {
     edges {
       node {
         id
