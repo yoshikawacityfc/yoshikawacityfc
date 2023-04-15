@@ -91,10 +91,11 @@ export const ContactForm = (): JSX.Element => {
     }
   };
 
-  const handleContactDetailChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    // TODO: バリデーション条件クリア後にエラーをクリアする
+  const handleContactDetailChange = (
+    event: ChangeEvent<HTMLTextAreaElement>
+  ) => {
     clearErrors("contactContent");
-    setContactDetail(e.target.value);
+    setContactDetail(event.target.value);
   };
 
   return (
