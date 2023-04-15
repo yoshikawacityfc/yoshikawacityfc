@@ -13,7 +13,6 @@ export const AdvisorCard = ({
   className,
   onClick,
 }: AdvisorCardProps): JSX.Element => {
-  // TODO: Cardコンポーネント追加
   return (
     <div
       className={clsx(

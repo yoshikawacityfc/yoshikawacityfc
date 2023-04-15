@@ -28,9 +28,9 @@ export const NewsDetail = ({ slug }: NewDetailProps): JSX.Element => {
   if (error) return <p>Error: {JSON.stringify(error)}</p>;
 
   return (
-    <>
+    <div className="max-w-[1000px] m-auto mb-32">
       {data?.newsCollection?.edges[0] ? (
-        <div className="znc max-w-[1000px] px-4 m-auto mb-32">
+        <div className="znc px-4 m-auto mb-32">
           <h1 className="text-3xl mb-1">
             {data.newsCollection.edges[0].node.title}
           </h1>
@@ -44,21 +44,20 @@ export const NewsDetail = ({ slug }: NewDetailProps): JSX.Element => {
             }}
             className="mb-32 whitespace-pre-line"
           ></div>
-
-          {/* TODO：以下コンポーネント化 */}
-          <div className="border-t-[1px] border-gray-400 py-4 flex justify-between">
-            <div className="m-auto w-3/4 mt-8">
-              <Button
-                label="一覧に戻る"
-                fullWidth
-                onClick={() => router.push(PagePaths.news())}
-              />
-            </div>
-          </div>
         </div>
       ) : (
+        // TODO: Emptyコンポーネント追加
         <div>記事が見つかりませんでした。</div>
       )}
-    </>
+      <div className="border-t-[1px] border-gray-400 py-4 flex justify-between">
+        <div className="m-auto w-3/4 mt-8">
+          <Button
+            label="一覧に戻る"
+            fullWidth
+            onClick={() => router.push(PagePaths.news())}
+          />
+        </div>
+      </div>
+    </div>
   );
 };
