@@ -7,6 +7,7 @@ export const queryNewsCollection =
         node {
           title
           id
+          slug
           published_at
           assets {
             src
@@ -29,6 +30,7 @@ query QueryPreviewNewsCollection($first: Int) {
     edges {
       node {
         id
+        slug
         title
         published_at
         assets {
@@ -46,6 +48,7 @@ export const queryNews = gql(`query QueryNews($filter: newsFilter) {
     edges {
       node {
         id
+        slug
         title
         published_at
         content

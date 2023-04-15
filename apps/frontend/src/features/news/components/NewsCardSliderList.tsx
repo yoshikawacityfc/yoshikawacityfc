@@ -17,8 +17,8 @@ export const NewsCardSliderList = ({
   const newsCardList = useRef<HTMLDivElement>(null);
 
   const router = useRouter();
-  const handleCardClick = (id: number) => {
-    router.push(PagePaths.news(id));
+  const handleCardClick = (slug: string) => {
+    router.push(PagePaths.news(slug));
   };
 
   const handlePrevClick = () => {
