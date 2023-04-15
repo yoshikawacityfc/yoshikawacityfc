@@ -118,6 +118,8 @@ export type Mutation = {
   deleteFromkeywordsCollection: KeywordsDeleteResponse;
   /** Deletes zero or more records from the `news` collection */
   deleteFromnewsCollection: NewsDeleteResponse;
+  /** Deletes zero or more records from the `news_duplicate` collection */
+  deleteFromnews_duplicateCollection: News_DuplicateDeleteResponse;
   /** Deletes zero or more records from the `news_tags` collection */
   deleteFromnews_tagsCollection: News_TagsDeleteResponse;
   /** Deletes zero or more records from the `seos` collection */
@@ -140,6 +142,8 @@ export type Mutation = {
   insertIntokeywordsCollection?: Maybe<KeywordsInsertResponse>;
   /** Adds one or more `news` records to the collection */
   insertIntonewsCollection?: Maybe<NewsInsertResponse>;
+  /** Adds one or more `news_duplicate` records to the collection */
+  insertIntonews_duplicateCollection?: Maybe<News_DuplicateInsertResponse>;
   /** Adds one or more `news_tags` records to the collection */
   insertIntonews_tagsCollection?: Maybe<News_TagsInsertResponse>;
   /** Adds one or more `seos` records to the collection */
@@ -162,6 +166,8 @@ export type Mutation = {
   updatekeywordsCollection: KeywordsUpdateResponse;
   /** Updates zero or more records in the `news` collection */
   updatenewsCollection: NewsUpdateResponse;
+  /** Updates zero or more records in the `news_duplicate` collection */
+  updatenews_duplicateCollection: News_DuplicateUpdateResponse;
   /** Updates zero or more records in the `news_tags` collection */
   updatenews_tagsCollection: News_TagsUpdateResponse;
   /** Updates zero or more records in the `seos` collection */
@@ -214,6 +220,13 @@ export type MutationDeleteFromkeywordsCollectionArgs = {
 export type MutationDeleteFromnewsCollectionArgs = {
   atMost?: Scalars['Int'];
   filter?: InputMaybe<NewsFilter>;
+};
+
+
+/** The root type for creating and mutating data */
+export type MutationDeleteFromnews_DuplicateCollectionArgs = {
+  atMost?: Scalars['Int'];
+  filter?: InputMaybe<News_DuplicateFilter>;
 };
 
 
@@ -285,6 +298,12 @@ export type MutationInsertIntokeywordsCollectionArgs = {
 /** The root type for creating and mutating data */
 export type MutationInsertIntonewsCollectionArgs = {
   objects: Array<NewsInsertInput>;
+};
+
+
+/** The root type for creating and mutating data */
+export type MutationInsertIntonews_DuplicateCollectionArgs = {
+  objects: Array<News_DuplicateInsertInput>;
 };
 
 
@@ -367,6 +386,14 @@ export type MutationUpdatenewsCollectionArgs = {
 
 
 /** The root type for creating and mutating data */
+export type MutationUpdatenews_DuplicateCollectionArgs = {
+  atMost?: Scalars['Int'];
+  filter?: InputMaybe<News_DuplicateFilter>;
+  set: News_DuplicateUpdateInput;
+};
+
+
+/** The root type for creating and mutating data */
 export type MutationUpdatenews_TagsCollectionArgs = {
   atMost?: Scalars['Int'];
   filter?: InputMaybe<News_TagsFilter>;
@@ -445,6 +472,8 @@ export type Query = {
   keywordsCollection?: Maybe<KeywordsConnection>;
   /** A pagable collection of type `news` */
   newsCollection?: Maybe<NewsConnection>;
+  /** A pagable collection of type `news_duplicate` */
+  news_duplicateCollection?: Maybe<News_DuplicateConnection>;
   /** A pagable collection of type `news_tags` */
   news_tagsCollection?: Maybe<News_TagsConnection>;
   /** Retrieve a record by its `ID` */
@@ -523,6 +552,17 @@ export type QueryNewsCollectionArgs = {
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<Array<NewsOrderBy>>;
+};
+
+
+/** The root type for querying data */
+export type QueryNews_DuplicateCollectionArgs = {
+  after?: InputMaybe<Scalars['Cursor']>;
+  before?: InputMaybe<Scalars['Cursor']>;
+  filter?: InputMaybe<News_DuplicateFilter>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<News_DuplicateOrderBy>>;
 };
 
 
@@ -626,6 +666,7 @@ export type Assets = Node & {
   id: Scalars['UUID'];
   mime_type: Scalars['String'];
   newsCollection?: Maybe<NewsConnection>;
+  news_duplicateCollection?: Maybe<News_DuplicateConnection>;
   /** Globally Unique Record Identifier */
   nodeId: Scalars['ID'];
   size: Scalars['Int'];
@@ -643,6 +684,16 @@ export type AssetsNewsCollectionArgs = {
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<Array<NewsOrderBy>>;
+};
+
+
+export type AssetsNews_DuplicateCollectionArgs = {
+  after?: InputMaybe<Scalars['Cursor']>;
+  before?: InputMaybe<Scalars['Cursor']>;
+  filter?: InputMaybe<News_DuplicateFilter>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<News_DuplicateOrderBy>>;
 };
 
 
@@ -1257,6 +1308,118 @@ export type NewsUpdateResponse = {
   records: Array<News>;
 };
 
+export type News_Duplicate = Node & {
+  __typename?: 'news_duplicate';
+  assets?: Maybe<Assets>;
+  content: Scalars['String'];
+  cover_image_asset_id?: Maybe<Scalars['UUID']>;
+  created_at: Scalars['Datetime'];
+  deleted_at?: Maybe<Scalars['Datetime']>;
+  excerpt: Scalars['String'];
+  id: Scalars['UUID'];
+  /** Globally Unique Record Identifier */
+  nodeId: Scalars['ID'];
+  published_at?: Maybe<Scalars['Datetime']>;
+  seo_id?: Maybe<Scalars['UUID']>;
+  seos?: Maybe<Seos>;
+  slug: Scalars['String'];
+  title: Scalars['String'];
+  updated_at: Scalars['Datetime'];
+};
+
+export type News_DuplicateConnection = {
+  __typename?: 'news_duplicateConnection';
+  edges: Array<News_DuplicateEdge>;
+  pageInfo: PageInfo;
+};
+
+export type News_DuplicateDeleteResponse = {
+  __typename?: 'news_duplicateDeleteResponse';
+  /** Count of the records impacted by the mutation */
+  affectedCount: Scalars['Int'];
+  /** Array of records impacted by the mutation */
+  records: Array<News_Duplicate>;
+};
+
+export type News_DuplicateEdge = {
+  __typename?: 'news_duplicateEdge';
+  cursor: Scalars['String'];
+  node: News_Duplicate;
+};
+
+export type News_DuplicateFilter = {
+  content?: InputMaybe<StringFilter>;
+  cover_image_asset_id?: InputMaybe<UuidFilter>;
+  created_at?: InputMaybe<DatetimeFilter>;
+  deleted_at?: InputMaybe<DatetimeFilter>;
+  excerpt?: InputMaybe<StringFilter>;
+  id?: InputMaybe<UuidFilter>;
+  nodeId?: InputMaybe<IdFilter>;
+  published_at?: InputMaybe<DatetimeFilter>;
+  seo_id?: InputMaybe<UuidFilter>;
+  slug?: InputMaybe<StringFilter>;
+  title?: InputMaybe<StringFilter>;
+  updated_at?: InputMaybe<DatetimeFilter>;
+};
+
+export type News_DuplicateInsertInput = {
+  content?: InputMaybe<Scalars['String']>;
+  cover_image_asset_id?: InputMaybe<Scalars['UUID']>;
+  created_at?: InputMaybe<Scalars['Datetime']>;
+  deleted_at?: InputMaybe<Scalars['Datetime']>;
+  excerpt?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['UUID']>;
+  published_at?: InputMaybe<Scalars['Datetime']>;
+  seo_id?: InputMaybe<Scalars['UUID']>;
+  slug?: InputMaybe<Scalars['String']>;
+  title?: InputMaybe<Scalars['String']>;
+  updated_at?: InputMaybe<Scalars['Datetime']>;
+};
+
+export type News_DuplicateInsertResponse = {
+  __typename?: 'news_duplicateInsertResponse';
+  /** Count of the records impacted by the mutation */
+  affectedCount: Scalars['Int'];
+  /** Array of records impacted by the mutation */
+  records: Array<News_Duplicate>;
+};
+
+export type News_DuplicateOrderBy = {
+  content?: InputMaybe<OrderByDirection>;
+  cover_image_asset_id?: InputMaybe<OrderByDirection>;
+  created_at?: InputMaybe<OrderByDirection>;
+  deleted_at?: InputMaybe<OrderByDirection>;
+  excerpt?: InputMaybe<OrderByDirection>;
+  id?: InputMaybe<OrderByDirection>;
+  published_at?: InputMaybe<OrderByDirection>;
+  seo_id?: InputMaybe<OrderByDirection>;
+  slug?: InputMaybe<OrderByDirection>;
+  title?: InputMaybe<OrderByDirection>;
+  updated_at?: InputMaybe<OrderByDirection>;
+};
+
+export type News_DuplicateUpdateInput = {
+  content?: InputMaybe<Scalars['String']>;
+  cover_image_asset_id?: InputMaybe<Scalars['UUID']>;
+  created_at?: InputMaybe<Scalars['Datetime']>;
+  deleted_at?: InputMaybe<Scalars['Datetime']>;
+  excerpt?: InputMaybe<Scalars['String']>;
+  id?: InputMaybe<Scalars['UUID']>;
+  published_at?: InputMaybe<Scalars['Datetime']>;
+  seo_id?: InputMaybe<Scalars['UUID']>;
+  slug?: InputMaybe<Scalars['String']>;
+  title?: InputMaybe<Scalars['String']>;
+  updated_at?: InputMaybe<Scalars['Datetime']>;
+};
+
+export type News_DuplicateUpdateResponse = {
+  __typename?: 'news_duplicateUpdateResponse';
+  /** Count of the records impacted by the mutation */
+  affectedCount: Scalars['Int'];
+  /** Array of records impacted by the mutation */
+  records: Array<News_Duplicate>;
+};
+
 export type News_Tags = Node & {
   __typename?: 'news_tags';
   news?: Maybe<News>;
@@ -1331,6 +1494,7 @@ export type Seos = Node & {
   description: Scalars['String'];
   id: Scalars['UUID'];
   newsCollection?: Maybe<NewsConnection>;
+  news_duplicateCollection?: Maybe<News_DuplicateConnection>;
   /** Globally Unique Record Identifier */
   nodeId: Scalars['ID'];
   og_image_url?: Maybe<Scalars['String']>;
@@ -1346,6 +1510,16 @@ export type SeosNewsCollectionArgs = {
   first?: InputMaybe<Scalars['Int']>;
   last?: InputMaybe<Scalars['Int']>;
   orderBy?: InputMaybe<Array<NewsOrderBy>>;
+};
+
+
+export type SeosNews_DuplicateCollectionArgs = {
+  after?: InputMaybe<Scalars['Cursor']>;
+  before?: InputMaybe<Scalars['Cursor']>;
+  filter?: InputMaybe<News_DuplicateFilter>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<News_DuplicateOrderBy>>;
 };
 
 export type SeosConnection = {
@@ -1742,24 +1916,28 @@ export type TagsUpdateResponse = {
 export type QueryNewsCollectionQueryVariables = Exact<{
   first?: InputMaybe<Scalars['Int']>;
   after?: InputMaybe<Scalars['Cursor']>;
+  orderBy?: InputMaybe<Array<NewsOrderBy> | NewsOrderBy>;
+  filter?: InputMaybe<NewsFilter>;
 }>;
 
 
-export type QueryNewsCollectionQuery = { __typename?: 'Query', newsCollection?: { __typename?: 'newsConnection', edges: Array<{ __typename?: 'newsEdge', cursor: string, node: { __typename?: 'news', title: string, id: any, published_at?: any | null, assets?: { __typename?: 'assets', src: string, file_name: string } | null } }>, pageInfo: { __typename?: 'PageInfo', endCursor?: string | null, hasNextPage: boolean, startCursor?: string | null } } | null };
+export type QueryNewsCollectionQuery = { __typename?: 'Query', newsCollection?: { __typename?: 'newsConnection', edges: Array<{ __typename?: 'newsEdge', cursor: string, node: { __typename?: 'news', title: string, id: any, slug: string, published_at?: any | null, assets?: { __typename?: 'assets', src: string, file_name: string } | null } }>, pageInfo: { __typename?: 'PageInfo', endCursor?: string | null, hasNextPage: boolean, startCursor?: string | null } } | null };
 
 export type QueryPreviewNewsCollectionQueryVariables = Exact<{
   first?: InputMaybe<Scalars['Int']>;
+  orderBy?: InputMaybe<Array<NewsOrderBy> | NewsOrderBy>;
+  filter?: InputMaybe<NewsFilter>;
 }>;
 
 
-export type QueryPreviewNewsCollectionQuery = { __typename?: 'Query', newsCollection?: { __typename?: 'newsConnection', edges: Array<{ __typename?: 'newsEdge', node: { __typename?: 'news', id: any, title: string, published_at?: any | null, assets?: { __typename?: 'assets', src: string, file_name: string } | null } }> } | null };
+export type QueryPreviewNewsCollectionQuery = { __typename?: 'Query', newsCollection?: { __typename?: 'newsConnection', edges: Array<{ __typename?: 'newsEdge', node: { __typename?: 'news', id: any, slug: string, title: string, published_at?: any | null, assets?: { __typename?: 'assets', src: string, file_name: string } | null } }> } | null };
 
 export type QueryNewsQueryVariables = Exact<{
   filter?: InputMaybe<NewsFilter>;
 }>;
 
 
-export type QueryNewsQuery = { __typename?: 'Query', newsCollection?: { __typename?: 'newsConnection', edges: Array<{ __typename?: 'newsEdge', node: { __typename?: 'news', id: any, title: string, published_at?: any | null, content: string } }> } | null };
+export type QueryNewsQuery = { __typename?: 'Query', newsCollection?: { __typename?: 'newsConnection', edges: Array<{ __typename?: 'newsEdge', node: { __typename?: 'news', id: any, slug: string, title: string, published_at?: any | null, content: string } }> } | null };
 
 export type QueryStaffCategoryCollectionQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -1781,9 +1959,9 @@ export type QueryAdvisorCollectionQueryVariables = Exact<{
 export type QueryAdvisorCollectionQuery = { __typename?: 'Query', staffsCollection?: { __typename?: 'staffsConnection', edges: Array<{ __typename?: 'staffsEdge', node: { __typename?: 'staffs', position: string, name: string, id: any, description: string, assets?: { __typename?: 'assets', src: string, file_name: string } | null } }> } | null };
 
 
-export const QueryNewsCollectionDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"QueryNewsCollection"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"first"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"after"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Cursor"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"newsCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"Variable","name":{"kind":"Name","value":"first"}}},{"kind":"Argument","name":{"kind":"Name","value":"after"},"value":{"kind":"Variable","name":{"kind":"Name","value":"after"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"published_at"}},{"kind":"Field","name":{"kind":"Name","value":"assets"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"file_name"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"cursor"}}]}},{"kind":"Field","name":{"kind":"Name","value":"pageInfo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"endCursor"}},{"kind":"Field","name":{"kind":"Name","value":"hasNextPage"}},{"kind":"Field","name":{"kind":"Name","value":"startCursor"}}]}}]}}]}}]} as unknown as DocumentNode<QueryNewsCollectionQuery, QueryNewsCollectionQueryVariables>;
-export const QueryPreviewNewsCollectionDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"QueryPreviewNewsCollection"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"first"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"newsCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"Variable","name":{"kind":"Name","value":"first"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"published_at"}},{"kind":"Field","name":{"kind":"Name","value":"assets"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"file_name"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<QueryPreviewNewsCollectionQuery, QueryPreviewNewsCollectionQueryVariables>;
-export const QueryNewsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"QueryNews"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filter"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"newsFilter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"newsCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"published_at"}},{"kind":"Field","name":{"kind":"Name","value":"content"}}]}}]}}]}}]}}]} as unknown as DocumentNode<QueryNewsQuery, QueryNewsQueryVariables>;
+export const QueryNewsCollectionDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"QueryNewsCollection"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"first"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"after"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Cursor"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"orderBy"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"newsOrderBy"}}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filter"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"newsFilter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"newsCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"Variable","name":{"kind":"Name","value":"first"}}},{"kind":"Argument","name":{"kind":"Name","value":"after"},"value":{"kind":"Variable","name":{"kind":"Name","value":"after"}}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"Variable","name":{"kind":"Name","value":"orderBy"}}},{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"published_at"}},{"kind":"Field","name":{"kind":"Name","value":"assets"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"file_name"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"cursor"}}]}},{"kind":"Field","name":{"kind":"Name","value":"pageInfo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"endCursor"}},{"kind":"Field","name":{"kind":"Name","value":"hasNextPage"}},{"kind":"Field","name":{"kind":"Name","value":"startCursor"}}]}}]}}]}}]} as unknown as DocumentNode<QueryNewsCollectionQuery, QueryNewsCollectionQueryVariables>;
+export const QueryPreviewNewsCollectionDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"QueryPreviewNewsCollection"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"first"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"orderBy"}},"type":{"kind":"ListType","type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"newsOrderBy"}}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filter"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"newsFilter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"newsCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"first"},"value":{"kind":"Variable","name":{"kind":"Name","value":"first"}}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"Variable","name":{"kind":"Name","value":"orderBy"}}},{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"published_at"}},{"kind":"Field","name":{"kind":"Name","value":"assets"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"file_name"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<QueryPreviewNewsCollectionQuery, QueryPreviewNewsCollectionQueryVariables>;
+export const QueryNewsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"QueryNews"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filter"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"newsFilter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"newsCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"published_at"}},{"kind":"Field","name":{"kind":"Name","value":"content"}}]}}]}}]}}]}}]} as unknown as DocumentNode<QueryNewsQuery, QueryNewsQueryVariables>;
 export const QueryStaffCategoryCollectionDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"QueryStaffCategoryCollection"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"staff_categoriesCollection"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}}]}}]}}]} as unknown as DocumentNode<QueryStaffCategoryCollectionQuery, QueryStaffCategoryCollectionQueryVariables>;
 export const QueryStaffCollectionDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"QueryStaffCollection"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filter"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"staffsFilter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"staffsCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"assets"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"file_name"}}]}},{"kind":"Field","name":{"kind":"Name","value":"position"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"one_word"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"license"}},{"kind":"Field","name":{"kind":"Name","value":"career"}},{"kind":"Field","name":{"kind":"Name","value":"coaching_achievement"}},{"kind":"Field","name":{"kind":"Name","value":"player_history"}},{"kind":"Field","name":{"kind":"Name","value":"player_achievement"}}]}}]}}]}}]}}]} as unknown as DocumentNode<QueryStaffCollectionQuery, QueryStaffCollectionQueryVariables>;
 export const QueryAdvisorCollectionDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"QueryAdvisorCollection"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"filter"}},"type":{"kind":"NamedType","name":{"kind":"Name","value":"staffsFilter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"staffsCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"Variable","name":{"kind":"Name","value":"filter"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"edges"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"node"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"position"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"assets"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"src"}},{"kind":"Field","name":{"kind":"Name","value":"file_name"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<QueryAdvisorCollectionQuery, QueryAdvisorCollectionQueryVariables>;

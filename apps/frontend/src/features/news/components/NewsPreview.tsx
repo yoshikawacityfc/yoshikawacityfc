@@ -5,11 +5,20 @@ import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import { NEWS_PREVIEW_COUNT } from "../constants";
 import { NewsCardSliderList } from "./NewsCardSliderList";
+import { FilterIs, OrderByDirection } from "@/__generated__/graphql";
 
 export const NewsPreview = (): JSX.Element => {
   const { loading, error, data } = useQuery(queryPreviewNewsCollection, {
     variables: {
       first: NEWS_PREVIEW_COUNT,
+      orderBy: {
+        published_at: OrderByDirection.DescNullsLast,
+      },
+      filter: {
+        deleted_at: {
+          is: FilterIs.Null,
+        },
+      },
     },
   });
 

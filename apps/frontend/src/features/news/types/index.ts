@@ -1,6 +1,7 @@
 export interface NewsType {
   title: string;
   id: any;
+  slug: string;
   published_at?: any;
   assets?: {
     src: string;

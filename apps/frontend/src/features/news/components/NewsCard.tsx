@@ -19,7 +19,7 @@ export const NewsCard = ({
         fullWidth ? "w-full" : "w-[300px]",
         "h-[400px] shadow text-secondary cursor-pointer"
       )}
-      onClick={() => onClick(news.id)}
+      onClick={() => onClick(news.slug)}
     >
       <img
         src={news.assets?.src || "/logo-gray.svg"}

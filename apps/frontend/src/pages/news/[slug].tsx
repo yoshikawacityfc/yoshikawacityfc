@@ -5,11 +5,12 @@ import { NewsDetail } from "@/features/news/components";
 
 const News: NextPage = () => {
   const router = useRouter();
+  const slug = typeof router.query.slug === "string" ? router.query.slug : "";
 
   return (
     <MainLayout>
       <section className="pt-64 min-h-[70vh]">
-        <NewsDetail id={router.query.id} />
+        <NewsDetail slug={slug} />
       </section>
     </MainLayout>
   );

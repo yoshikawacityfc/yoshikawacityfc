@@ -1,4 +1,4 @@
-import { Button, Icon } from "@/components/Elements";
+import { Button } from "@/components/Elements";
 import { PagePaths } from "@/lib/pagePaths";
 import { useRouter } from "next/router";
 import "zenn-content-css";
@@ -7,17 +7,17 @@ import { queryNews } from "@/lib/gql/news";
 import { formatDate } from "@/utils/date";
 
 interface NewDetailProps {
-  id: any;
+  slug: string;
 }
 
-export const NewsDetail = ({ id }: NewDetailProps): JSX.Element => {
+export const NewsDetail = ({ slug }: NewDetailProps): JSX.Element => {
   const router = useRouter();
 
   const { loading, error, data } = useQuery(queryNews, {
     variables: {
       filter: {
-        id: {
-          eq: id,
+        slug: {
+          eq: slug,
         },
       },
     },

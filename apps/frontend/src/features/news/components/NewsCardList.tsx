@@ -9,8 +9,8 @@ interface NewsCardListProps {
 
 export const NewsCardList = ({ news }: NewsCardListProps): JSX.Element => {
   const router = useRouter();
-  const handleCardClick = (id: any) => {
-    router.push(PagePaths.news(id));
+  const handleCardClick = (slug: string) => {
+    router.push(PagePaths.news(slug));
   };
 
   return (
