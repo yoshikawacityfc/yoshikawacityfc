@@ -24,7 +24,7 @@ export const NewsPreview = (): JSX.Element => {
 
   const router = useRouter();
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <></>;
 
   if (error) return <p>Error: {JSON.stringify(error)}</p>;
 

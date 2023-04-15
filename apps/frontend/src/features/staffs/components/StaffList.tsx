@@ -34,7 +34,7 @@ export const StaffList = ({ categoryId }: StaffListProps): JSX.Element => {
     setSelectedStaffProfile(selectStaffProfile?.node);
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <></>;
 
   if (error) return <p>Error: {JSON.stringify(error)}</p>;
 

@@ -23,14 +23,14 @@ export const NewsDetail = ({ slug }: NewDetailProps): JSX.Element => {
     },
   });
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <></>;
 
   if (error) return <p>Error: {JSON.stringify(error)}</p>;
 
   return (
-    <div className="max-w-[1000px] m-auto mb-32">
+    <div className="max-w-[1000px] m-auto mb-32 px-4">
       {data?.newsCollection?.edges[0] ? (
-        <div className="znc px-4 m-auto mb-32">
+        <div className="znc m-auto mb-32">
           <h1 className="text-3xl mb-1">
             {data.newsCollection.edges[0].node.title}
           </h1>

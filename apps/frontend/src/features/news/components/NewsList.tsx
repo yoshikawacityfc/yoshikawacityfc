@@ -31,7 +31,7 @@ export const NewsList = (): JSX.Element => {
     });
   }, [data, fetchMore]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <></>;
 
   if (error) return <p>Error: {JSON.stringify(error)}</p>;
 

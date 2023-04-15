@@ -35,7 +35,7 @@ export const Advisor = ({ categoryId }: AdvisorProps): JSX.Element => {
     setSelectedAdvisorProfile(selectAdvisorProfile?.node);
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <></>;
 
   if (error) return <p>Error: {JSON.stringify(error)}</p>;
 
