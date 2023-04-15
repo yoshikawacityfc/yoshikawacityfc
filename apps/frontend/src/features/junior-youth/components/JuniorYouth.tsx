@@ -70,8 +70,12 @@ export const JuniorYouth = (): JSX.Element => {
             2023年度から始動する、埼玉県吉川市を拠点に活動をするJr.ユースチームです。【大人の描く想像を超えていく】選手の育成を目指すクラブチームです。スポーツジムとの連携、テクノロジーの活用、各種専門家との交流など選手1人1人の成長の為に全力を尽くします。
           </p>
 
-          <div className="relative my-12 block shadow-2xl">
-            <img src="/player-recruiting.png" alt="ball" className="rounded" />
+          <div className="relative my-12 block">
+            <img
+              src="/player-recruiting.png"
+              alt="ball"
+              className="rounded-sm"
+            />
           </div>
         </div>
       </div>
