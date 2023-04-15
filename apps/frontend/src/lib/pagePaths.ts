@@ -39,6 +39,13 @@ export namespace PagePaths {
   };
 
   /**
+   * 入会案内-スクール
+   */
+  export const entrySchool = (): string => {
+    return "/entry/school";
+  };
+
+  /**
    * お問い合わせ
    */
   export const contact = (): string => {
@@ -46,7 +53,7 @@ export namespace PagePaths {
   };
 
   /**
-   * お問い合わせ完了
+   * お問い合わせ-完了
    */
   export const contactComplete = (): string => {
     return "/contact/complete";

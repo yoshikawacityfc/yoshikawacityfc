@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 const BUTTON_COLORS = {
   primary:
-    "text-primary border-2 border-primary hover:text-secondary hover:bg-primary",
+    "text-primary bg-secondary border-2 border-primary hover:text-secondary hover:bg-primary",
   secondary:
     "text-secondary border-2 border-secondary hover:text-primary hover:bg-secondary",
 };

@@ -66,7 +66,7 @@ export const School = (): JSX.Element => {
         <Button
           label="入会案内"
           fullWidth
-          onClick={() => router.push(PagePaths.entry())}
+          onClick={() => router.push(PagePaths.entrySchool())}
         />
       </div>
     </div>
