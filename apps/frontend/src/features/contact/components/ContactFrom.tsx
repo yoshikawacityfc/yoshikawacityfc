@@ -14,7 +14,8 @@ import { useRouter } from "next/router";
 import { PagePaths } from "@/lib/pagePaths";
 import { supabase } from "@/lib/supabase";
 import { useQuery } from "@apollo/client";
-import { queryContactTemplateCollection } from "@/lib/gql/contacts";
+import { queryContactCategoriesCollection } from "@/lib/gql/contacts";
+import { OrderByDirection } from "@/__generated__/graphql";
 
 interface ContactInput {
   name: string;
@@ -36,14 +37,20 @@ const schema = z.object({
 });
 
 export const ContactForm = (): JSX.Element => {
-  const { loading, error, data } = useQuery(queryContactTemplateCollection);
+  const { loading, error, data } = useQuery(queryContactCategoriesCollection, {
+    variables: {
+      orderBy: {
+        sort: OrderByDirection.AscNullsFirst,
+      },
+    },
+  });
 
   const contactOptions =
-    data?.contact_templatesCollection?.edges.map((item) => {
+    data?.contact_categoriesCollection?.edges.map((item) => {
       return {
         value: item?.node.id,
         label: item?.node.name,
-        content: item?.node.content,
+        template: item?.node.contact_templates?.content,
       };
     }) || [];
 
@@ -67,7 +74,7 @@ export const ContactForm = (): JSX.Element => {
 
   useEffect(() => {
     if (!loading && data) {
-      contactTypeChange(data.contact_templatesCollection?.edges[0]?.node.id);
+      contactTypeChange(data.contact_categoriesCollection?.edges[0]?.node.id);
     }
   }, [loading, data]);
 
@@ -103,7 +110,7 @@ export const ContactForm = (): JSX.Element => {
     );
 
     if (contactTemplate) {
-      setContactDetail(contactTemplate.content);
+      setContactDetail(contactTemplate.template || "");
     }
   };
 
