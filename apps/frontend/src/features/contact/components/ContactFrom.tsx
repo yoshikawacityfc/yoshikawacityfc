@@ -1,7 +1,6 @@
 import {
   Button,
   FormItem,
-  Icon,
   Input,
   Select,
   Textarea,
@@ -13,8 +12,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { PagePaths } from "@/lib/pagePaths";
-import { CONTACT_TEMPLATE, CONTACT_TYPE } from "../constants";
 import { supabase } from "@/lib/supabase";
+import { useQuery } from "@apollo/client";
+import { queryContactTemplateCollection } from "@/lib/gql/contacts";
 
 interface ContactInput {
   name: string;
@@ -36,11 +36,21 @@ const schema = z.object({
 });
 
 export const ContactForm = (): JSX.Element => {
+  const { loading, error, data } = useQuery(queryContactTemplateCollection);
+
+  const contactOptions =
+    data?.contact_templatesCollection?.edges.map((item) => {
+      return {
+        value: item?.node.id,
+        label: item?.node.name,
+        content: item?.node.content,
+      };
+    }) || [];
+
   const router = useRouter();
 
-  const [selectedContactOptionValue, setSelectedContactOptionValue] = useState(
-    CONTACT_TYPE[0].value
-  );
+  const [selectedContactOptionValue, setSelectedContactOptionValue] =
+    useState("");
   const [errorMessages, setErrorMessages] =
     useState<FieldErrors<ContactInput>>();
   const [apiErrorMessage, setApiErrorMessage] = useState("");
@@ -54,6 +64,12 @@ export const ContactForm = (): JSX.Element => {
   } = useForm<ContactInput>({
     resolver: zodResolver(schema),
   });
+
+  useEffect(() => {
+    if (!loading && data) {
+      contactTypeChange(data.contact_templatesCollection?.edges[0]?.node.id);
+    }
+  }, [loading, data]);
 
   useEffect(() => {
     setErrorMessages(errors);
@@ -79,16 +95,20 @@ export const ContactForm = (): JSX.Element => {
     router.push(PagePaths.contactComplete());
   };
 
-  const handleContactTypeChange = (optionValue: string) => {
+  const contactTypeChange = (optionValue: string) => {
     setSelectedContactOptionValue(optionValue);
 
-    const contactTemplate = CONTACT_TEMPLATE.find(
-      (item) => item.type === optionValue
+    const contactTemplate = contactOptions.find(
+      (item) => item.value === optionValue
     );
 
     if (contactTemplate) {
-      setContactDetail(contactTemplate.template);
+      setContactDetail(contactTemplate.content);
     }
+  };
+
+  const handleContactTypeChange = (optionValue: string) => {
+    contactTypeChange(optionValue);
   };
 
   const handleContactDetailChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -97,12 +117,16 @@ export const ContactForm = (): JSX.Element => {
     setContactDetail(e.target.value);
   };
 
+  if (loading) return <p>Loading...</p>;
+
+  if (error) return <p>Error: {JSON.stringify(error)}</p>;
+
   return (
     <form className="m-auto" onSubmit={handleSubmit(onSubmit)}>
       <div className="mb-8 max-w-[20rem]">
         <FormItem label="お問い合わせ内容" htmlFor="contactType">
           <Select
-            options={CONTACT_TYPE}
+            options={contactOptions}
             selectedOptionValue={selectedContactOptionValue}
             onChange={handleContactTypeChange}
           />

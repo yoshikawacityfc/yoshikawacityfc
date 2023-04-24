@@ -13,6 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
+    "query QueryContactTemplateCollection {\n    contact_templatesCollection {\n      edges {\n        node {\n          id\n          name\n          content\n        }\n      }\n    }\n  }": types.QueryContactTemplateCollectionDocument,
     "query QueryNewsCollection($first: Int, $after: Cursor, $orderBy: [newsOrderBy!], $filter: newsFilter) {\n    newsCollection(first: $first, after: $after, orderBy: $orderBy, filter: $filter) {\n      edges {\n        node {\n          title\n          id\n          slug\n          published_at\n          assets {\n            src\n            file_name\n          }\n        }\n        cursor\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n        startCursor\n      }\n    }\n  }": types.QueryNewsCollectionDocument,
     "\nquery QueryPreviewNewsCollection($first: Int, $orderBy: [newsOrderBy!], $filter: newsFilter) {\n  newsCollection(first: $first, orderBy: $orderBy, filter: $filter) {\n    edges {\n      node {\n        id\n        slug\n        title\n        published_at\n        assets {\n          src\n          file_name\n        }\n      }\n    }\n  }\n}\n": types.QueryPreviewNewsCollectionDocument,
     "query QueryNews($filter: newsFilter) {\n  newsCollection(filter: $filter) {\n    edges {\n      node {\n        id\n        slug\n        title\n        published_at\n        content\n      }\n    }\n  }\n}": types.QueryNewsDocument,
@@ -35,6 +36,10 @@ const documents = {
  */
 export function gql(source: string): unknown;
 
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "query QueryContactTemplateCollection {\n    contact_templatesCollection {\n      edges {\n        node {\n          id\n          name\n          content\n        }\n      }\n    }\n  }"): (typeof documents)["query QueryContactTemplateCollection {\n    contact_templatesCollection {\n      edges {\n        node {\n          id\n          name\n          content\n        }\n      }\n    }\n  }"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
