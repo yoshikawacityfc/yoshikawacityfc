@@ -56,7 +56,7 @@ export const JuniorYouth = (): JSX.Element => {
             easing="ease-out"
           >
             <img
-              src="/junior-football.jpg"
+              src="/junior-football.webp"
               alt="junior-football"
               className="max-w-none w-screen min-h-[300px] object-cover"
             />
@@ -72,7 +72,7 @@ export const JuniorYouth = (): JSX.Element => {
 
           <div className="relative my-12 block">
             <img
-              src="/player-recruiting.png"
+              src="/player-recruiting.webp"
               alt="ball"
               className="rounded-sm"
             />

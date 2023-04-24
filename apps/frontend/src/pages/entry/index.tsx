@@ -17,7 +17,7 @@ const Entry: NextPage = () => {
         <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(300px,_1fr))]">
           <div className="rounded-2xl overflow-hidden h-[600px] relative flex flex-col justify-center">
             <img
-              src="/school.jpg"
+              src="/school.webp"
               alt="school"
               className="object-cover h-full w-full absolute -z-10"
             />
@@ -38,7 +38,7 @@ const Entry: NextPage = () => {
 
           <div className="rounded-2xl overflow-hidden h-[600px] relative flex flex-col justify-center">
             <img
-              src="/entry-junior-football.jpg"
+              src="/entry-junior-football.webp"
               alt="entry-junior-football"
               className="object-cover h-full w-full absolute -z-10"
             />

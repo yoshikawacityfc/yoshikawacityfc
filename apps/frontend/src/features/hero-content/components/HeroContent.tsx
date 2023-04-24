@@ -9,7 +9,7 @@ export const HeroContent = (): JSX.Element => {
       </div>
 
       <img
-        src="/hero.jpg"
+        src="/hero.webp"
         alt="hero"
         className="w-screen h-screen object-cover"
       />
