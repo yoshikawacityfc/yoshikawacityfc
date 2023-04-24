@@ -1,13 +1,15 @@
 import { gql } from "@/__generated__";
 
-export const queryContactTemplateCollection =
-  gql(`query QueryContactTemplateCollection {
-    contact_templatesCollection {
+export const queryContactCategoriesCollection =
+  gql(`query QueryContactCategoriesCollection($orderBy: [contact_categoriesOrderBy!]) {
+    contact_categoriesCollection(orderBy: $orderBy) {
       edges {
         node {
-          id
+          contact_templates {
+            content
+          }
           name
-          content
+          id
         }
       }
     }
