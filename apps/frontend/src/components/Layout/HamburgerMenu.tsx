@@ -1,8 +1,9 @@
-import { MENU } from "@/constants";
+import { INSTAGRAM_URL, LINE_URL, MENU } from "@/constants";
 import { PagePaths } from "@/lib/pagePaths";
 import Link from "next/link";
 import { Icon } from "../Elements";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram, faLine } from "@fortawesome/free-brands-svg-icons";
 
 interface HamburgerMenuProps {
   onClose: () => void;
@@ -33,6 +34,15 @@ export const HamburgerMenu = ({ onClose }: HamburgerMenuProps): JSX.Element => {
           })}
         </ul>
       </nav>
+
+      <div className="mt-16 flex justify-center">
+        <Link href={LINE_URL} className="mx-2">
+          <Icon icon={faLine} size="4xlarge" />
+        </Link>
+        <Link href={INSTAGRAM_URL} className="mx-2">
+          <Icon icon={faInstagram} size="4xlarge" />
+        </Link>
+      </div>
     </div>
   );
 };
