@@ -1,13 +1,14 @@
-name: Vercel Staging Deployment
+name: Staging Deployment
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   Deploy-Staging:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}

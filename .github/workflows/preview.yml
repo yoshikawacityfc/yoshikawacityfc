@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy-preview:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     env:
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
