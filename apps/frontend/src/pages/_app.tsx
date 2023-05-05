@@ -4,6 +4,7 @@ import type { AppProps } from "next/app";
 import { ApolloProvider } from "@apollo/client";
 import client from "@/lib/apolloClient";
 import { DefaultSeo } from "next-seo";
+import { Analytics } from "@vercel/analytics/react";
 
 const APP_NAME = "YOSHiKAWA CiTY FC 公式サイト";
 const APP_ROOT_URL = "https://yoshikawa-fc.com";
@@ -39,6 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ApolloProvider client={client}>
         <Component {...pageProps} />
       </ApolloProvider>
+      <Analytics />
     </>
   );
 }
