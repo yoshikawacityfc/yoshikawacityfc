@@ -1,3 +1,17 @@
+.fadeIn {
+  animation: fadeIn backwards 3s ease 1s normal;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .yoshikawa-city-outline {
   fill: none;
   stroke: #2e0075;
