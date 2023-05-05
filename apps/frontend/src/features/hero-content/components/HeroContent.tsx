@@ -14,6 +14,7 @@ export const HeroContent = (): JSX.Element => {
         autoPlay
         muted
         loop
+        playsInline
         className="object-cover h-screen w-screen"
       ></video>
     </div>
