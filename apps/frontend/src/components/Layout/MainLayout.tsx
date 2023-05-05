@@ -17,11 +17,8 @@ export const MainLayout = ({
 
   return (
     <>
-      {/* TODO: リリース時にnoindex削除 */}
       <NextSeo
         title={title}
-        noindex
-        nofollow
         openGraph={{
           title,
         }}
