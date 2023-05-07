@@ -42,7 +42,7 @@
     "@types/scrollreveal": "^0.0.8",
     "autoprefixer": "^10.4.13",
     "clsx": "^1.2.1",
-    "eslint": "8.39.0",
+    "eslint": "8.40.0",
     "eslint-config-custom": "workspace:*",
     "postcss": "^8.4.21",
     "scrollreveal": "^4.0.9",
