@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps<NewsScreenProps> = async (
           is: "NULL",
         },
         published_at: {
-          lte: new Date().toISOString(),
+          lte: new Date(),
         },
       },
     },

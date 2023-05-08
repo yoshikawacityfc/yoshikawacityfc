@@ -19,6 +19,9 @@ export const NewsList = (): JSX.Element => {
         deleted_at: {
           is: FilterIs.Null,
         },
+        published_at: {
+          lte: new Date(),
+        },
       },
     },
   });
