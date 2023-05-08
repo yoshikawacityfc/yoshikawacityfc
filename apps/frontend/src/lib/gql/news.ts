@@ -56,3 +56,18 @@ export const queryNews = gql(`query QueryNews($filter: newsFilter) {
     }
   }
 }`);
+
+export const queryNewsSlugCollection = gql(`
+query QueryNewsSlugCollection($publishedAtFilter: DatetimeFilter) {
+  newsCollection(
+    orderBy: { published_at: DescNullsLast }
+    filter: { deleted_at: { is: NULL }, published_at: $publishedAtFilter }
+  ) {
+    edges {
+      node {
+        slug
+      }
+    }
+  }
+}
+`);
