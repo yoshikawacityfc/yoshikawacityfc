@@ -1,12 +1,15 @@
 import { MainLayout } from "@/components/Layout";
-import { NextPage } from "next";
-import { useRouter } from "next/router";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { NewsDetail } from "@/features/news/components";
+import client from "@/lib/apolloClient";
+import { queryNewsSlugCollection } from "@/lib/gql/news";
+import { QueryNewsSlugCollectionQuery } from "@/__generated__/graphql";
 
-const News: NextPage = () => {
-  const router = useRouter();
-  const slug = typeof router.query.slug === "string" ? router.query.slug : "";
+interface NewsScreenProps {
+  slug: string;
+}
 
+const NewsScreen: NextPage<NewsScreenProps> = ({ slug }: NewsScreenProps) => {
   return (
     <MainLayout>
       <section className="pt-64 min-h-[70vh]">
@@ -16,4 +19,36 @@ const News: NextPage = () => {
   );
 };
 
-export default News;
+export default NewsScreen;
+
+// noinspection JSUnusedGlobalSymbols
+export const getStaticPaths: GetStaticPaths = async () => {
+  const { data } = await client.query<QueryNewsSlugCollectionQuery>({
+    query: queryNewsSlugCollection,
+    variables: {
+      publishedAtFilter: {
+        lte: new Date().toISOString(),
+      },
+    },
+  });
+
+  const paths =
+    data.newsCollection?.edges?.map((edge) => `/news/${edge.node.slug}`) ?? [];
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+};
+
+export const getStaticProps: GetStaticProps<NewsScreenProps> = async (
+  context
+) => {
+  const slug = context.params?.slug;
+  return {
+    props: {
+      slug: typeof slug === "string" ? slug : "",
+    },
+    revalidate: 30,
+  };
+};
