@@ -18,6 +18,9 @@ export const NewsPreview = (): JSX.Element => {
         deleted_at: {
           is: FilterIs.Null,
         },
+        published_at: {
+          lte: new Date(),
+        },
       },
     },
   });
