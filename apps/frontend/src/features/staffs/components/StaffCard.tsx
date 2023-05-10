@@ -13,7 +13,6 @@ export const StaffCard = ({
   className,
   onClick,
 }: StaffCardProps): JSX.Element => {
-  // TODO: Cardコンポーネント追加
   return (
     <div
       className={clsx(
