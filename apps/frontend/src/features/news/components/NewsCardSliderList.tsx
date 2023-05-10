@@ -3,8 +3,9 @@ import clsx from "clsx";
 import { useRouter } from "next/router";
 import { useRef } from "react";
 import { NEWS_CARD_MARGIN_RIGHT, NEWS_CARD_WIDTH } from "../constants";
-import { NewsNodeType, NewsType } from "../types";
+import { NewsNodeType } from "../types";
 import { NewsCard } from "./NewsCard";
+import { isNotMaxIndex } from "@/utils/array";
 
 interface NewsCardSliderListProps {
   news: NewsNodeType[];
@@ -41,10 +42,12 @@ export const NewsCardSliderList = ({
       >
         {news.map((item, index) => {
           return (
-            // TODO: インデックスが配列の最大値かどうか判定するUtil関数を作成する
             <div
               key={index}
-              className={clsx(news.length - 1 > index && "mr-2", "w-[300px]")}
+              className={clsx(
+                isNotMaxIndex(news, index) && "mr-2",
+                "w-[300px]"
+              )}
             >
               <NewsCard news={item.node} onClick={handleCardClick} />
             </div>
