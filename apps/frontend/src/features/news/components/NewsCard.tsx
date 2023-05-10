@@ -22,7 +22,7 @@ export const NewsCard = ({
       onClick={() => onClick(news.slug)}
     >
       <img
-        src={news.assets?.src || "/logo-gray.svg"}
+        src={news.assets?.src || "/assets/image/logo-gray.svg"}
         alt={news.assets?.file_name || "gray-scale"}
         className={clsx(
           fullWidth ? "w-full" : "w-[300px]",

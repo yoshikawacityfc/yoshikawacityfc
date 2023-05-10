@@ -13,7 +13,7 @@ export const AboutTeam = (): JSX.Element => {
         duration={1500}
         className="flex flex-col items-center md:w-1/2"
       >
-        <img src="/logo.svg" alt="logo" className="w-[100px]" />
+        <img src="/assets/image/logo.svg" alt="logo" className="w-[100px]" />
 
         <h2 className="font-semibold text-5xl sm:text-6xl my-10">YCFCとは</h2>
 

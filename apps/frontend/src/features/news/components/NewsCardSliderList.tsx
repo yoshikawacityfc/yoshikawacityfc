@@ -56,13 +56,13 @@ export const NewsCardSliderList = ({
       </div>
 
       <img
-        src="/circle-chevron-left-solid.svg"
+        src="/assets/image/circle-chevron-left-solid.svg"
         alt="prev"
         className="w-16 cursor-pointer absolute top-0 bottom-0 m-auto left-4 opacity-80"
         onClick={handlePrevClick}
       />
       <img
-        src="/circle-chevron-right-solid.svg"
+        src="/assets/image/circle-chevron-right-solid.svg"
         alt="next"
         className="w-16 cursor-pointer absolute top-0 bottom-0 m-auto right-4 opacity-80"
         onClick={handleNextClick}

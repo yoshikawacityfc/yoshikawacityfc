@@ -11,7 +11,7 @@ const NotFoundPage: NextPage = () => {
     <div className="h-screen w-scree bg-primary flex items-center justify-center">
       <div className="flex flex-col items-center">
         <img
-          src="/logo-white.svg"
+          src="/assets/image/logo-white.svg"
           alt="logo-white"
           className="w-[100px] mb-6"
         />

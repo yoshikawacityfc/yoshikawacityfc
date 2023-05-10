@@ -16,7 +16,7 @@ export const SponsorRecruiting = (): JSX.Element => {
         </p>
 
         <img
-          src="sponsor-recruiting.svg"
+          src="/assets/image/sponsor-recruiting.svg"
           alt="sponsor-recruiting"
           className="h-[256px] transform translate-y-[-40px]"
         />

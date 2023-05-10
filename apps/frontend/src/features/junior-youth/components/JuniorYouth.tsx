@@ -27,13 +27,13 @@ export const JuniorYouth = (): JSX.Element => {
 
       <div className="relative h-20 flex items-end">
         <img
-          src="/grass.svg"
+          src="/assets/image/grass.svg"
           alt="grass"
           className="w-screen min-w-[1000px] mb-[-1px]"
         />
         <img
           ref={imgRef}
-          src="/ball-illust.svg"
+          src="/assets/image/ball-illust.svg"
           alt="ball-illust"
           className="w-16 absolute bottom-1 left-4"
         />
