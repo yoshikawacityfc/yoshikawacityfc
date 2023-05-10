@@ -1,4 +1,5 @@
 import { ScrollAnimation } from "@/components/Elements";
+import Image from "next/image";
 
 export const SocialContribution = (): JSX.Element => {
   return (
@@ -46,10 +47,12 @@ export const SocialContribution = (): JSX.Element => {
         viewFactor={0.3}
         easing="ease-out"
       >
-        <img
-          src="/social-contribution.webp"
+        <Image
+          src="/assets/image/social-contribution.webp"
           alt="social-contribution"
           className="w-full md:w-2/3 scale-y-[1] scale-x-[-1]"
+          width={1000}
+          height={1333}
         />
       </ScrollAnimation>
     </div>

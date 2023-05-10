@@ -10,7 +10,7 @@ export const HeroContent = (): JSX.Element => {
       </div>
 
       <video
-        src="/hero-video.mp4"
+        src="/assets/video/hero-video.mp4"
         autoPlay
         muted
         loop

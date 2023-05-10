@@ -1,4 +1,5 @@
 import { ScrollAnimation } from "@/components/Elements";
+import Image from "next/image";
 import { useRef } from "react";
 
 export const JuniorYouth = (): JSX.Element => {
@@ -55,10 +56,12 @@ export const JuniorYouth = (): JSX.Element => {
             opacity={0}
             easing="ease-out"
           >
-            <img
-              src="/junior-football.webp"
+            <Image
+              src="/assets/image/junior-football.webp"
               alt="junior-football"
               className="max-w-none w-screen min-h-[300px] object-cover"
+              width={2000}
+              height={575}
             />
           </ScrollAnimation>
 
@@ -71,10 +74,12 @@ export const JuniorYouth = (): JSX.Element => {
           </p>
 
           <div className="relative my-12 block">
-            <img
-              src="/player-recruiting.webp"
+            <Image
+              src="/assets/image/player-recruiting.webp"
               alt="ball"
               className="rounded-sm"
+              width={3120}
+              height={1016}
             />
           </div>
         </div>

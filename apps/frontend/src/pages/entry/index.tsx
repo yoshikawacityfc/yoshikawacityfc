@@ -2,6 +2,7 @@ import { Button } from "@/components/Elements";
 import { MainLayout } from "@/components/Layout";
 import { PagePaths } from "@/lib/pagePaths";
 import { NextPage } from "next";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 const Entry: NextPage = () => {
@@ -16,10 +17,12 @@ const Entry: NextPage = () => {
 
         <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(300px,_1fr))]">
           <div className="rounded-2xl overflow-hidden h-[600px] relative flex flex-col justify-center">
-            <img
-              src="/school.webp"
+            <Image
+              src="/assets/image/school.webp"
               alt="school"
               className="object-cover h-full w-full absolute -z-10"
+              width={800}
+              height={1200}
             />
 
             <h3 className="font-bold text-secondary text-4xl text-center p-2 bg-primary/80">
@@ -37,10 +40,12 @@ const Entry: NextPage = () => {
           </div>
 
           <div className="rounded-2xl overflow-hidden h-[600px] relative flex flex-col justify-center">
-            <img
-              src="/entry-junior-football.webp"
+            <Image
+              src="/assets/image/entry-junior-football.webp"
               alt="entry-junior-football"
               className="object-cover h-full w-full absolute -z-10"
+              width={800}
+              height={800}
             />
 
             <h3 className="font-bold text-secondary text-4xl text-center p-2 bg-primary/80">
