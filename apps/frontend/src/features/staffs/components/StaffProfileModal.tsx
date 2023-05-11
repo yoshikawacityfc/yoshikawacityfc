@@ -3,6 +3,7 @@ import { EMPTY_USER_IMAGE_PATH } from "@/constants/image";
 import { useMemo } from "react";
 import { StaffProfile } from "../types";
 import { StaffCareerList } from "./StaffCareerList";
+import Image from "next/image";
 
 interface StaffProfileProps {
   visible: boolean;
@@ -28,11 +29,21 @@ export const StaffProfileModal = ({
   return (
     <Modal visible={visible} onClose={onClose}>
       <div className="w-[90vw] max-w-[700px] overflow-scroll p-6">
-        <img
-          src={staffProfile.assets?.src || EMPTY_USER_IMAGE_PATH}
-          alt={staffProfile.assets?.file_name}
-          className="object-cover w-[200px] h-[200px] rounded-[50%] m-auto mb-4"
-        />
+        {staffProfile.assets ? (
+          <Image
+            className="object-cover w-[200px] h-[200px] rounded-[50%] m-auto mb-4"
+            src={staffProfile.assets.src}
+            alt={staffProfile.assets.file_name}
+            width={staffProfile.assets.width}
+            height={staffProfile.assets.height}
+          />
+        ) : (
+          <img
+            src={EMPTY_USER_IMAGE_PATH}
+            alt="empty"
+            className="object-cover w-[200px] h-[200px] rounded-[50%] m-auto mb-4"
+          />
+        )}
 
         <div className="flex flex-col items-center mb-8">
           <span className="text-sm font-medium">{staffProfile.position}</span>

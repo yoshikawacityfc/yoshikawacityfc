@@ -12,5 +12,7 @@ export interface StaffProfile {
   assets?: {
     src: string;
     file_name: string;
+    width: number;
+    height: number;
   } | null;
 }

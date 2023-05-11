@@ -1,6 +1,7 @@
 import { EMPTY_USER_IMAGE_PATH } from "@/constants/image";
 import clsx from "clsx";
 import { StaffProfile } from "../types";
+import Image from "next/image";
 
 interface StaffCardProps {
   staffProfile: StaffProfile;
@@ -21,11 +22,21 @@ export const StaffCard = ({
       )}
       onClick={() => onClick(staffProfile.id)}
     >
-      <img
-        className="object-cover w-[150px] h-[150px] rounded-[50%]"
-        src={staffProfile.assets?.src || EMPTY_USER_IMAGE_PATH}
-        alt={staffProfile.assets?.file_name}
-      />
+      {staffProfile.assets ? (
+        <Image
+          className="object-cover w-[150px] h-[150px] rounded-[50%]"
+          src={staffProfile.assets.src}
+          alt={staffProfile.assets.file_name}
+          width={staffProfile.assets.width}
+          height={staffProfile.assets.height}
+        />
+      ) : (
+        <img
+          src={EMPTY_USER_IMAGE_PATH}
+          alt="empty"
+          className="object-cover w-[150px] h-[150px] rounded-[50%]"
+        />
+      )}
 
       <div className="flex flex-col items-center my-4">
         <span className="text-sm font-medium">{staffProfile.position}</span>

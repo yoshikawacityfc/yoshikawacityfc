@@ -6,5 +6,7 @@ export interface AdvisorProfile {
   assets?: {
     src: string;
     file_name: string;
+    width: number;
+    height: number;
   } | null;
 }
