@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AdvisorProfile } from "../types";
 import { AdvisorCard } from "./AdvisorCard";
 import { AdvisorProfileModal } from "./AdvisorProfileModal";
+import { FilterIs } from "@/__generated__/graphql";
 
 interface AdvisorProps {
   categoryId: string;
@@ -15,6 +16,9 @@ export const Advisor = ({ categoryId }: AdvisorProps): JSX.Element => {
       filter: {
         category_id: {
           eq: categoryId,
+        },
+        deleted_at: {
+          is: FilterIs.Null,
         },
       },
     },

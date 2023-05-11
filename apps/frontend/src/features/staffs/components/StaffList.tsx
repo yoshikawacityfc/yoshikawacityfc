@@ -4,6 +4,7 @@ import { queryStaffCollection } from "@/lib/gql/staffs";
 import { StaffProfile } from "../types";
 import { StaffCard } from "./StaffCard";
 import { StaffProfileModal } from "./StaffProfileModal";
+import { FilterIs } from "@/__generated__/graphql";
 
 interface StaffListProps {
   categoryId: string;
@@ -15,6 +16,9 @@ export const StaffList = ({ categoryId }: StaffListProps): JSX.Element => {
       filter: {
         category_id: {
           eq: categoryId,
+        },
+        deleted_at: {
+          is: FilterIs.Null,
         },
       },
     },
