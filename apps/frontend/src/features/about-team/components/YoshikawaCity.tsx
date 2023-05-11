@@ -1,4 +1,5 @@
 import { ScrollAnimation } from "@/components/Elements";
+import Image from "next/image";
 import { useRef } from "react";
 
 export const YoshikawaCity = (): JSX.Element => {
@@ -31,9 +32,11 @@ export const YoshikawaCity = (): JSX.Element => {
       </ScrollAnimation>
 
       <ScrollAnimation delay={1500}>
-        <img
-          src="/spike-and-ball-yoshikawa.webp"
+        <Image
+          src="/assets/image/spike-and-ball-yoshikawa.webp"
           alt="spike-and-ball"
+          width={900}
+          height={1242}
           className="w-full"
         />
       </ScrollAnimation>

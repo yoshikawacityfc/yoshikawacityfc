@@ -17,7 +17,11 @@ export const HamburgerMenu = ({ onClose }: HamburgerMenuProps): JSX.Element => {
       </div>
 
       <Link href={PagePaths.index()}>
-        <img src="/logo.svg" alt="logo" className="w-20 mb-12 m-auto" />
+        <img
+          src="/assets/image/logo.svg"
+          alt="logo"
+          className="w-20 mb-12 m-auto"
+        />
       </Link>
 
       <nav className="ml-4">

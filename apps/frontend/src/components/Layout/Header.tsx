@@ -11,7 +11,7 @@ export const Header = ({ onMenuClick }: HeaderProps): JSX.Element => {
     <header className="fixed z-50 w-full">
       <div className="bg-white rounded-xl m-auto mt-12 px-6 py-2 w-11/12 flex justify-between shadow-lg">
         <Link href={PagePaths.index()}>
-          <img src="/logo.svg" alt="logo" className="w-10" />
+          <img src="/assets/image/logo.svg" alt="logo" className="w-10" />
         </Link>
 
         <nav className="md:flex md:flex-col-reverse hidden">
@@ -30,7 +30,7 @@ export const Header = ({ onMenuClick }: HeaderProps): JSX.Element => {
         </nav>
 
         <img
-          src="/bars-solid.svg"
+          src="/assets/image/bars-solid.svg"
           alt="menu"
           className="w-7 cursor-pointer md:hidden"
           onClick={onMenuClick}

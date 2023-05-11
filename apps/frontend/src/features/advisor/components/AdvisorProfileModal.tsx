@@ -1,6 +1,7 @@
 import { Button, Modal } from "@/components/Elements";
 import { EMPTY_USER_IMAGE_PATH } from "@/constants/image";
 import { AdvisorProfile } from "../types";
+import Image from "next/image";
 
 interface AdvisorProfileModalProps {
   visible: boolean;
@@ -16,11 +17,21 @@ export const AdvisorProfileModal = ({
   return (
     <Modal visible={visible} onClose={onClose}>
       <div className="w-[90vw] max-w-[700px] overflow-scroll p-6">
-        <img
-          src={advisorProfile.assets?.src || EMPTY_USER_IMAGE_PATH}
-          alt={advisorProfile.assets?.src}
-          className="object-cover w-[200px] h-[200px] rounded-[50%] m-auto mb-4"
-        />
+        {advisorProfile.assets ? (
+          <Image
+            src={advisorProfile.assets.src}
+            alt={advisorProfile.assets.src}
+            width={advisorProfile.assets.width}
+            height={advisorProfile.assets.height}
+            className="object-cover w-[200px] h-[200px] rounded-[50%] m-auto mb-4"
+          />
+        ) : (
+          <img
+            src={EMPTY_USER_IMAGE_PATH}
+            alt="empty"
+            className="object-cover w-[200px] h-[200px] rounded-[50%] m-auto mb-4"
+          />
+        )}
 
         <div className="flex flex-col items-center mb-8">
           <span className="text-sm font-medium">{advisorProfile.position}</span>

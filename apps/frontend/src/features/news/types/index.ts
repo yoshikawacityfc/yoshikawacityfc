@@ -6,6 +6,8 @@ export interface NewsType {
   assets?: {
     src: string;
     file_name: string;
+    width: number;
+    height: number;
   } | null;
 }
 

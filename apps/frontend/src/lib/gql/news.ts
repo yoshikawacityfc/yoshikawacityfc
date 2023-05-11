@@ -12,6 +12,8 @@ export const queryNewsCollection =
           assets {
             src
             file_name
+            width
+            height
           }
         }
         cursor
@@ -36,6 +38,8 @@ query QueryPreviewNewsCollection($first: Int, $orderBy: [newsOrderBy!], $filter:
         assets {
           src
           file_name
+          width
+          height
         }
       }
     }

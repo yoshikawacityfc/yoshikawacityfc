@@ -11,7 +11,7 @@ const ContactComplete: NextPage = () => {
       <section className="pt-64 m-auto max-w-[1000px] mb-24 px-4">
         <h2 className="font-semibold text-5xl text-center mb-24">送信完了</h2>
         <img
-          src="/send-complete.svg"
+          src="/assets/image/send-complete.svg"
           alt="送信完了"
           className="w-[250px] m-auto"
         />

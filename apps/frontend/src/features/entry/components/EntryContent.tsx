@@ -1,8 +1,12 @@
+import Image from "next/image";
+
 export interface EntryContentProps {
   orderNumber: number;
   title: string;
   description: string;
   imageSrc: string;
+  imageWidth: number;
+  imageHeight: number;
 }
 
 export const EntryContent = ({
@@ -10,6 +14,8 @@ export const EntryContent = ({
   title,
   description,
   imageSrc,
+  imageWidth,
+  imageHeight,
 }: EntryContentProps): JSX.Element => {
   return (
     <div className="grid grid-cols-1 gap-8 sm:gap-16 sm:grid-cols-2">
@@ -21,7 +27,13 @@ export const EntryContent = ({
         <p>{description}</p>
       </div>
 
-      <img src={imageSrc} alt={title} className="m-auto" />
+      <Image
+        src={imageSrc}
+        alt={title}
+        width={imageWidth}
+        height={imageHeight}
+        className="m-auto"
+      />
     </div>
   );
 };

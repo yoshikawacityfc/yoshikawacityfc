@@ -22,6 +22,8 @@ export const queryStaffCollection =
           assets {
             src
             file_name
+            width
+            height
           }
           position
           name
@@ -49,6 +51,8 @@ export const queryAdvisorCollection =
         assets {
           src
           file_name
+          width
+          height
         }
       }
     }
