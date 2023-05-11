@@ -1,4 +1,3 @@
-// インデックスが配列の最大値かどうか判定する
 export const isMaxIndex = (array: unknown[], index: number): boolean => {
   return index === array.length - 1;
 };
