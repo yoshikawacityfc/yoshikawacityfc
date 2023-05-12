@@ -26,7 +26,7 @@ export const AdvisorCard = ({
         <Image
           className="object-cover w-[150px] h-[150px] rounded-[50%]"
           src={advisorProfile.assets.src}
-          alt={advisorProfile.assets.src}
+          alt={advisorProfile.assets.file_name}
           width={advisorProfile.assets.width}
           height={advisorProfile.assets.height}
         />

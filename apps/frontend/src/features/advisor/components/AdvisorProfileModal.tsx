@@ -20,7 +20,7 @@ export const AdvisorProfileModal = ({
         {advisorProfile.assets ? (
           <Image
             src={advisorProfile.assets.src}
-            alt={advisorProfile.assets.src}
+            alt={advisorProfile.assets.file_name}
             width={advisorProfile.assets.width}
             height={advisorProfile.assets.height}
             className="object-cover w-[200px] h-[200px] rounded-[50%] m-auto mb-4"
