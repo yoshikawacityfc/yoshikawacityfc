@@ -23,6 +23,15 @@
       "contributions": [
         "maintenance"
       ]
+    },
+    {
+      "login": "t10o",
+      "name": "t10o",
+      "avatar_url": "https://avatars.githubusercontent.com/u/55011568?v=4",
+      "profile": "https://flaque.t10o.one",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,

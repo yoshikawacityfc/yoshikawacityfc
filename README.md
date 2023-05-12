@@ -1,6 +1,6 @@
 [![Staging Deployment](https://github.com/yoshikawacityfc/yoshikawacityfc/actions/workflows/staging.yml/badge.svg)](https://github.com/yoshikawacityfc/yoshikawacityfc/actions/workflows/staging.yml)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 [![Production Deployment](https://github.com/yoshikawacityfc/yoshikawacityfc/actions/workflows/production.yml/badge.svg)](https://github.com/yoshikawacityfc/yoshikawacityfc/actions/workflows/production.yml)
 
@@ -61,6 +61,7 @@ $ pnpm run dev
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://ripomoea.com/"><img src="https://avatars.githubusercontent.com/u/19267812?v=4?s=100" width="100px;" alt="Ryo Takeuchi"/><br /><sub><b>Ryo Takeuchi</b></sub></a><br /><a href="#maintenance-tatsutakein" title="Maintenance">🚧</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ka10take"><img src="https://avatars.githubusercontent.com/u/70331644?v=4?s=100" width="100px;" alt="ka10take"/><br /><sub><b>ka10take</b></sub></a><br /><a href="#maintenance-ka10take" title="Maintenance">🚧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://flaque.t10o.one"><img src="https://avatars.githubusercontent.com/u/55011568?v=4?s=100" width="100px;" alt="t10o"/><br /><sub><b>t10o</b></sub></a><br /><a href="https://github.com/yoshikawacityfc/yoshikawacityfc/commits?author=t10o" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
