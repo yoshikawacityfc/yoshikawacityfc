@@ -20,7 +20,7 @@ export const NewsCard = ({
         fullWidth ? "w-full" : "w-[300px]",
         "h-[400px] shadow text-secondary cursor-pointer"
       )}
-      onClick={() => onClick(news.title)}
+      onClick={() => onClick(news.id)}
     >
       {news.thumbnail ? (
         <Image

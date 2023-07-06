@@ -2,7 +2,7 @@ import { MainLayout } from "@/components/Layout";
 import { NewsList } from "@/features/news/components";
 import { NewsListItem } from "@/features/news/types";
 import { client } from "@/lib/client";
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 
 interface NewsProps {
   news: NewsListItem[];
@@ -20,8 +20,11 @@ const News: NextPage<NewsProps> = ({ news }: NewsProps) => {
 
 export default News;
 
-export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "news" });
+export const getStaticProps: GetStaticProps<NewsProps> = async () => {
+  const data = await client.get({
+    endpoint: "news",
+    queries: { orders: "-publishedAt" },
+  });
 
   const news = data.contents.map((content: any) => {
     return {

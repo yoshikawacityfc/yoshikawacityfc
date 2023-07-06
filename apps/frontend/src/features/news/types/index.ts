@@ -11,6 +11,13 @@ export interface NewsListItem {
   thumbnail: Thumbnail | null;
 }
 
+export interface News {
+  id: string;
+  title: string;
+  publishedAtString: string;
+  content: string;
+}
+
 export interface NewsType {
   title: string;
   id: any;
