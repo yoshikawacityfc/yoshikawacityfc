@@ -17,6 +17,7 @@ export const NewsList = ({ news }: NewsListProps): JSX.Element => {
         <NewsCardList news={news} />
 
         <div className="m-auto w-3/4 mt-16">
+          {/* TODO: ページネーション */}
           <Button label="もっと見る" fullWidth onClick={() => {}} />
         </div>
       </div>
