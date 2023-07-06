@@ -1,18 +1,40 @@
 import { MainLayout } from "@/components/Layout";
 import { NewsList } from "@/features/news/components";
+import { NewsListItem } from "@/features/news/types";
+import { client } from "@/lib/client";
 import { NextPage } from "next";
-import { useRouter } from "next/router";
 
-const News: NextPage = () => {
-  const router = useRouter();
+interface NewsProps {
+  news: NewsListItem[];
+}
 
+const News: NextPage<NewsProps> = ({ news }: NewsProps) => {
   return (
     <MainLayout>
       <section className="py-44">
-        <NewsList />
+        <NewsList news={news} />
       </section>
     </MainLayout>
   );
 };
 
 export default News;
+
+export const getStaticProps = async () => {
+  const data = await client.get({ endpoint: "news" });
+
+  const news = data.contents.map((content: any) => {
+    return {
+      id: content.id,
+      title: content.title,
+      publishedAtString: content.publishedAt,
+      thumbnail: content.eyecatch ?? null,
+    };
+  });
+
+  return {
+    props: {
+      news,
+    },
+  };
+};
