@@ -5,6 +5,7 @@ interface EnvVar {
   supabaseEndpoint: string;
   graphqlEndpoint: string;
   apiKey: string;
+  microCmsApiKey: string;
 }
 
 const resolveEnvironment: () => Environment = () => {
@@ -24,4 +25,5 @@ export const envVar: EnvVar = {
   supabaseEndpoint: process.env.NEXT_PUBLIC_SUPABASE_ENDPOINT!,
   graphqlEndpoint: process.env.NEXT_PUBLIC_SUPABASE_GRAPHQL_ENDPOINT!,
   apiKey: process.env.NEXT_PUBLIC_API_KEY!,
+  microCmsApiKey: process.env.NEXT_PUBLIC_MICRO_CMS_API_KEY!,
 };
