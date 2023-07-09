@@ -5,7 +5,7 @@ import { Staffs } from "@/features/staffs/components";
 import { StaffProfile } from "@/features/staffs/types";
 import { TrainingInfo } from "@/features/training-info/components";
 import { cmsClient } from "@/lib/cms/cmsClient";
-import { staffs } from "@/lib/cms/types";
+import { advisor, staffs } from "@/lib/cms/types";
 import { GetStaticProps, NextPage } from "next";
 
 interface TeamPageProps {
@@ -59,7 +59,7 @@ export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
 
   const advisorsData = await cmsClient.get({ endpoint: "advisors" });
 
-  const advisorProfiles = advisorsData.contents.map((content: staffs) => {
+  const advisorProfiles = advisorsData.contents.map((content: advisor) => {
     return {
       id: content.id,
       name: content.name,
