@@ -70,5 +70,6 @@ export const getStaticProps: GetStaticProps<TopProps> = async () => {
     props: {
       news,
     },
+    revalidate: 60,
   };
 };

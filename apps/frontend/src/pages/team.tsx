@@ -80,6 +80,6 @@ export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
       staffProfiles,
       advisorProfiles,
     },
-    revalidate: 10,
+    revalidate: 60,
   };
 };

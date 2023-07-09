@@ -77,5 +77,6 @@ export const getStaticProps: GetStaticProps<NewsProps> = async () => {
       news,
       totalCount: data.totalCount,
     },
+    revalidate: 60,
   };
 };
