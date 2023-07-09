@@ -1,6 +1,6 @@
 import { Button } from "@/components/Elements";
 import { MainLayout } from "@/components/Layout";
-import { NewsCardList } from "@/features/news/components/NewsCardList";
+import { NewsCardList } from "@/features/news/components";
 import { NewsListItem } from "@/features/news/types";
 import { client } from "@/lib/client";
 import { GetStaticProps, NextPage } from "next";
