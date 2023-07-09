@@ -1,28 +1,25 @@
 import { MainLayout } from "@/components/Layout";
 import { Advisor } from "@/features/advisor/components";
 import { Staffs } from "@/features/staffs/components";
+import { StaffProfile } from "@/features/staffs/types";
 import { TrainingInfo } from "@/features/training-info/components";
-import client from "@/lib/apolloClient";
+import { client } from "@/lib/client";
 import { GetStaticProps, NextPage } from "next";
-import { queryStaffCategoryCollection } from "@/lib/gql/staffs";
 
 interface TeamPageProps {
-  staffCategoryId: string;
-  advisorCategoryId: string;
+  staffs: StaffProfile[];
+  advisors: any;
 }
 
-const TeamPage: NextPage<TeamPageProps> = ({
-  staffCategoryId,
-  advisorCategoryId,
-}) => {
+const TeamPage: NextPage<TeamPageProps> = ({ staffs, advisors }) => {
   return (
     <MainLayout>
       <section className="pt-64">
-        <Staffs categoryId={staffCategoryId} />
+        <Staffs staffs={staffs} />
       </section>
 
       <section className="mt-64">
-        <Advisor categoryId={advisorCategoryId} />
+        {/* <Advisor categoryId={advisorCategoryId} /> */}
       </section>
 
       <section>
@@ -35,23 +32,48 @@ const TeamPage: NextPage<TeamPageProps> = ({
 export default TeamPage;
 
 export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
-  const { data } = await client.query({
-    query: queryStaffCategoryCollection,
+  const data = await client.get({
+    endpoint: "staffs",
   });
 
-  const findCategoryByName = (name: string) => {
-    return data.staff_categoriesCollection?.edges.find(
-      (item) => item.node.name === name
-    )?.node.id;
-  };
+  const staffs = data.contents
+    .map((content: any) => {
+      if (!content.category.includes("スタッフ")) return;
 
-  const staffCategoryId = findCategoryByName("スタッフ");
-  const advisorCategoryId = findCategoryByName("アドバイザー");
+      return {
+        id: content.id,
+        name: content.name,
+        position: content.position ?? null,
+        oneWord: content.oneWord ?? null,
+        description: content.description ?? null,
+        license: content.license ?? null,
+        career: content.career ?? null,
+        coachingAchievement: content.coachingAchievement ?? null,
+        playerHistory: content.playerHistory ?? null,
+        playerAchievement: content.playerAchievement ?? null,
+        profileImage: content.profileImage ?? null,
+      };
+    })
+    .filter((staff: any) => staff !== undefined);
+
+  const advisors = data.contents
+    .map((content: any) => {
+      if (!content.category.includes("アドバイザー")) return;
+
+      return {
+        id: content.id,
+        name: content.name,
+        position: content.position ?? null,
+        description: content.description ?? null,
+        profileImage: content.profileImage ?? null,
+      };
+    })
+    .filter((staff: any) => staff !== undefined);
 
   return {
     props: {
-      staffCategoryId,
-      advisorCategoryId,
+      staffs,
+      advisors,
     },
     revalidate: 10,
   };
