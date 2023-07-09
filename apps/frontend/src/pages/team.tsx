@@ -1,5 +1,6 @@
 import { MainLayout } from "@/components/Layout";
 import { Advisor } from "@/features/advisor/components";
+import { AdvisorProfile } from "@/features/advisor/types";
 import { Staffs } from "@/features/staffs/components";
 import { StaffProfile } from "@/features/staffs/types";
 import { TrainingInfo } from "@/features/training-info/components";
@@ -8,7 +9,7 @@ import { GetStaticProps, NextPage } from "next";
 
 interface TeamPageProps {
   staffs: StaffProfile[];
-  advisors: any;
+  advisors: AdvisorProfile[];
 }
 
 const TeamPage: NextPage<TeamPageProps> = ({ staffs, advisors }) => {
@@ -19,7 +20,7 @@ const TeamPage: NextPage<TeamPageProps> = ({ staffs, advisors }) => {
       </section>
 
       <section className="mt-64">
-        {/* <Advisor categoryId={advisorCategoryId} /> */}
+        <Advisor advisors={advisors} />
       </section>
 
       <section>

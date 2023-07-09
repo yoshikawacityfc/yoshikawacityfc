@@ -1,12 +1,13 @@
+interface ProfileImage {
+  url: string;
+  height: number;
+  width: number;
+}
+
 export interface AdvisorProfile {
-  position: string;
+  id: string;
   name: string;
-  id: any;
-  description: string;
-  assets?: {
-    src: string;
-    file_name: string;
-    width: number;
-    height: number;
-  } | null;
+  position: string | null;
+  description: string | null;
+  profileImage: ProfileImage;
 }

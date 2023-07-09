@@ -17,12 +17,12 @@ export const AdvisorProfileModal = ({
   return (
     <Modal visible={visible} onClose={onClose}>
       <div className="w-[90vw] max-w-[700px] overflow-scroll p-6">
-        {advisorProfile.assets ? (
+        {advisorProfile.profileImage ? (
           <Image
-            src={advisorProfile.assets.src}
-            alt={advisorProfile.assets.file_name}
-            width={advisorProfile.assets.width}
-            height={advisorProfile.assets.height}
+            src={advisorProfile.profileImage.url}
+            alt={advisorProfile.name}
+            width={advisorProfile.profileImage.width}
+            height={advisorProfile.profileImage.height}
             className="object-cover w-[200px] h-[200px] rounded-[50%] m-auto mb-4"
           />
         ) : (

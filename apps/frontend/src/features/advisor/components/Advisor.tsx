@@ -1,29 +1,13 @@
-import { queryAdvisorCollection } from "@/lib/gql/staffs";
-import { useQuery } from "@apollo/client";
 import { useState } from "react";
 import { AdvisorProfile } from "../types";
 import { AdvisorCard } from "./AdvisorCard";
 import { AdvisorProfileModal } from "./AdvisorProfileModal";
-import { FilterIs } from "@/__generated__/graphql";
 
 interface AdvisorProps {
-  categoryId: string;
+  advisors: AdvisorProfile[];
 }
 
-export const Advisor = ({ categoryId }: AdvisorProps): JSX.Element => {
-  const { loading, error, data } = useQuery(queryAdvisorCollection, {
-    variables: {
-      filter: {
-        category_id: {
-          eq: categoryId,
-        },
-        deleted_at: {
-          is: FilterIs.Null,
-        },
-      },
-    },
-  });
-
+export const Advisor = ({ advisors }: AdvisorProps): JSX.Element => {
   const [isAdvisorProfileModalVisible, setIsAdvisorProfileModalVisible] =
     useState(false);
   const [selectedAdvisorProfile, setSelectedAdvisorProfile] =
@@ -32,16 +16,10 @@ export const Advisor = ({ categoryId }: AdvisorProps): JSX.Element => {
   const handleAdvisorCardClick = (id: string) => {
     setIsAdvisorProfileModalVisible(true);
 
-    const selectAdvisorProfile = data?.staffsCollection?.edges.find(
-      (item) => item.node.id === id
-    );
+    const selectAdvisorProfile = advisors.find((item) => item.id === id);
 
-    setSelectedAdvisorProfile(selectAdvisorProfile?.node);
+    setSelectedAdvisorProfile(selectAdvisorProfile);
   };
-
-  if (loading) return <p>Loading...</p>;
-
-  if (error) return <p>Error: {JSON.stringify(error)}</p>;
 
   return (
     <div className="bg-primary py-24">
@@ -67,10 +45,10 @@ export const Advisor = ({ categoryId }: AdvisorProps): JSX.Element => {
         </div>
 
         <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(300px,_1fr))]">
-          {data?.staffsCollection?.edges.map((advisor) => (
+          {advisors.map((advisor) => (
             <AdvisorCard
-              key={advisor.node.id}
-              advisorProfile={advisor.node}
+              key={advisor.id}
+              advisorProfile={advisor}
               onClick={handleAdvisorCardClick}
             />
           ))}
