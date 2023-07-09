@@ -3,12 +3,12 @@ import clsx from "clsx";
 import { useRouter } from "next/router";
 import { useRef } from "react";
 import { NEWS_CARD_MARGIN_RIGHT, NEWS_CARD_WIDTH } from "../constants";
-import { NewsNodeType } from "../types";
+import { NewsListItem } from "../types";
 import { NewsCard } from "./NewsCard";
 import { isNotMaxIndex } from "@/utils/array";
 
 interface NewsCardSliderListProps {
-  news: NewsNodeType[];
+  news: NewsListItem[];
 }
 
 export const NewsCardSliderList = ({
@@ -49,7 +49,7 @@ export const NewsCardSliderList = ({
                 "w-[300px]"
               )}
             >
-              <NewsCard news={item.node} onClick={handleCardClick} />
+              <NewsCard news={item} onClick={handleCardClick} />
             </div>
           );
         })}

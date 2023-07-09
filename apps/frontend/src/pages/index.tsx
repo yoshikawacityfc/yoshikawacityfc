@@ -3,12 +3,18 @@ import { AboutTeam } from "@/features/about-team/components";
 import { HeroContent } from "@/features/hero-content/components";
 import { JuniorYouth } from "@/features/junior-youth/components";
 import { NewsPreview } from "@/features/news/components";
+import { NewsListItem } from "@/features/news/types";
 import { School } from "@/features/school/components";
 import { SocialContribution } from "@/features/social-contribution/components";
 import { SponsorRecruiting } from "@/features/sponsor-recruiting/components";
-import { NextPage } from "next";
+import { client } from "@/lib/client";
+import { GetStaticProps, NextPage } from "next";
 
-const Top: NextPage = () => {
+interface TopProps {
+  news: NewsListItem[];
+}
+
+const Top: NextPage<TopProps> = ({ news }: TopProps) => {
   return (
     <MainLayout>
       <section>
@@ -32,7 +38,7 @@ const Top: NextPage = () => {
       </section>
 
       <section className="mt-[220px] sm:mt-[320px]">
-        <NewsPreview />
+        <NewsPreview news={news} />
       </section>
 
       <section className="mt-[320px]">
@@ -43,3 +49,25 @@ const Top: NextPage = () => {
 };
 
 export default Top;
+
+export const getStaticProps: GetStaticProps<TopProps> = async () => {
+  const data = await client.get({
+    endpoint: "news",
+    queries: { orders: "-publishedAt", limit: 10 },
+  });
+
+  const news = data.contents.map((content: any) => {
+    return {
+      id: content.id,
+      title: content.title,
+      publishedAtString: content.publishedAt,
+      thumbnail: content.eyecatch ?? null,
+    };
+  });
+
+  return {
+    props: {
+      news,
+    },
+  };
+};
