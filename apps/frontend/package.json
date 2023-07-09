@@ -8,7 +8,8 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "codegen": "graphql-codegen --require dotenv/config --config codegen.ts dotenv_config_path=.env"
+    "codegen": "graphql-codegen --require dotenv/config --config codegen.ts dotenv_config_path=.env",
+    "gen:cms-types": "npx microcms-typescript src/lib/cms/schema src/lib/cms/types.ts"
   },
   "dependencies": {
     "@apollo/client": "^3.7.10",
@@ -23,6 +24,7 @@
     "@vercel/analytics": "^1.0.1",
     "dayjs": "1.11.9",
     "graphql": "^16.6.0",
+    "microcms-js-sdk": "^2.5.0",
     "next": "^13.1.1",
     "next-seo": "^6.0.0",
     "next-sitemap": "^4.0.9",
@@ -47,6 +49,7 @@
     "clsx": "^1.2.1",
     "eslint": "8.44.0",
     "eslint-config-custom": "workspace:*",
+    "microcms-typescript": "^1.0.14",
     "postcss": "^8.4.21",
     "scrollreveal": "^4.0.9",
     "tailwindcss": "^3.2.6",

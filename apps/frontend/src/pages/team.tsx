@@ -1,28 +1,30 @@
 import { MainLayout } from "@/components/Layout";
 import { Advisor } from "@/features/advisor/components";
+import { AdvisorProfile } from "@/features/advisor/types";
 import { Staffs } from "@/features/staffs/components";
+import { StaffProfile } from "@/features/staffs/types";
 import { TrainingInfo } from "@/features/training-info/components";
-import client from "@/lib/apolloClient";
+import { cmsClient } from "@/lib/cms/cmsClient";
+import { advisor, staffs } from "@/lib/cms/types";
 import { GetStaticProps, NextPage } from "next";
-import { queryStaffCategoryCollection } from "@/lib/gql/staffs";
 
 interface TeamPageProps {
-  staffCategoryId: string;
-  advisorCategoryId: string;
+  staffProfiles: StaffProfile[];
+  advisorProfiles: AdvisorProfile[];
 }
 
 const TeamPage: NextPage<TeamPageProps> = ({
-  staffCategoryId,
-  advisorCategoryId,
+  staffProfiles,
+  advisorProfiles,
 }) => {
   return (
     <MainLayout>
       <section className="pt-64">
-        <Staffs categoryId={staffCategoryId} />
+        <Staffs staffProfiles={staffProfiles} />
       </section>
 
       <section className="mt-64">
-        <Advisor categoryId={advisorCategoryId} />
+        <Advisor advisorProfiles={advisorProfiles} />
       </section>
 
       <section>
@@ -35,24 +37,43 @@ const TeamPage: NextPage<TeamPageProps> = ({
 export default TeamPage;
 
 export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
-  const { data } = await client.query({
-    query: queryStaffCategoryCollection,
+  const staffsData = await cmsClient.get({
+    endpoint: "staffs",
   });
 
-  const findCategoryByName = (name: string) => {
-    return data.staff_categoriesCollection?.edges.find(
-      (item) => item.node.name === name
-    )?.node.id;
-  };
+  const staffProfiles = staffsData.contents.map((content: staffs) => {
+    return {
+      id: content.id,
+      name: content.name,
+      position: content.position ?? null,
+      oneWord: content.oneWord ?? null,
+      description: content.description ?? null,
+      license: content.license ?? null,
+      career: content.career ?? null,
+      coachingAchievement: content.coachingAchievement ?? null,
+      playerHistory: content.playerHistory ?? null,
+      playerAchievement: content.playerAchievement ?? null,
+      profileImage: content.profileImage ?? null,
+    };
+  });
 
-  const staffCategoryId = findCategoryByName("スタッフ");
-  const advisorCategoryId = findCategoryByName("アドバイザー");
+  const advisorsData = await cmsClient.get({ endpoint: "advisors" });
+
+  const advisorProfiles = advisorsData.contents.map((content: advisor) => {
+    return {
+      id: content.id,
+      name: content.name,
+      position: content.position ?? null,
+      description: content.description ?? null,
+      profileImage: content.profileImage ?? null,
+    };
+  });
 
   return {
     props: {
-      staffCategoryId,
-      advisorCategoryId,
+      staffProfiles,
+      advisorProfiles,
     },
-    revalidate: 10,
+    revalidate: 60,
   };
 };

@@ -2,7 +2,6 @@ import { Button, Modal } from "@/components/Elements";
 import { EMPTY_USER_IMAGE_PATH } from "@/constants/image";
 import { useMemo } from "react";
 import { StaffProfile } from "../types";
-import { StaffCareerList } from "./StaffCareerList";
 import Image from "next/image";
 
 interface StaffProfileProps {
@@ -20,22 +19,22 @@ export const StaffProfileModal = ({
     return ![
       staffProfile.career,
       staffProfile.license,
-      staffProfile.coaching_achievement,
-      staffProfile.player_history,
-      staffProfile.player_achievement,
-    ].every((item) => item.length === 0);
+      staffProfile.coachingAchievement,
+      staffProfile.playerHistory,
+      staffProfile.playerAchievement,
+    ].every((content) => content === null);
   }, [staffProfile]);
 
   return (
     <Modal visible={visible} onClose={onClose}>
       <div className="w-[90vw] max-w-[700px] overflow-scroll p-6">
-        {staffProfile.assets ? (
+        {staffProfile.profileImage ? (
           <Image
             className="object-cover w-[200px] h-[200px] rounded-[50%] m-auto mb-4"
-            src={staffProfile.assets.src}
-            alt={staffProfile.assets.file_name}
-            width={staffProfile.assets.width}
-            height={staffProfile.assets.height}
+            src={staffProfile.profileImage.url}
+            alt={staffProfile.name}
+            width={staffProfile.profileImage.width}
+            height={staffProfile.profileImage.height}
           />
         ) : (
           <img
@@ -50,7 +49,7 @@ export const StaffProfileModal = ({
           <p className="text-xl font-semibold">{staffProfile.name}</p>
         </div>
 
-        <p className="text-primary font-medium mb-8">{staffProfile.one_word}</p>
+        <p className="text-primary font-medium mb-8">{staffProfile.oneWord}</p>
 
         {staffProfile.description && (
           <p className="mb-8 whitespace-pre-line">{staffProfile.description}</p>
@@ -58,33 +57,50 @@ export const StaffProfileModal = ({
 
         {isCareerProfile && (
           <div className="bg-gray-200 px-6 py-8 rounded-lg">
-            {staffProfile.career.length > 0 && (
-              <StaffCareerList label="経歴" career={staffProfile.career} />
+            {staffProfile.career && (
+              <div className="mb-6">
+                <h3 className="text-xl font-semibold mb-2">経歴</h3>
+
+                <p className="whitespace-pre-line">{staffProfile.career}</p>
+              </div>
             )}
 
-            {staffProfile.coaching_achievement.length > 0 && (
-              <StaffCareerList
-                label="指導実績"
-                career={staffProfile.coaching_achievement}
-              />
+            {staffProfile.coachingAchievement && (
+              <div className="mb-6">
+                <h3 className="text-xl font-semibold mb-2">指導実績</h3>
+
+                <p className="whitespace-pre-line">
+                  {staffProfile.coachingAchievement}
+                </p>
+              </div>
             )}
 
-            {staffProfile.license.length > 0 && (
-              <StaffCareerList label="資格" career={staffProfile.license} />
+            {staffProfile.license && (
+              <div className="mb-6">
+                <h3 className="text-xl font-semibold mb-2">資格</h3>
+
+                <p className="whitespace-pre-line">{staffProfile.license}</p>
+              </div>
             )}
 
-            {staffProfile.player_history.length > 0 && (
-              <StaffCareerList
-                label="選手歴"
-                career={staffProfile.player_history}
-              />
+            {staffProfile.playerHistory && (
+              <div className="mb-6">
+                <h3 className="text-xl font-semibold mb-2">選手歴</h3>
+
+                <p className="whitespace-pre-line">
+                  {staffProfile.playerHistory}
+                </p>
+              </div>
             )}
 
-            {staffProfile.player_achievement.length > 0 && (
-              <StaffCareerList
-                label="選手実績"
-                career={staffProfile.player_achievement}
-              />
+            {staffProfile.playerAchievement && (
+              <div className="mb-6">
+                <h3 className="text-xl font-semibold mb-2">選手実績</h3>
+
+                <p className="whitespace-pre-line">
+                  {staffProfile.playerAchievement}
+                </p>
+              </div>
             )}
           </div>
         )}

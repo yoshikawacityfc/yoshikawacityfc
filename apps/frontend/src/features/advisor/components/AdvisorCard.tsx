@@ -22,13 +22,13 @@ export const AdvisorCard = ({
       )}
       onClick={() => onClick(advisorProfile.id)}
     >
-      {advisorProfile.assets ? (
+      {advisorProfile.profileImage ? (
         <Image
           className="object-cover w-[150px] h-[150px] rounded-[50%]"
-          src={advisorProfile.assets.src}
-          alt={advisorProfile.assets.file_name}
-          width={advisorProfile.assets.width}
-          height={advisorProfile.assets.height}
+          src={advisorProfile.profileImage.url}
+          alt={advisorProfile.name}
+          width={advisorProfile.profileImage.width}
+          height={advisorProfile.profileImage.height}
         />
       ) : (
         <img

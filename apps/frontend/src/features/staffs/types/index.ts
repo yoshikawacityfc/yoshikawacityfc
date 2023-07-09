@@ -1,18 +1,19 @@
+interface ProfileImage {
+  url: string;
+  height: number;
+  width: number;
+}
+
 export interface StaffProfile {
-  id: any;
-  position: string;
+  id: string;
   name: string;
-  one_word: string;
-  description: string;
-  license: (string | null)[];
-  career: (string | null)[];
-  coaching_achievement: (string | null)[];
-  player_history: (string | null)[];
-  player_achievement: (string | null)[];
-  assets?: {
-    src: string;
-    file_name: string;
-    width: number;
-    height: number;
-  } | null;
+  position: string | null;
+  oneWord: string | null;
+  description: string | null;
+  license: string | null;
+  career: string | null;
+  coachingAchievement: string | null;
+  playerHistory: string | null;
+  playerAchievement: string | null;
+  profileImage: ProfileImage | null;
 }

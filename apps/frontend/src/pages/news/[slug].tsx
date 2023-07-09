@@ -1,21 +1,12 @@
 import { MainLayout } from "@/components/Layout";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { NewsDetail } from "@/features/news/components";
-import client from "@/lib/apolloClient";
-import { queryNews, queryNewsSlugCollection } from "@/lib/gql/news";
-import {
-  QueryNewsQuery,
-  QueryNewsSlugCollectionQuery,
-} from "@/__generated__/graphql";
+import { cmsClient } from "@/lib/cms/cmsClient";
+import { News } from "@/features/news/types";
+import { news } from "@/lib/cms/types";
 
 interface NewsScreenProps {
-  news: {
-    id: string;
-    slug: string;
-    title: string;
-    publishedAtString: string;
-    content: string;
-  };
+  news: News;
 }
 
 const NewsScreen: NextPage<NewsScreenProps> = ({ news }: NewsScreenProps) => {
@@ -32,17 +23,12 @@ export default NewsScreen;
 
 // noinspection JSUnusedGlobalSymbols
 export const getStaticPaths: GetStaticPaths = async () => {
-  const { data } = await client.query<QueryNewsSlugCollectionQuery>({
-    query: queryNewsSlugCollection,
-    variables: {
-      publishedAtFilter: {
-        lte: new Date().toISOString(),
-      },
-    },
+  const data = await cmsClient.get({
+    endpoint: "news",
   });
 
   const paths =
-    data.newsCollection?.edges?.map((edge) => `/news/${edge.node.slug}`) ?? [];
+    data.contents.map((content: news) => `/news/${content.id}`) ?? [];
 
   return {
     paths,
@@ -53,24 +39,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<NewsScreenProps> = async (
   context
 ) => {
-  const { data } = await client.query<QueryNewsQuery>({
-    query: queryNews,
-    variables: {
-      filter: {
-        slug: {
-          eq: context.params?.slug,
-        },
-        deleted_at: {
-          is: "NULL",
-        },
-        published_at: {
-          lte: new Date(),
-        },
-      },
+  const data = await cmsClient.get({
+    endpoint: "news",
+    queries: {
+      ids: context.params?.slug,
     },
   });
 
-  const news = data.newsCollection?.edges?.[0]?.node;
+  const news: news = data.contents[0];
+
   if (!news) {
     return {
       notFound: true,
@@ -80,10 +57,9 @@ export const getStaticProps: GetStaticProps<NewsScreenProps> = async (
   return {
     props: {
       news: {
-        id: String(news.id),
-        slug: news.slug,
+        id: news.id,
         title: news.title,
-        publishedAtString: news.published_at,
+        publishedAtString: news.publishedAt,
         content: news.content,
       },
     },

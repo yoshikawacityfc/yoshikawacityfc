@@ -3,15 +3,10 @@ import { PagePaths } from "@/lib/pagePaths";
 import { useRouter } from "next/router";
 import "zenn-content-css";
 import { formatDate } from "@/utils/date";
+import { News } from "../types";
 
 interface NewDetailProps {
-  news: {
-    id: string;
-    slug: string;
-    title: string;
-    publishedAtString: string;
-    content: string;
-  };
+  news: News;
 }
 
 export const NewsDetail = ({
@@ -34,7 +29,6 @@ export const NewsDetail = ({
           className="mb-32 whitespace-pre-line"
         ></div>
 
-        {/* TODO：以下コンポーネント化 */}
         <div className="border-t-[1px] border-gray-400 py-4 flex justify-between">
           <div className="m-auto w-3/4 mt-8">
             <Button

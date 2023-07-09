@@ -22,13 +22,13 @@ export const StaffCard = ({
       )}
       onClick={() => onClick(staffProfile.id)}
     >
-      {staffProfile.assets ? (
+      {staffProfile.profileImage ? (
         <Image
           className="object-cover w-[150px] h-[150px] rounded-[50%]"
-          src={staffProfile.assets.src}
-          alt={staffProfile.assets.file_name}
-          width={staffProfile.assets.width}
-          height={staffProfile.assets.height}
+          src={staffProfile.profileImage.url}
+          alt={staffProfile.name}
+          width={staffProfile.profileImage.width}
+          height={staffProfile.profileImage.height}
         />
       ) : (
         <img
@@ -43,7 +43,7 @@ export const StaffCard = ({
         <p className="text-xl font-semibold">{staffProfile.name}</p>
       </div>
 
-      <p>{staffProfile.one_word}</p>
+      <p>{staffProfile.oneWord}</p>
     </div>
   );
 };
