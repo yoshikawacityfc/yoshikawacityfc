@@ -21,10 +21,6 @@ export type staffs<T='get'> = Structure<
 T,
 {
   /**
-   * カテゴリ
-   */
-  category: ['スタッフ' | 'アドバイザー']
-  /**
    * 氏名
    */
   name: string
@@ -83,26 +79,52 @@ T,
   eyecatch?: { url: string, width: number, height: number }
 }>
 
+export type advisor<T='get'> = Structure<
+T,
+{
+  /**
+   * 氏名
+   */
+  name: string
+  /**
+   * 役割
+   */
+  position?: string
+  /**
+   * 説明文
+   */
+  description?: string
+  /**
+   * プロフィール画像
+   */
+  profileImage?: { url: string, width: number, height: number }
+}>
+
 
 export interface EndPoints {
   get: {
     'staffs': staffs<'get'>
     'news': news<'get'>
+    'advisor': advisor<'get'>
   }
   gets: {
     'staffs': staffs<'gets'>
     'news': news<'gets'>
+    'advisor': advisor<'gets'>
   }
   post: {
     'staffs': staffs<'post'>
     'news': news<'post'>
+    'advisor': advisor<'post'>
   }
   put: {
     'staffs': staffs<'put'>
     'news': news<'put'>
+    'advisor': advisor<'put'>
   }
   patch: {
     'staffs': staffs<'patch'>
     'news': news<'patch'>
+    'advisor': advisor<'patch'>
   }
 }

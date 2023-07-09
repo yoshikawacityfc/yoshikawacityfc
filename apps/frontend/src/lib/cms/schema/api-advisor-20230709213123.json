@@ -1,0 +1,1 @@
+{"apiFields":[{"idValue":"s35JtOtR-5","fieldId":"name","name":"氏名","kind":"text","required":true},{"fieldId":"position","name":"役割","kind":"text"},{"fieldId":"description","name":"説明文","kind":"textArea"},{"fieldId":"profileImage","name":"プロフィール画像","kind":"media"}],"customFields":[]}

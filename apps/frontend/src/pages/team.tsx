@@ -37,34 +37,30 @@ const TeamPage: NextPage<TeamPageProps> = ({
 export default TeamPage;
 
 export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
-  const data = await cmsClient.get({
+  const staffsData = await cmsClient.get({
     endpoint: "staffs",
   });
 
-  const staffProfiles = data.contents
+  const staffProfiles = staffsData.contents.map((content: staffs) => {
+    return {
+      id: content.id,
+      name: content.name,
+      position: content.position ?? null,
+      oneWord: content.oneWord ?? null,
+      description: content.description ?? null,
+      license: content.license ?? null,
+      career: content.career ?? null,
+      coachingAchievement: content.coachingAchievement ?? null,
+      playerHistory: content.playerHistory ?? null,
+      playerAchievement: content.playerAchievement ?? null,
+      profileImage: content.profileImage ?? null,
+    };
+  });
+
+  const advisorsData = await cmsClient.get({ endpoint: "advisors" });
+
+  const advisorProfiles = advisorsData.contents
     .map((content: staffs) => {
-      if (!content.category.includes("スタッフ")) return;
-
-      return {
-        id: content.id,
-        name: content.name,
-        position: content.position ?? null,
-        oneWord: content.oneWord ?? null,
-        description: content.description ?? null,
-        license: content.license ?? null,
-        career: content.career ?? null,
-        coachingAchievement: content.coachingAchievement ?? null,
-        playerHistory: content.playerHistory ?? null,
-        playerAchievement: content.playerAchievement ?? null,
-        profileImage: content.profileImage ?? null,
-      };
-    })
-    .filter((staff: StaffProfile) => staff !== undefined);
-
-  const advisorProfiles = data.contents
-    .map((content: staffs) => {
-      if (!content.category.includes("アドバイザー")) return;
-
       return {
         id: content.id,
         name: content.name,
