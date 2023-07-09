@@ -1,10 +1,7 @@
-import { useQuery } from "@apollo/client";
 import { useState } from "react";
-import { queryStaffCollection } from "@/lib/gql/staffs";
 import { StaffProfile } from "../types";
 import { StaffCard } from "./StaffCard";
 import { StaffProfileModal } from "./StaffProfileModal";
-import { FilterIs } from "@/__generated__/graphql";
 
 interface StaffListProps {
   staffProfiles: StaffProfile[];
