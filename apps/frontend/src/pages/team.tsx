@@ -59,17 +59,15 @@ export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
 
   const advisorsData = await cmsClient.get({ endpoint: "advisors" });
 
-  const advisorProfiles = advisorsData.contents
-    .map((content: staffs) => {
-      return {
-        id: content.id,
-        name: content.name,
-        position: content.position ?? null,
-        description: content.description ?? null,
-        profileImage: content.profileImage ?? null,
-      };
-    })
-    .filter((advisor: AdvisorProfile) => advisor !== undefined);
+  const advisorProfiles = advisorsData.contents.map((content: staffs) => {
+    return {
+      id: content.id,
+      name: content.name,
+      position: content.position ?? null,
+      description: content.description ?? null,
+      profileImage: content.profileImage ?? null,
+    };
+  });
 
   return {
     props: {
