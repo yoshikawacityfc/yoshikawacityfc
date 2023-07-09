@@ -1,8 +1,9 @@
 import { MainLayout } from "@/components/Layout";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { NewsDetail } from "@/features/news/components";
-import { cmsClient } from "@/lib/cmsClient";
+import { cmsClient } from "@/lib/cms/cmsClient";
 import { News } from "@/features/news/types";
+import { news } from "@/lib/cms/types";
 
 interface NewsScreenProps {
   news: News;
@@ -27,7 +28,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   });
 
   const paths =
-    data.contents.map((content: any) => `/news/${content.id}`) ?? [];
+    data.contents.map((content: news) => `/news/${content.id}`) ?? [];
 
   return {
     paths,
@@ -45,7 +46,7 @@ export const getStaticProps: GetStaticProps<NewsScreenProps> = async (
     },
   });
 
-  const news = data.contents[0];
+  const news: news = data.contents[0];
 
   if (!news) {
     return {

@@ -122,6 +122,9 @@ importers:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
+      microcms-typescript:
+        specifier: ^1.0.14
+        version: 1.0.14
       postcss:
         specifier: ^8.4.21
         version: 8.4.21
@@ -4380,6 +4383,11 @@ packages:
       encoding: 0.1.13
       qs: 6.11.2
     dev: false
+
+  /microcms-typescript@1.0.14:
+    resolution: {integrity: sha512-fQMohVQ8mpeULTVuaUrn2uzFV2jYL0Tgi+09WgSE9deu9RiDo2l9MFh/PsKsCirc4NLxFAImmb1OxVjCu/nEPg==}
+    hasBin: true
+    dev: true
 
   /micromatch@4.0.5:
     resolution: {integrity: sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==}

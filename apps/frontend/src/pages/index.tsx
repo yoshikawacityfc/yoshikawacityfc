@@ -7,7 +7,8 @@ import { NewsListItem } from "@/features/news/types";
 import { School } from "@/features/school/components";
 import { SocialContribution } from "@/features/social-contribution/components";
 import { SponsorRecruiting } from "@/features/sponsor-recruiting/components";
-import { cmsClient } from "@/lib/cmsClient";
+import { cmsClient } from "@/lib/cms/cmsClient";
+import { news } from "@/lib/cms/types";
 import { GetStaticProps, NextPage } from "next";
 
 interface TopProps {
@@ -56,7 +57,7 @@ export const getStaticProps: GetStaticProps<TopProps> = async () => {
     queries: { orders: "-publishedAt", limit: 10 },
   });
 
-  const news = data.contents.map((content: any) => {
+  const news = data.contents.map((content: news) => {
     return {
       id: content.id,
       title: content.title,

@@ -4,7 +4,8 @@ import { AdvisorProfile } from "@/features/advisor/types";
 import { Staffs } from "@/features/staffs/components";
 import { StaffProfile } from "@/features/staffs/types";
 import { TrainingInfo } from "@/features/training-info/components";
-import { cmsClient } from "@/lib/cmsClient";
+import { cmsClient } from "@/lib/cms/cmsClient";
+import { staffs } from "@/lib/cms/types";
 import { GetStaticProps, NextPage } from "next";
 
 interface TeamPageProps {
@@ -41,7 +42,7 @@ export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
   });
 
   const staffProfiles = data.contents
-    .map((content: any) => {
+    .map((content: staffs) => {
       if (!content.category.includes("スタッフ")) return;
 
       return {
@@ -58,10 +59,10 @@ export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
         profileImage: content.profileImage ?? null,
       };
     })
-    .filter((staff: any) => staff !== undefined);
+    .filter((staff: StaffProfile) => staff !== undefined);
 
   const advisorProfiles = data.contents
-    .map((content: any) => {
+    .map((content: staffs) => {
       if (!content.category.includes("アドバイザー")) return;
 
       return {
@@ -72,7 +73,7 @@ export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
         profileImage: content.profileImage ?? null,
       };
     })
-    .filter((staff: any) => staff !== undefined);
+    .filter((advisor: AdvisorProfile) => advisor !== undefined);
 
   return {
     props: {

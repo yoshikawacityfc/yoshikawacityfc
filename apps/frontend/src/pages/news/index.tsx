@@ -2,7 +2,8 @@ import { Button } from "@/components/Elements";
 import { MainLayout } from "@/components/Layout";
 import { NewsCardList } from "@/features/news/components";
 import { NewsListItem } from "@/features/news/types";
-import { cmsClient } from "@/lib/cmsClient";
+import { cmsClient } from "@/lib/cms/cmsClient";
+import { news } from "@/lib/cms/types";
 import { GetStaticProps, NextPage } from "next";
 import { useState } from "react";
 
@@ -10,6 +11,17 @@ interface NewsProps {
   news: NewsListItem[];
   totalCount: number;
 }
+
+const transformToNewsListItems = (news: news[]): NewsListItem[] => {
+  return news.map((content: news) => {
+    return {
+      id: content.id,
+      title: content.title,
+      publishedAtString: content.publishedAt,
+      thumbnail: content.eyecatch ?? null,
+    };
+  });
+};
 
 const News: NextPage<NewsProps> = (props: NewsProps) => {
   const [news, setNews] = useState(props.news);
@@ -20,14 +32,7 @@ const News: NextPage<NewsProps> = (props: NewsProps) => {
       queries: { orders: "-publishedAt", limit: 10, offset: news.length },
     });
 
-    const newNews = data.contents.map((content: any) => {
-      return {
-        id: content.id,
-        title: content.title,
-        publishedAtString: content.publishedAt,
-        thumbnail: content.eyecatch ?? null,
-      };
-    });
+    const newNews = transformToNewsListItems(data.contents);
 
     setNews([...news, ...newNews]);
   };
@@ -65,14 +70,7 @@ export const getStaticProps: GetStaticProps<NewsProps> = async () => {
     queries: { orders: "-publishedAt", limit: 10 },
   });
 
-  const news = data.contents.map((content: any) => {
-    return {
-      id: content.id,
-      title: content.title,
-      publishedAtString: content.publishedAt,
-      thumbnail: content.eyecatch ?? null,
-    };
-  });
+  const news = transformToNewsListItems(data.contents);
 
   return {
     props: {
