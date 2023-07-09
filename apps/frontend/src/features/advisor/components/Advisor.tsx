@@ -4,10 +4,10 @@ import { AdvisorCard } from "./AdvisorCard";
 import { AdvisorProfileModal } from "./AdvisorProfileModal";
 
 interface AdvisorProps {
-  advisors: AdvisorProfile[];
+  advisorProfiles: AdvisorProfile[];
 }
 
-export const Advisor = ({ advisors }: AdvisorProps): JSX.Element => {
+export const Advisor = ({ advisorProfiles }: AdvisorProps): JSX.Element => {
   const [isAdvisorProfileModalVisible, setIsAdvisorProfileModalVisible] =
     useState(false);
   const [selectedAdvisorProfile, setSelectedAdvisorProfile] =
@@ -16,7 +16,7 @@ export const Advisor = ({ advisors }: AdvisorProps): JSX.Element => {
   const handleAdvisorCardClick = (id: string) => {
     setIsAdvisorProfileModalVisible(true);
 
-    const selectAdvisorProfile = advisors.find((item) => item.id === id);
+    const selectAdvisorProfile = advisorProfiles.find((item) => item.id === id);
 
     setSelectedAdvisorProfile(selectAdvisorProfile);
   };
@@ -45,10 +45,10 @@ export const Advisor = ({ advisors }: AdvisorProps): JSX.Element => {
         </div>
 
         <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(300px,_1fr))]">
-          {advisors.map((advisor) => (
+          {advisorProfiles.map((advisorProfile) => (
             <AdvisorCard
-              key={advisor.id}
-              advisorProfile={advisor}
+              key={advisorProfile.id}
+              advisorProfile={advisorProfile}
               onClick={handleAdvisorCardClick}
             />
           ))}

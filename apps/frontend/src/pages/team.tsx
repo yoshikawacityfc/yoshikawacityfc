@@ -8,19 +8,22 @@ import { client } from "@/lib/client";
 import { GetStaticProps, NextPage } from "next";
 
 interface TeamPageProps {
-  staffs: StaffProfile[];
-  advisors: AdvisorProfile[];
+  staffProfiles: StaffProfile[];
+  advisorProfiles: AdvisorProfile[];
 }
 
-const TeamPage: NextPage<TeamPageProps> = ({ staffs, advisors }) => {
+const TeamPage: NextPage<TeamPageProps> = ({
+  staffProfiles,
+  advisorProfiles,
+}) => {
   return (
     <MainLayout>
       <section className="pt-64">
-        <Staffs staffs={staffs} />
+        <Staffs staffProfiles={staffProfiles} />
       </section>
 
       <section className="mt-64">
-        <Advisor advisors={advisors} />
+        <Advisor advisorProfiles={advisorProfiles} />
       </section>
 
       <section>
@@ -37,7 +40,7 @@ export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
     endpoint: "staffs",
   });
 
-  const staffs = data.contents
+  const staffProfiles = data.contents
     .map((content: any) => {
       if (!content.category.includes("スタッフ")) return;
 
@@ -57,7 +60,7 @@ export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
     })
     .filter((staff: any) => staff !== undefined);
 
-  const advisors = data.contents
+  const advisorProfiles = data.contents
     .map((content: any) => {
       if (!content.category.includes("アドバイザー")) return;
 
@@ -73,8 +76,8 @@ export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
 
   return {
     props: {
-      staffs,
-      advisors,
+      staffProfiles,
+      advisorProfiles,
     },
     revalidate: 10,
   };

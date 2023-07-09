@@ -7,10 +7,10 @@ import { StaffProfileModal } from "./StaffProfileModal";
 import { FilterIs } from "@/__generated__/graphql";
 
 interface StaffListProps {
-  staffs: StaffProfile[];
+  staffProfiles: StaffProfile[];
 }
 
-export const StaffList = ({ staffs }: StaffListProps): JSX.Element => {
+export const StaffList = ({ staffProfiles }: StaffListProps): JSX.Element => {
   const [isStaffProfileModalVisible, setIsStaffProfileModalVisible] =
     useState(false);
   const [selectedStaffProfile, setSelectedStaffProfile] =
@@ -19,14 +19,14 @@ export const StaffList = ({ staffs }: StaffListProps): JSX.Element => {
   const handleStaffCardClick = (id: string) => {
     setIsStaffProfileModalVisible(true);
 
-    const selectStaffProfile = staffs.find((item) => item.id === id);
+    const selectStaffProfile = staffProfiles.find((item) => item.id === id);
     setSelectedStaffProfile(selectStaffProfile);
   };
 
   return (
     <>
       <div className="flex flex-wrap justify-center">
-        {staffs.map((item) => {
+        {staffProfiles.map((item) => {
           return (
             <StaffCard
               key={item.id}
