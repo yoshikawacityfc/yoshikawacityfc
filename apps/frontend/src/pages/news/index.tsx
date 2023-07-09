@@ -2,7 +2,7 @@ import { Button } from "@/components/Elements";
 import { MainLayout } from "@/components/Layout";
 import { NewsCardList } from "@/features/news/components";
 import { NewsListItem } from "@/features/news/types";
-import { client } from "@/lib/client";
+import { cmsClient } from "@/lib/cmsClient";
 import { GetStaticProps, NextPage } from "next";
 import { useState } from "react";
 
@@ -15,7 +15,7 @@ const News: NextPage<NewsProps> = (props: NewsProps) => {
   const [news, setNews] = useState(props.news);
 
   const handleMoreButtonClick = async () => {
-    const data = await client.get({
+    const data = await cmsClient.get({
       endpoint: "news",
       queries: { orders: "-publishedAt", limit: 10, offset: news.length },
     });
@@ -60,7 +60,7 @@ const News: NextPage<NewsProps> = (props: NewsProps) => {
 export default News;
 
 export const getStaticProps: GetStaticProps<NewsProps> = async () => {
-  const data = await client.get({
+  const data = await cmsClient.get({
     endpoint: "news",
     queries: { orders: "-publishedAt", limit: 10 },
   });

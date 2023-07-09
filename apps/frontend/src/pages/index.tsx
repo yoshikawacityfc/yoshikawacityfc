@@ -7,7 +7,7 @@ import { NewsListItem } from "@/features/news/types";
 import { School } from "@/features/school/components";
 import { SocialContribution } from "@/features/social-contribution/components";
 import { SponsorRecruiting } from "@/features/sponsor-recruiting/components";
-import { client } from "@/lib/client";
+import { cmsClient } from "@/lib/cmsClient";
 import { GetStaticProps, NextPage } from "next";
 
 interface TopProps {
@@ -51,7 +51,7 @@ const Top: NextPage<TopProps> = ({ news }: TopProps) => {
 export default Top;
 
 export const getStaticProps: GetStaticProps<TopProps> = async () => {
-  const data = await client.get({
+  const data = await cmsClient.get({
     endpoint: "news",
     queries: { orders: "-publishedAt", limit: 10 },
   });

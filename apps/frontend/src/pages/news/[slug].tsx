@@ -1,7 +1,7 @@
 import { MainLayout } from "@/components/Layout";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { NewsDetail } from "@/features/news/components";
-import { client } from "@/lib/client";
+import { cmsClient } from "@/lib/cmsClient";
 import { News } from "@/features/news/types";
 
 interface NewsScreenProps {
@@ -22,7 +22,7 @@ export default NewsScreen;
 
 // noinspection JSUnusedGlobalSymbols
 export const getStaticPaths: GetStaticPaths = async () => {
-  const data = await client.get({
+  const data = await cmsClient.get({
     endpoint: "news",
   });
 
@@ -38,7 +38,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps<NewsScreenProps> = async (
   context
 ) => {
-  const data = await client.get({
+  const data = await cmsClient.get({
     endpoint: "news",
     queries: {
       ids: context.params?.slug,

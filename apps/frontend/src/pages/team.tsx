@@ -4,7 +4,7 @@ import { AdvisorProfile } from "@/features/advisor/types";
 import { Staffs } from "@/features/staffs/components";
 import { StaffProfile } from "@/features/staffs/types";
 import { TrainingInfo } from "@/features/training-info/components";
-import { client } from "@/lib/client";
+import { cmsClient } from "@/lib/cmsClient";
 import { GetStaticProps, NextPage } from "next";
 
 interface TeamPageProps {
@@ -36,7 +36,7 @@ const TeamPage: NextPage<TeamPageProps> = ({
 export default TeamPage;
 
 export const getStaticProps: GetStaticProps<TeamPageProps> = async () => {
-  const data = await client.get({
+  const data = await cmsClient.get({
     endpoint: "staffs",
   });
 
