@@ -1,6 +1,6 @@
 name: Feature request
 description: 機能要望を出す
-title: "[FR]: "
+title: "[Feature]: "
 labels: [ "enhancement", "triage me" ]
 body:
   - type: markdown
