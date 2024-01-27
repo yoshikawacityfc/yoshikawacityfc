@@ -21,7 +21,7 @@ importers:
   apps/frontend:
     dependencies:
       '@apollo/client':
-        specifier: ^3.7.10
+        specifier: 3.8.10
         version: 3.8.10(graphql@16.8.1)(react-dom@18.2.0)(react@18.2.0)
       '@fortawesome/fontawesome-svg-core':
         specifier: 6.4.2
@@ -39,34 +39,34 @@ importers:
         specifier: 0.2.0
         version: 0.2.0(@fortawesome/fontawesome-svg-core@6.4.2)(react@18.2.0)
       '@headlessui/react':
-        specifier: ^1.7.13
+        specifier: 1.7.18
         version: 1.7.18(react-dom@18.2.0)(react@18.2.0)
       '@hookform/resolvers':
-        specifier: ^3.0.0
+        specifier: 3.3.4
         version: 3.3.4(react-hook-form@7.49.3)
       '@supabase/supabase-js':
-        specifier: ^2.14.0
+        specifier: 2.39.3
         version: 2.39.3
       '@vercel/analytics':
-        specifier: ^1.0.1
+        specifier: 1.1.2
         version: 1.1.2
       dayjs:
         specifier: 1.11.10
         version: 1.11.10
       graphql:
-        specifier: ^16.6.0
+        specifier: 16.8.1
         version: 16.8.1
       microcms-js-sdk:
-        specifier: ^2.5.0
+        specifier: 2.7.0
         version: 2.7.0
       next:
-        specifier: ^13.1.1
+        specifier: 13.5.6
         version: 13.5.6(@babel/core@7.23.9)(react-dom@18.2.0)(react@18.2.0)
       next-seo:
-        specifier: ^6.0.0
+        specifier: 6.4.0
         version: 6.4.0(next@13.5.6)(react-dom@18.2.0)(react@18.2.0)
       next-sitemap:
-        specifier: ^4.0.9
+        specifier: 4.2.3
         version: 4.2.3(next@13.5.6)
       react:
         specifier: 18.2.0
@@ -75,50 +75,50 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       react-hook-form:
-        specifier: ^7.43.7
+        specifier: 7.49.3
         version: 7.49.3(react@18.2.0)
       zenn-content-css:
-        specifier: ^0.1.141
+        specifier: 0.1.151
         version: 0.1.151
       zod:
-        specifier: ^3.21.4
+        specifier: 3.22.4
         version: 3.22.4
     devDependencies:
       '@babel/core':
-        specifier: ^7.0.0
+        specifier: 7.23.9
         version: 7.23.9
       '@graphql-codegen/cli':
-        specifier: ^5.0.0
+        specifier: 5.0.0
         version: 5.0.0(@types/node@18.19.10)(graphql@16.8.1)(typescript@5.3.3)
       '@graphql-codegen/client-preset':
-        specifier: ^4.0.0
+        specifier: 4.1.0
         version: 4.1.0(graphql@16.8.1)
       '@graphql-typed-document-node/core':
-        specifier: ^3.2.0
+        specifier: 3.2.0
         version: 3.2.0(graphql@16.8.1)
       '@tailwindcss/line-clamp':
-        specifier: ^0.4.2
+        specifier: 0.4.4
         version: 0.4.4(tailwindcss@3.4.1)
       '@types/gtag.js':
         specifier: 0.0.18
         version: 0.0.18
       '@types/node':
-        specifier: ^18.0.0
+        specifier: 18.19.10
         version: 18.19.10
       '@types/react':
-        specifier: ^18.0.22
+        specifier: 18.2.48
         version: 18.2.48
       '@types/react-dom':
-        specifier: ^18.0.7
+        specifier: 18.2.18
         version: 18.2.18
       '@types/scrollreveal':
-        specifier: ^0.0.11
+        specifier: 0.0.11
         version: 0.0.11
       autoprefixer:
-        specifier: ^10.4.13
+        specifier: 10.4.17
         version: 10.4.17(postcss@8.4.33)
       clsx:
-        specifier: ^2.0.0
+        specifier: 2.1.0
         version: 2.1.0
       eslint:
         specifier: 8.56.0
@@ -127,34 +127,34 @@ importers:
         specifier: workspace:*
         version: link:../../packages/eslint-config-custom
       microcms-typescript:
-        specifier: ^1.0.14
+        specifier: 1.0.14
         version: 1.0.14
       postcss:
-        specifier: ^8.4.21
+        specifier: 8.4.33
         version: 8.4.33
       scrollreveal:
-        specifier: ^4.0.9
+        specifier: 4.0.9
         version: 4.0.9
       tailwindcss:
-        specifier: ^3.2.6
+        specifier: 3.4.1
         version: 3.4.1
       tsconfig:
         specifier: workspace:*
         version: link:../../packages/tsconfig
       typescript:
-        specifier: ^5.0.0
+        specifier: 5.3.3
         version: 5.3.3
 
   packages/eslint-config-custom:
     dependencies:
       eslint:
-        specifier: ^8.0.0
+        specifier: 8.56.0
         version: 8.56.0
       eslint-config-next:
         specifier: 13.5.6
         version: 13.5.6(eslint@8.56.0)(typescript@5.3.3)
       eslint-config-prettier:
-        specifier: ^9.0.0
+        specifier: 9.1.0
         version: 9.1.0(eslint@8.56.0)
       eslint-config-turbo:
         specifier: latest
@@ -164,7 +164,7 @@ importers:
         version: 7.33.2(eslint@8.56.0)
     devDependencies:
       typescript:
-        specifier: ^5.0.0
+        specifier: 5.3.3
         version: 5.3.3
 
   packages/tsconfig: {}
