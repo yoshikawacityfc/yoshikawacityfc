@@ -54,27 +54,11 @@ $ pnpm run dev
 
 ## Contributors ✨
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+<a href="https://github.com/yoshikawacityfc/yoshikawacityfc/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=yoshikawacityfc/yoshikawacityfc" />
+</a>
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://ripomoea.com/"><img src="https://avatars.githubusercontent.com/u/19267812?v=4?s=100" width="100px;" alt="Ryo Takeuchi"/><br /><sub><b>Ryo Takeuchi</b></sub></a><br /><a href="#maintenance-tatsutakein" title="Maintenance">🚧</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ka10take"><img src="https://avatars.githubusercontent.com/u/70331644?v=4?s=100" width="100px;" alt="ka10take"/><br /><sub><b>ka10take</b></sub></a><br /><a href="#maintenance-ka10take" title="Maintenance">🚧</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://flaque.t10o.one"><img src="https://avatars.githubusercontent.com/u/55011568?v=4?s=100" width="100px;" alt="t10o"/><br /><sub><b>t10o</b></sub></a><br /><a href="https://github.com/yoshikawacityfc/yoshikawacityfc/commits?author=t10o" title="Code">💻</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
-Contributions of any kind welcome!
+Made with [contrib.rocks](https://contrib.rocks).
 
 ## License
 
