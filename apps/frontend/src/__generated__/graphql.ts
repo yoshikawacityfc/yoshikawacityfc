@@ -5,68 +5,70 @@ export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
+export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
+export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: string;
-  String: string;
-  Boolean: boolean;
-  Int: number;
-  Float: number;
-  BigInt: any;
-  Cursor: any;
-  Date: any;
-  Datetime: any;
-  JSON: any;
-  Time: any;
-  UUID: any;
+  ID: { input: string; output: string; }
+  String: { input: string; output: string; }
+  Boolean: { input: boolean; output: boolean; }
+  Int: { input: number; output: number; }
+  Float: { input: number; output: number; }
+  BigInt: { input: any; output: any; }
+  Cursor: { input: any; output: any; }
+  Date: { input: any; output: any; }
+  Datetime: { input: any; output: any; }
+  JSON: { input: any; output: any; }
+  Time: { input: any; output: any; }
+  UUID: { input: any; output: any; }
 };
 
 /** Boolean expression comparing fields on type "BigInt" */
 export type BigIntFilter = {
-  eq?: InputMaybe<Scalars['BigInt']>;
-  gt?: InputMaybe<Scalars['BigInt']>;
-  gte?: InputMaybe<Scalars['BigInt']>;
-  in?: InputMaybe<Array<Scalars['BigInt']>>;
+  eq?: InputMaybe<Scalars['BigInt']['input']>;
+  gt?: InputMaybe<Scalars['BigInt']['input']>;
+  gte?: InputMaybe<Scalars['BigInt']['input']>;
+  in?: InputMaybe<Array<Scalars['BigInt']['input']>>;
   is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['BigInt']>;
-  lte?: InputMaybe<Scalars['BigInt']>;
-  neq?: InputMaybe<Scalars['BigInt']>;
+  lt?: InputMaybe<Scalars['BigInt']['input']>;
+  lte?: InputMaybe<Scalars['BigInt']['input']>;
+  neq?: InputMaybe<Scalars['BigInt']['input']>;
 };
 
 /** Boolean expression comparing fields on type "Boolean" */
 export type BooleanFilter = {
-  eq?: InputMaybe<Scalars['Boolean']>;
-  gt?: InputMaybe<Scalars['Boolean']>;
-  gte?: InputMaybe<Scalars['Boolean']>;
-  in?: InputMaybe<Array<Scalars['Boolean']>>;
+  eq?: InputMaybe<Scalars['Boolean']['input']>;
+  gt?: InputMaybe<Scalars['Boolean']['input']>;
+  gte?: InputMaybe<Scalars['Boolean']['input']>;
+  in?: InputMaybe<Array<Scalars['Boolean']['input']>>;
   is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['Boolean']>;
-  lte?: InputMaybe<Scalars['Boolean']>;
-  neq?: InputMaybe<Scalars['Boolean']>;
+  lt?: InputMaybe<Scalars['Boolean']['input']>;
+  lte?: InputMaybe<Scalars['Boolean']['input']>;
+  neq?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 /** Boolean expression comparing fields on type "Date" */
 export type DateFilter = {
-  eq?: InputMaybe<Scalars['Date']>;
-  gt?: InputMaybe<Scalars['Date']>;
-  gte?: InputMaybe<Scalars['Date']>;
-  in?: InputMaybe<Array<Scalars['Date']>>;
+  eq?: InputMaybe<Scalars['Date']['input']>;
+  gt?: InputMaybe<Scalars['Date']['input']>;
+  gte?: InputMaybe<Scalars['Date']['input']>;
+  in?: InputMaybe<Array<Scalars['Date']['input']>>;
   is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['Date']>;
-  lte?: InputMaybe<Scalars['Date']>;
-  neq?: InputMaybe<Scalars['Date']>;
+  lt?: InputMaybe<Scalars['Date']['input']>;
+  lte?: InputMaybe<Scalars['Date']['input']>;
+  neq?: InputMaybe<Scalars['Date']['input']>;
 };
 
 /** Boolean expression comparing fields on type "Datetime" */
 export type DatetimeFilter = {
-  eq?: InputMaybe<Scalars['Datetime']>;
-  gt?: InputMaybe<Scalars['Datetime']>;
-  gte?: InputMaybe<Scalars['Datetime']>;
-  in?: InputMaybe<Array<Scalars['Datetime']>>;
+  eq?: InputMaybe<Scalars['Datetime']['input']>;
+  gt?: InputMaybe<Scalars['Datetime']['input']>;
+  gte?: InputMaybe<Scalars['Datetime']['input']>;
+  in?: InputMaybe<Array<Scalars['Datetime']['input']>>;
   is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['Datetime']>;
-  lte?: InputMaybe<Scalars['Datetime']>;
-  neq?: InputMaybe<Scalars['Datetime']>;
+  lt?: InputMaybe<Scalars['Datetime']['input']>;
+  lte?: InputMaybe<Scalars['Datetime']['input']>;
+  neq?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export enum FilterIs {
@@ -76,31 +78,31 @@ export enum FilterIs {
 
 /** Boolean expression comparing fields on type "Float" */
 export type FloatFilter = {
-  eq?: InputMaybe<Scalars['Float']>;
-  gt?: InputMaybe<Scalars['Float']>;
-  gte?: InputMaybe<Scalars['Float']>;
-  in?: InputMaybe<Array<Scalars['Float']>>;
+  eq?: InputMaybe<Scalars['Float']['input']>;
+  gt?: InputMaybe<Scalars['Float']['input']>;
+  gte?: InputMaybe<Scalars['Float']['input']>;
+  in?: InputMaybe<Array<Scalars['Float']['input']>>;
   is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['Float']>;
-  lte?: InputMaybe<Scalars['Float']>;
-  neq?: InputMaybe<Scalars['Float']>;
+  lt?: InputMaybe<Scalars['Float']['input']>;
+  lte?: InputMaybe<Scalars['Float']['input']>;
+  neq?: InputMaybe<Scalars['Float']['input']>;
 };
 
 /** Boolean expression comparing fields on type "ID" */
 export type IdFilter = {
-  eq?: InputMaybe<Scalars['ID']>;
+  eq?: InputMaybe<Scalars['ID']['input']>;
 };
 
 /** Boolean expression comparing fields on type "Int" */
 export type IntFilter = {
-  eq?: InputMaybe<Scalars['Int']>;
-  gt?: InputMaybe<Scalars['Int']>;
-  gte?: InputMaybe<Scalars['Int']>;
-  in?: InputMaybe<Array<Scalars['Int']>>;
+  eq?: InputMaybe<Scalars['Int']['input']>;
+  gt?: InputMaybe<Scalars['Int']['input']>;
+  gte?: InputMaybe<Scalars['Int']['input']>;
+  in?: InputMaybe<Array<Scalars['Int']['input']>>;
   is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['Int']>;
-  lte?: InputMaybe<Scalars['Int']>;
-  neq?: InputMaybe<Scalars['Int']>;
+  lt?: InputMaybe<Scalars['Int']['input']>;
+  lte?: InputMaybe<Scalars['Int']['input']>;
+  neq?: InputMaybe<Scalars['Int']['input']>;
 };
 
 /** The root type for creating and mutating data */
@@ -177,77 +179,77 @@ export type Mutation = {
 
 /** The root type for creating and mutating data */
 export type MutationDeleteFromassetsCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<AssetsFilter>;
 };
 
 
 /** The root type for creating and mutating data */
 export type MutationDeleteFromcontact_CategoriesCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<Contact_CategoriesFilter>;
 };
 
 
 /** The root type for creating and mutating data */
 export type MutationDeleteFromcontact_TemplatesCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<Contact_TemplatesFilter>;
 };
 
 
 /** The root type for creating and mutating data */
 export type MutationDeleteFromcontactsCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<ContactsFilter>;
 };
 
 
 /** The root type for creating and mutating data */
 export type MutationDeleteFromkeywordsCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<KeywordsFilter>;
 };
 
 
 /** The root type for creating and mutating data */
 export type MutationDeleteFromnewsCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<NewsFilter>;
 };
 
 
 /** The root type for creating and mutating data */
 export type MutationDeleteFromnews_TagsCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<News_TagsFilter>;
 };
 
 
 /** The root type for creating and mutating data */
 export type MutationDeleteFromseosCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<SeosFilter>;
 };
 
 
 /** The root type for creating and mutating data */
 export type MutationDeleteFromstaff_CategoriesCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<Staff_CategoriesFilter>;
 };
 
 
 /** The root type for creating and mutating data */
 export type MutationDeleteFromstaffsCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<StaffsFilter>;
 };
 
 
 /** The root type for creating and mutating data */
 export type MutationDeleteFromtagsCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<TagsFilter>;
 };
 
@@ -320,7 +322,7 @@ export type MutationInsertIntotagsCollectionArgs = {
 
 /** The root type for creating and mutating data */
 export type MutationUpdateassetsCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<AssetsFilter>;
   set: AssetsUpdateInput;
 };
@@ -328,7 +330,7 @@ export type MutationUpdateassetsCollectionArgs = {
 
 /** The root type for creating and mutating data */
 export type MutationUpdatecontact_CategoriesCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<Contact_CategoriesFilter>;
   set: Contact_CategoriesUpdateInput;
 };
@@ -336,7 +338,7 @@ export type MutationUpdatecontact_CategoriesCollectionArgs = {
 
 /** The root type for creating and mutating data */
 export type MutationUpdatecontact_TemplatesCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<Contact_TemplatesFilter>;
   set: Contact_TemplatesUpdateInput;
 };
@@ -344,7 +346,7 @@ export type MutationUpdatecontact_TemplatesCollectionArgs = {
 
 /** The root type for creating and mutating data */
 export type MutationUpdatecontactsCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<ContactsFilter>;
   set: ContactsUpdateInput;
 };
@@ -352,7 +354,7 @@ export type MutationUpdatecontactsCollectionArgs = {
 
 /** The root type for creating and mutating data */
 export type MutationUpdatekeywordsCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<KeywordsFilter>;
   set: KeywordsUpdateInput;
 };
@@ -360,7 +362,7 @@ export type MutationUpdatekeywordsCollectionArgs = {
 
 /** The root type for creating and mutating data */
 export type MutationUpdatenewsCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<NewsFilter>;
   set: NewsUpdateInput;
 };
@@ -368,7 +370,7 @@ export type MutationUpdatenewsCollectionArgs = {
 
 /** The root type for creating and mutating data */
 export type MutationUpdatenews_TagsCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<News_TagsFilter>;
   set: News_TagsUpdateInput;
 };
@@ -376,7 +378,7 @@ export type MutationUpdatenews_TagsCollectionArgs = {
 
 /** The root type for creating and mutating data */
 export type MutationUpdateseosCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<SeosFilter>;
   set: SeosUpdateInput;
 };
@@ -384,7 +386,7 @@ export type MutationUpdateseosCollectionArgs = {
 
 /** The root type for creating and mutating data */
 export type MutationUpdatestaff_CategoriesCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<Staff_CategoriesFilter>;
   set: Staff_CategoriesUpdateInput;
 };
@@ -392,7 +394,7 @@ export type MutationUpdatestaff_CategoriesCollectionArgs = {
 
 /** The root type for creating and mutating data */
 export type MutationUpdatestaffsCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<StaffsFilter>;
   set: StaffsUpdateInput;
 };
@@ -400,14 +402,14 @@ export type MutationUpdatestaffsCollectionArgs = {
 
 /** The root type for creating and mutating data */
 export type MutationUpdatetagsCollectionArgs = {
-  atMost?: Scalars['Int'];
+  atMost?: Scalars['Int']['input'];
   filter?: InputMaybe<TagsFilter>;
   set: TagsUpdateInput;
 };
 
 export type Node = {
   /** Retrieves a record by `ID` */
-  nodeId: Scalars['ID'];
+  nodeId: Scalars['ID']['output'];
 };
 
 /** Defines a per-field sorting order */
@@ -424,10 +426,10 @@ export enum OrderByDirection {
 
 export type PageInfo = {
   __typename?: 'PageInfo';
-  endCursor?: Maybe<Scalars['String']>;
-  hasNextPage: Scalars['Boolean'];
-  hasPreviousPage: Scalars['Boolean'];
-  startCursor?: Maybe<Scalars['String']>;
+  endCursor?: Maybe<Scalars['String']['output']>;
+  hasNextPage: Scalars['Boolean']['output'];
+  hasPreviousPage: Scalars['Boolean']['output'];
+  startCursor?: Maybe<Scalars['String']['output']>;
 };
 
 /** The root type for querying data */
@@ -462,196 +464,196 @@ export type Query = {
 
 /** The root type for querying data */
 export type QueryAssetsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<AssetsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<AssetsOrderBy>>;
 };
 
 
 /** The root type for querying data */
 export type QueryContact_CategoriesCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<Contact_CategoriesFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<Contact_CategoriesOrderBy>>;
 };
 
 
 /** The root type for querying data */
 export type QueryContact_TemplatesCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<Contact_TemplatesFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<Contact_TemplatesOrderBy>>;
 };
 
 
 /** The root type for querying data */
 export type QueryContactsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<ContactsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<ContactsOrderBy>>;
 };
 
 
 /** The root type for querying data */
 export type QueryKeywordsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<KeywordsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<KeywordsOrderBy>>;
 };
 
 
 /** The root type for querying data */
 export type QueryNewsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<NewsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<NewsOrderBy>>;
 };
 
 
 /** The root type for querying data */
 export type QueryNews_TagsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<News_TagsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<News_TagsOrderBy>>;
 };
 
 
 /** The root type for querying data */
 export type QueryNodeArgs = {
-  nodeId: Scalars['ID'];
+  nodeId: Scalars['ID']['input'];
 };
 
 
 /** The root type for querying data */
 export type QuerySeosCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<SeosFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<SeosOrderBy>>;
 };
 
 
 /** The root type for querying data */
 export type QueryStaff_CategoriesCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<Staff_CategoriesFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<Staff_CategoriesOrderBy>>;
 };
 
 
 /** The root type for querying data */
 export type QueryStaffsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<StaffsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<StaffsOrderBy>>;
 };
 
 
 /** The root type for querying data */
 export type QueryTagsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<TagsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<TagsOrderBy>>;
 };
 
 /** Boolean expression comparing fields on type "String" */
 export type StringFilter = {
-  eq?: InputMaybe<Scalars['String']>;
-  gt?: InputMaybe<Scalars['String']>;
-  gte?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
+  eq?: InputMaybe<Scalars['String']['input']>;
+  gt?: InputMaybe<Scalars['String']['input']>;
+  gte?: InputMaybe<Scalars['String']['input']>;
+  in?: InputMaybe<Array<Scalars['String']['input']>>;
   is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['String']>;
-  lte?: InputMaybe<Scalars['String']>;
-  neq?: InputMaybe<Scalars['String']>;
+  lt?: InputMaybe<Scalars['String']['input']>;
+  lte?: InputMaybe<Scalars['String']['input']>;
+  neq?: InputMaybe<Scalars['String']['input']>;
 };
 
 /** Boolean expression comparing fields on type "Time" */
 export type TimeFilter = {
-  eq?: InputMaybe<Scalars['Time']>;
-  gt?: InputMaybe<Scalars['Time']>;
-  gte?: InputMaybe<Scalars['Time']>;
-  in?: InputMaybe<Array<Scalars['Time']>>;
+  eq?: InputMaybe<Scalars['Time']['input']>;
+  gt?: InputMaybe<Scalars['Time']['input']>;
+  gte?: InputMaybe<Scalars['Time']['input']>;
+  in?: InputMaybe<Array<Scalars['Time']['input']>>;
   is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['Time']>;
-  lte?: InputMaybe<Scalars['Time']>;
-  neq?: InputMaybe<Scalars['Time']>;
+  lt?: InputMaybe<Scalars['Time']['input']>;
+  lte?: InputMaybe<Scalars['Time']['input']>;
+  neq?: InputMaybe<Scalars['Time']['input']>;
 };
 
 /** Boolean expression comparing fields on type "UUID" */
 export type UuidFilter = {
-  eq?: InputMaybe<Scalars['UUID']>;
-  in?: InputMaybe<Array<Scalars['UUID']>>;
+  eq?: InputMaybe<Scalars['UUID']['input']>;
+  in?: InputMaybe<Array<Scalars['UUID']['input']>>;
   is?: InputMaybe<FilterIs>;
-  neq?: InputMaybe<Scalars['UUID']>;
+  neq?: InputMaybe<Scalars['UUID']['input']>;
 };
 
 export type Assets = Node & {
   __typename?: 'assets';
-  created_at: Scalars['Datetime'];
-  file_name: Scalars['String'];
-  height: Scalars['Int'];
-  id: Scalars['UUID'];
-  mime_type: Scalars['String'];
+  created_at: Scalars['Datetime']['output'];
+  file_name: Scalars['String']['output'];
+  height: Scalars['Int']['output'];
+  id: Scalars['UUID']['output'];
+  mime_type: Scalars['String']['output'];
   newsCollection?: Maybe<NewsConnection>;
   /** Globally Unique Record Identifier */
-  nodeId: Scalars['ID'];
-  size: Scalars['Int'];
-  src: Scalars['String'];
+  nodeId: Scalars['ID']['output'];
+  size: Scalars['Int']['output'];
+  src: Scalars['String']['output'];
   staffsCollection?: Maybe<StaffsConnection>;
-  updated_at: Scalars['Datetime'];
-  width: Scalars['Int'];
+  updated_at: Scalars['Datetime']['output'];
+  width: Scalars['Int']['output'];
 };
 
 
 export type AssetsNewsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<NewsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<NewsOrderBy>>;
 };
 
 
 export type AssetsStaffsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<StaffsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<StaffsOrderBy>>;
 };
 
@@ -664,14 +666,14 @@ export type AssetsConnection = {
 export type AssetsDeleteResponse = {
   __typename?: 'assetsDeleteResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Assets>;
 };
 
 export type AssetsEdge = {
   __typename?: 'assetsEdge';
-  cursor: Scalars['String'];
+  cursor: Scalars['String']['output'];
   node: Assets;
 };
 
@@ -689,21 +691,21 @@ export type AssetsFilter = {
 };
 
 export type AssetsInsertInput = {
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  file_name?: InputMaybe<Scalars['String']>;
-  height?: InputMaybe<Scalars['Int']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  mime_type?: InputMaybe<Scalars['String']>;
-  size?: InputMaybe<Scalars['Int']>;
-  src?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
-  width?: InputMaybe<Scalars['Int']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  file_name?: InputMaybe<Scalars['String']['input']>;
+  height?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  mime_type?: InputMaybe<Scalars['String']['input']>;
+  size?: InputMaybe<Scalars['Int']['input']>;
+  src?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
+  width?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type AssetsInsertResponse = {
   __typename?: 'assetsInsertResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Assets>;
 };
@@ -721,21 +723,21 @@ export type AssetsOrderBy = {
 };
 
 export type AssetsUpdateInput = {
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  file_name?: InputMaybe<Scalars['String']>;
-  height?: InputMaybe<Scalars['Int']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  mime_type?: InputMaybe<Scalars['String']>;
-  size?: InputMaybe<Scalars['Int']>;
-  src?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
-  width?: InputMaybe<Scalars['Int']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  file_name?: InputMaybe<Scalars['String']['input']>;
+  height?: InputMaybe<Scalars['Int']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  mime_type?: InputMaybe<Scalars['String']['input']>;
+  size?: InputMaybe<Scalars['Int']['input']>;
+  src?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
+  width?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type AssetsUpdateResponse = {
   __typename?: 'assetsUpdateResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Assets>;
 };
@@ -744,25 +746,25 @@ export type Contact_Categories = Node & {
   __typename?: 'contact_categories';
   contact_templates?: Maybe<Contact_Templates>;
   contactsCollection?: Maybe<ContactsConnection>;
-  created_at: Scalars['Datetime'];
-  deleted_at?: Maybe<Scalars['Datetime']>;
-  description: Scalars['String'];
-  id: Scalars['UUID'];
-  name: Scalars['String'];
+  created_at: Scalars['Datetime']['output'];
+  deleted_at?: Maybe<Scalars['Datetime']['output']>;
+  description: Scalars['String']['output'];
+  id: Scalars['UUID']['output'];
+  name: Scalars['String']['output'];
   /** Globally Unique Record Identifier */
-  nodeId: Scalars['ID'];
-  sort: Scalars['BigInt'];
-  template_id?: Maybe<Scalars['UUID']>;
-  updated_at: Scalars['Datetime'];
+  nodeId: Scalars['ID']['output'];
+  sort: Scalars['BigInt']['output'];
+  template_id?: Maybe<Scalars['UUID']['output']>;
+  updated_at: Scalars['Datetime']['output'];
 };
 
 
 export type Contact_CategoriesContactsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<ContactsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<ContactsOrderBy>>;
 };
 
@@ -775,14 +777,14 @@ export type Contact_CategoriesConnection = {
 export type Contact_CategoriesDeleteResponse = {
   __typename?: 'contact_categoriesDeleteResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Contact_Categories>;
 };
 
 export type Contact_CategoriesEdge = {
   __typename?: 'contact_categoriesEdge';
-  cursor: Scalars['String'];
+  cursor: Scalars['String']['output'];
   node: Contact_Categories;
 };
 
@@ -799,20 +801,20 @@ export type Contact_CategoriesFilter = {
 };
 
 export type Contact_CategoriesInsertInput = {
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  deleted_at?: InputMaybe<Scalars['Datetime']>;
-  description?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  name?: InputMaybe<Scalars['String']>;
-  sort?: InputMaybe<Scalars['BigInt']>;
-  template_id?: InputMaybe<Scalars['UUID']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  deleted_at?: InputMaybe<Scalars['Datetime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  sort?: InputMaybe<Scalars['BigInt']['input']>;
+  template_id?: InputMaybe<Scalars['UUID']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type Contact_CategoriesInsertResponse = {
   __typename?: 'contact_categoriesInsertResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Contact_Categories>;
 };
@@ -829,20 +831,20 @@ export type Contact_CategoriesOrderBy = {
 };
 
 export type Contact_CategoriesUpdateInput = {
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  deleted_at?: InputMaybe<Scalars['Datetime']>;
-  description?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  name?: InputMaybe<Scalars['String']>;
-  sort?: InputMaybe<Scalars['BigInt']>;
-  template_id?: InputMaybe<Scalars['UUID']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  deleted_at?: InputMaybe<Scalars['Datetime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  sort?: InputMaybe<Scalars['BigInt']['input']>;
+  template_id?: InputMaybe<Scalars['UUID']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type Contact_CategoriesUpdateResponse = {
   __typename?: 'contact_categoriesUpdateResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Contact_Categories>;
 };
@@ -850,23 +852,23 @@ export type Contact_CategoriesUpdateResponse = {
 export type Contact_Templates = Node & {
   __typename?: 'contact_templates';
   contact_categoriesCollection?: Maybe<Contact_CategoriesConnection>;
-  content: Scalars['String'];
-  created_at: Scalars['Datetime'];
-  description: Scalars['String'];
-  id: Scalars['UUID'];
-  name: Scalars['String'];
+  content: Scalars['String']['output'];
+  created_at: Scalars['Datetime']['output'];
+  description: Scalars['String']['output'];
+  id: Scalars['UUID']['output'];
+  name: Scalars['String']['output'];
   /** Globally Unique Record Identifier */
-  nodeId: Scalars['ID'];
-  updated_at: Scalars['Datetime'];
+  nodeId: Scalars['ID']['output'];
+  updated_at: Scalars['Datetime']['output'];
 };
 
 
 export type Contact_TemplatesContact_CategoriesCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<Contact_CategoriesFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<Contact_CategoriesOrderBy>>;
 };
 
@@ -879,14 +881,14 @@ export type Contact_TemplatesConnection = {
 export type Contact_TemplatesDeleteResponse = {
   __typename?: 'contact_templatesDeleteResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Contact_Templates>;
 };
 
 export type Contact_TemplatesEdge = {
   __typename?: 'contact_templatesEdge';
-  cursor: Scalars['String'];
+  cursor: Scalars['String']['output'];
   node: Contact_Templates;
 };
 
@@ -901,18 +903,18 @@ export type Contact_TemplatesFilter = {
 };
 
 export type Contact_TemplatesInsertInput = {
-  content?: InputMaybe<Scalars['String']>;
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  description?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  name?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  content?: InputMaybe<Scalars['String']['input']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type Contact_TemplatesInsertResponse = {
   __typename?: 'contact_templatesInsertResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Contact_Templates>;
 };
@@ -927,37 +929,37 @@ export type Contact_TemplatesOrderBy = {
 };
 
 export type Contact_TemplatesUpdateInput = {
-  content?: InputMaybe<Scalars['String']>;
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  description?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  name?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  content?: InputMaybe<Scalars['String']['input']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type Contact_TemplatesUpdateResponse = {
   __typename?: 'contact_templatesUpdateResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Contact_Templates>;
 };
 
 export type Contacts = Node & {
   __typename?: 'contacts';
-  category_id?: Maybe<Scalars['UUID']>;
-  closed_at?: Maybe<Scalars['Datetime']>;
+  category_id?: Maybe<Scalars['UUID']['output']>;
+  closed_at?: Maybe<Scalars['Datetime']['output']>;
   contact_categories?: Maybe<Contact_Categories>;
-  content: Scalars['String'];
-  created_at: Scalars['Datetime'];
-  email: Scalars['String'];
-  id: Scalars['UUID'];
-  name: Scalars['String'];
-  name_kana: Scalars['String'];
+  content: Scalars['String']['output'];
+  created_at: Scalars['Datetime']['output'];
+  email: Scalars['String']['output'];
+  id: Scalars['UUID']['output'];
+  name: Scalars['String']['output'];
+  name_kana: Scalars['String']['output'];
   /** Globally Unique Record Identifier */
-  nodeId: Scalars['ID'];
-  phone_number: Scalars['String'];
-  updated_at: Scalars['Datetime'];
+  nodeId: Scalars['ID']['output'];
+  phone_number: Scalars['String']['output'];
+  updated_at: Scalars['Datetime']['output'];
 };
 
 export type ContactsConnection = {
@@ -969,14 +971,14 @@ export type ContactsConnection = {
 export type ContactsDeleteResponse = {
   __typename?: 'contactsDeleteResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Contacts>;
 };
 
 export type ContactsEdge = {
   __typename?: 'contactsEdge';
-  cursor: Scalars['String'];
+  cursor: Scalars['String']['output'];
   node: Contacts;
 };
 
@@ -995,22 +997,22 @@ export type ContactsFilter = {
 };
 
 export type ContactsInsertInput = {
-  category_id?: InputMaybe<Scalars['UUID']>;
-  closed_at?: InputMaybe<Scalars['Datetime']>;
-  content?: InputMaybe<Scalars['String']>;
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  email?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  name?: InputMaybe<Scalars['String']>;
-  name_kana?: InputMaybe<Scalars['String']>;
-  phone_number?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  category_id?: InputMaybe<Scalars['UUID']['input']>;
+  closed_at?: InputMaybe<Scalars['Datetime']['input']>;
+  content?: InputMaybe<Scalars['String']['input']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  name_kana?: InputMaybe<Scalars['String']['input']>;
+  phone_number?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type ContactsInsertResponse = {
   __typename?: 'contactsInsertResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Contacts>;
 };
@@ -1029,36 +1031,36 @@ export type ContactsOrderBy = {
 };
 
 export type ContactsUpdateInput = {
-  category_id?: InputMaybe<Scalars['UUID']>;
-  closed_at?: InputMaybe<Scalars['Datetime']>;
-  content?: InputMaybe<Scalars['String']>;
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  email?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  name?: InputMaybe<Scalars['String']>;
-  name_kana?: InputMaybe<Scalars['String']>;
-  phone_number?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  category_id?: InputMaybe<Scalars['UUID']['input']>;
+  closed_at?: InputMaybe<Scalars['Datetime']['input']>;
+  content?: InputMaybe<Scalars['String']['input']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  email?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  name_kana?: InputMaybe<Scalars['String']['input']>;
+  phone_number?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type ContactsUpdateResponse = {
   __typename?: 'contactsUpdateResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Contacts>;
 };
 
 export type Keywords = Node & {
   __typename?: 'keywords';
-  created_at: Scalars['Datetime'];
-  deleted_at?: Maybe<Scalars['Datetime']>;
-  description: Scalars['String'];
-  id: Scalars['UUID'];
-  keyword: Scalars['String'];
+  created_at: Scalars['Datetime']['output'];
+  deleted_at?: Maybe<Scalars['Datetime']['output']>;
+  description: Scalars['String']['output'];
+  id: Scalars['UUID']['output'];
+  keyword: Scalars['String']['output'];
   /** Globally Unique Record Identifier */
-  nodeId: Scalars['ID'];
-  updated_at: Scalars['Datetime'];
+  nodeId: Scalars['ID']['output'];
+  updated_at: Scalars['Datetime']['output'];
 };
 
 export type KeywordsConnection = {
@@ -1070,14 +1072,14 @@ export type KeywordsConnection = {
 export type KeywordsDeleteResponse = {
   __typename?: 'keywordsDeleteResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Keywords>;
 };
 
 export type KeywordsEdge = {
   __typename?: 'keywordsEdge';
-  cursor: Scalars['String'];
+  cursor: Scalars['String']['output'];
   node: Keywords;
 };
 
@@ -1092,18 +1094,18 @@ export type KeywordsFilter = {
 };
 
 export type KeywordsInsertInput = {
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  deleted_at?: InputMaybe<Scalars['Datetime']>;
-  description?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  keyword?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  deleted_at?: InputMaybe<Scalars['Datetime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  keyword?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type KeywordsInsertResponse = {
   __typename?: 'keywordsInsertResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Keywords>;
 };
@@ -1118,18 +1120,18 @@ export type KeywordsOrderBy = {
 };
 
 export type KeywordsUpdateInput = {
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  deleted_at?: InputMaybe<Scalars['Datetime']>;
-  description?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  keyword?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  deleted_at?: InputMaybe<Scalars['Datetime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  keyword?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type KeywordsUpdateResponse = {
   __typename?: 'keywordsUpdateResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Keywords>;
 };
@@ -1137,30 +1139,30 @@ export type KeywordsUpdateResponse = {
 export type News = Node & {
   __typename?: 'news';
   assets?: Maybe<Assets>;
-  content: Scalars['String'];
-  cover_image_asset_id?: Maybe<Scalars['UUID']>;
-  created_at: Scalars['Datetime'];
-  deleted_at?: Maybe<Scalars['Datetime']>;
-  excerpt: Scalars['String'];
-  id: Scalars['UUID'];
+  content: Scalars['String']['output'];
+  cover_image_asset_id?: Maybe<Scalars['UUID']['output']>;
+  created_at: Scalars['Datetime']['output'];
+  deleted_at?: Maybe<Scalars['Datetime']['output']>;
+  excerpt: Scalars['String']['output'];
+  id: Scalars['UUID']['output'];
   news_tagsCollection?: Maybe<News_TagsConnection>;
   /** Globally Unique Record Identifier */
-  nodeId: Scalars['ID'];
-  published_at?: Maybe<Scalars['Datetime']>;
-  seo_id?: Maybe<Scalars['UUID']>;
+  nodeId: Scalars['ID']['output'];
+  published_at?: Maybe<Scalars['Datetime']['output']>;
+  seo_id?: Maybe<Scalars['UUID']['output']>;
   seos?: Maybe<Seos>;
-  slug: Scalars['String'];
-  title: Scalars['String'];
-  updated_at: Scalars['Datetime'];
+  slug: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  updated_at: Scalars['Datetime']['output'];
 };
 
 
 export type NewsNews_TagsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<News_TagsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<News_TagsOrderBy>>;
 };
 
@@ -1173,14 +1175,14 @@ export type NewsConnection = {
 export type NewsDeleteResponse = {
   __typename?: 'newsDeleteResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<News>;
 };
 
 export type NewsEdge = {
   __typename?: 'newsEdge';
-  cursor: Scalars['String'];
+  cursor: Scalars['String']['output'];
   node: News;
 };
 
@@ -1200,23 +1202,23 @@ export type NewsFilter = {
 };
 
 export type NewsInsertInput = {
-  content?: InputMaybe<Scalars['String']>;
-  cover_image_asset_id?: InputMaybe<Scalars['UUID']>;
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  deleted_at?: InputMaybe<Scalars['Datetime']>;
-  excerpt?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  published_at?: InputMaybe<Scalars['Datetime']>;
-  seo_id?: InputMaybe<Scalars['UUID']>;
-  slug?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  content?: InputMaybe<Scalars['String']['input']>;
+  cover_image_asset_id?: InputMaybe<Scalars['UUID']['input']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  deleted_at?: InputMaybe<Scalars['Datetime']['input']>;
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  published_at?: InputMaybe<Scalars['Datetime']['input']>;
+  seo_id?: InputMaybe<Scalars['UUID']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type NewsInsertResponse = {
   __typename?: 'newsInsertResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<News>;
 };
@@ -1236,23 +1238,23 @@ export type NewsOrderBy = {
 };
 
 export type NewsUpdateInput = {
-  content?: InputMaybe<Scalars['String']>;
-  cover_image_asset_id?: InputMaybe<Scalars['UUID']>;
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  deleted_at?: InputMaybe<Scalars['Datetime']>;
-  excerpt?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  published_at?: InputMaybe<Scalars['Datetime']>;
-  seo_id?: InputMaybe<Scalars['UUID']>;
-  slug?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  content?: InputMaybe<Scalars['String']['input']>;
+  cover_image_asset_id?: InputMaybe<Scalars['UUID']['input']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  deleted_at?: InputMaybe<Scalars['Datetime']['input']>;
+  excerpt?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  published_at?: InputMaybe<Scalars['Datetime']['input']>;
+  seo_id?: InputMaybe<Scalars['UUID']['input']>;
+  slug?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type NewsUpdateResponse = {
   __typename?: 'newsUpdateResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<News>;
 };
@@ -1260,10 +1262,10 @@ export type NewsUpdateResponse = {
 export type News_Tags = Node & {
   __typename?: 'news_tags';
   news?: Maybe<News>;
-  news_id: Scalars['UUID'];
+  news_id: Scalars['UUID']['output'];
   /** Globally Unique Record Identifier */
-  nodeId: Scalars['ID'];
-  tag_id: Scalars['UUID'];
+  nodeId: Scalars['ID']['output'];
+  tag_id: Scalars['UUID']['output'];
   tags?: Maybe<Tags>;
 };
 
@@ -1276,14 +1278,14 @@ export type News_TagsConnection = {
 export type News_TagsDeleteResponse = {
   __typename?: 'news_tagsDeleteResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<News_Tags>;
 };
 
 export type News_TagsEdge = {
   __typename?: 'news_tagsEdge';
-  cursor: Scalars['String'];
+  cursor: Scalars['String']['output'];
   node: News_Tags;
 };
 
@@ -1294,14 +1296,14 @@ export type News_TagsFilter = {
 };
 
 export type News_TagsInsertInput = {
-  news_id?: InputMaybe<Scalars['UUID']>;
-  tag_id?: InputMaybe<Scalars['UUID']>;
+  news_id?: InputMaybe<Scalars['UUID']['input']>;
+  tag_id?: InputMaybe<Scalars['UUID']['input']>;
 };
 
 export type News_TagsInsertResponse = {
   __typename?: 'news_tagsInsertResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<News_Tags>;
 };
@@ -1312,39 +1314,39 @@ export type News_TagsOrderBy = {
 };
 
 export type News_TagsUpdateInput = {
-  news_id?: InputMaybe<Scalars['UUID']>;
-  tag_id?: InputMaybe<Scalars['UUID']>;
+  news_id?: InputMaybe<Scalars['UUID']['input']>;
+  tag_id?: InputMaybe<Scalars['UUID']['input']>;
 };
 
 export type News_TagsUpdateResponse = {
   __typename?: 'news_tagsUpdateResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<News_Tags>;
 };
 
 export type Seos = Node & {
   __typename?: 'seos';
-  created_at: Scalars['Datetime'];
-  deleted_at?: Maybe<Scalars['Datetime']>;
-  description: Scalars['String'];
-  id: Scalars['UUID'];
+  created_at: Scalars['Datetime']['output'];
+  deleted_at?: Maybe<Scalars['Datetime']['output']>;
+  description: Scalars['String']['output'];
+  id: Scalars['UUID']['output'];
   newsCollection?: Maybe<NewsConnection>;
   /** Globally Unique Record Identifier */
-  nodeId: Scalars['ID'];
-  og_image_url?: Maybe<Scalars['String']>;
-  title: Scalars['String'];
-  updated_at: Scalars['Datetime'];
+  nodeId: Scalars['ID']['output'];
+  og_image_url?: Maybe<Scalars['String']['output']>;
+  title: Scalars['String']['output'];
+  updated_at: Scalars['Datetime']['output'];
 };
 
 
 export type SeosNewsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<NewsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<NewsOrderBy>>;
 };
 
@@ -1357,14 +1359,14 @@ export type SeosConnection = {
 export type SeosDeleteResponse = {
   __typename?: 'seosDeleteResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Seos>;
 };
 
 export type SeosEdge = {
   __typename?: 'seosEdge';
-  cursor: Scalars['String'];
+  cursor: Scalars['String']['output'];
   node: Seos;
 };
 
@@ -1380,19 +1382,19 @@ export type SeosFilter = {
 };
 
 export type SeosInsertInput = {
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  deleted_at?: InputMaybe<Scalars['Datetime']>;
-  description?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  og_image_url?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  deleted_at?: InputMaybe<Scalars['Datetime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  og_image_url?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type SeosInsertResponse = {
   __typename?: 'seosInsertResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Seos>;
 };
@@ -1408,44 +1410,44 @@ export type SeosOrderBy = {
 };
 
 export type SeosUpdateInput = {
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  deleted_at?: InputMaybe<Scalars['Datetime']>;
-  description?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  og_image_url?: InputMaybe<Scalars['String']>;
-  title?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  deleted_at?: InputMaybe<Scalars['Datetime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  og_image_url?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type SeosUpdateResponse = {
   __typename?: 'seosUpdateResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Seos>;
 };
 
 export type Staff_Categories = Node & {
   __typename?: 'staff_categories';
-  created_at: Scalars['Datetime'];
-  deleted_at?: Maybe<Scalars['Datetime']>;
-  description: Scalars['String'];
-  id: Scalars['UUID'];
-  name: Scalars['String'];
+  created_at: Scalars['Datetime']['output'];
+  deleted_at?: Maybe<Scalars['Datetime']['output']>;
+  description: Scalars['String']['output'];
+  id: Scalars['UUID']['output'];
+  name: Scalars['String']['output'];
   /** Globally Unique Record Identifier */
-  nodeId: Scalars['ID'];
-  sort: Scalars['Int'];
+  nodeId: Scalars['ID']['output'];
+  sort: Scalars['Int']['output'];
   staffsCollection?: Maybe<StaffsConnection>;
-  updated_at: Scalars['Datetime'];
+  updated_at: Scalars['Datetime']['output'];
 };
 
 
 export type Staff_CategoriesStaffsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<StaffsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<StaffsOrderBy>>;
 };
 
@@ -1458,14 +1460,14 @@ export type Staff_CategoriesConnection = {
 export type Staff_CategoriesDeleteResponse = {
   __typename?: 'staff_categoriesDeleteResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Staff_Categories>;
 };
 
 export type Staff_CategoriesEdge = {
   __typename?: 'staff_categoriesEdge';
-  cursor: Scalars['String'];
+  cursor: Scalars['String']['output'];
   node: Staff_Categories;
 };
 
@@ -1481,19 +1483,19 @@ export type Staff_CategoriesFilter = {
 };
 
 export type Staff_CategoriesInsertInput = {
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  deleted_at?: InputMaybe<Scalars['Datetime']>;
-  description?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  name?: InputMaybe<Scalars['String']>;
-  sort?: InputMaybe<Scalars['Int']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  deleted_at?: InputMaybe<Scalars['Datetime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  sort?: InputMaybe<Scalars['Int']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type Staff_CategoriesInsertResponse = {
   __typename?: 'staff_categoriesInsertResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Staff_Categories>;
 };
@@ -1509,19 +1511,19 @@ export type Staff_CategoriesOrderBy = {
 };
 
 export type Staff_CategoriesUpdateInput = {
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  deleted_at?: InputMaybe<Scalars['Datetime']>;
-  description?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  name?: InputMaybe<Scalars['String']>;
-  sort?: InputMaybe<Scalars['Int']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  deleted_at?: InputMaybe<Scalars['Datetime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  sort?: InputMaybe<Scalars['Int']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type Staff_CategoriesUpdateResponse = {
   __typename?: 'staff_categoriesUpdateResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Staff_Categories>;
 };
@@ -1529,24 +1531,24 @@ export type Staff_CategoriesUpdateResponse = {
 export type Staffs = Node & {
   __typename?: 'staffs';
   assets?: Maybe<Assets>;
-  career: Array<Maybe<Scalars['String']>>;
-  category_id?: Maybe<Scalars['UUID']>;
-  coaching_achievement: Array<Maybe<Scalars['String']>>;
-  created_at: Scalars['Datetime'];
-  deleted_at?: Maybe<Scalars['Datetime']>;
-  description: Scalars['String'];
-  id: Scalars['UUID'];
-  license: Array<Maybe<Scalars['String']>>;
-  name: Scalars['String'];
+  career: Array<Maybe<Scalars['String']['output']>>;
+  category_id?: Maybe<Scalars['UUID']['output']>;
+  coaching_achievement: Array<Maybe<Scalars['String']['output']>>;
+  created_at: Scalars['Datetime']['output'];
+  deleted_at?: Maybe<Scalars['Datetime']['output']>;
+  description: Scalars['String']['output'];
+  id: Scalars['UUID']['output'];
+  license: Array<Maybe<Scalars['String']['output']>>;
+  name: Scalars['String']['output'];
   /** Globally Unique Record Identifier */
-  nodeId: Scalars['ID'];
-  one_word: Scalars['String'];
-  player_achievement: Array<Maybe<Scalars['String']>>;
-  player_history: Array<Maybe<Scalars['String']>>;
-  position: Scalars['String'];
-  profile_image_asset_id?: Maybe<Scalars['UUID']>;
+  nodeId: Scalars['ID']['output'];
+  one_word: Scalars['String']['output'];
+  player_achievement: Array<Maybe<Scalars['String']['output']>>;
+  player_history: Array<Maybe<Scalars['String']['output']>>;
+  position: Scalars['String']['output'];
+  profile_image_asset_id?: Maybe<Scalars['UUID']['output']>;
   staff_categories?: Maybe<Staff_Categories>;
-  updated_at: Scalars['Datetime'];
+  updated_at: Scalars['Datetime']['output'];
 };
 
 export type StaffsConnection = {
@@ -1558,14 +1560,14 @@ export type StaffsConnection = {
 export type StaffsDeleteResponse = {
   __typename?: 'staffsDeleteResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Staffs>;
 };
 
 export type StaffsEdge = {
   __typename?: 'staffsEdge';
-  cursor: Scalars['String'];
+  cursor: Scalars['String']['output'];
   node: Staffs;
 };
 
@@ -1584,27 +1586,27 @@ export type StaffsFilter = {
 };
 
 export type StaffsInsertInput = {
-  career?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  category_id?: InputMaybe<Scalars['UUID']>;
-  coaching_achievement?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  deleted_at?: InputMaybe<Scalars['Datetime']>;
-  description?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  license?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  name?: InputMaybe<Scalars['String']>;
-  one_word?: InputMaybe<Scalars['String']>;
-  player_achievement?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  player_history?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  position?: InputMaybe<Scalars['String']>;
-  profile_image_asset_id?: InputMaybe<Scalars['UUID']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  career?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  category_id?: InputMaybe<Scalars['UUID']['input']>;
+  coaching_achievement?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  deleted_at?: InputMaybe<Scalars['Datetime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  license?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  one_word?: InputMaybe<Scalars['String']['input']>;
+  player_achievement?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  player_history?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  position?: InputMaybe<Scalars['String']['input']>;
+  profile_image_asset_id?: InputMaybe<Scalars['UUID']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type StaffsInsertResponse = {
   __typename?: 'staffsInsertResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Staffs>;
 };
@@ -1623,50 +1625,50 @@ export type StaffsOrderBy = {
 };
 
 export type StaffsUpdateInput = {
-  career?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  category_id?: InputMaybe<Scalars['UUID']>;
-  coaching_achievement?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  deleted_at?: InputMaybe<Scalars['Datetime']>;
-  description?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  license?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  name?: InputMaybe<Scalars['String']>;
-  one_word?: InputMaybe<Scalars['String']>;
-  player_achievement?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  player_history?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-  position?: InputMaybe<Scalars['String']>;
-  profile_image_asset_id?: InputMaybe<Scalars['UUID']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  career?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  category_id?: InputMaybe<Scalars['UUID']['input']>;
+  coaching_achievement?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  deleted_at?: InputMaybe<Scalars['Datetime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  license?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  one_word?: InputMaybe<Scalars['String']['input']>;
+  player_achievement?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  player_history?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  position?: InputMaybe<Scalars['String']['input']>;
+  profile_image_asset_id?: InputMaybe<Scalars['UUID']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type StaffsUpdateResponse = {
   __typename?: 'staffsUpdateResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Staffs>;
 };
 
 export type Tags = Node & {
   __typename?: 'tags';
-  created_at: Scalars['Datetime'];
-  description: Scalars['String'];
-  id: Scalars['UUID'];
+  created_at: Scalars['Datetime']['output'];
+  description: Scalars['String']['output'];
+  id: Scalars['UUID']['output'];
   news_tagsCollection?: Maybe<News_TagsConnection>;
   /** Globally Unique Record Identifier */
-  nodeId: Scalars['ID'];
-  tag: Scalars['String'];
-  updated_at: Scalars['Datetime'];
+  nodeId: Scalars['ID']['output'];
+  tag: Scalars['String']['output'];
+  updated_at: Scalars['Datetime']['output'];
 };
 
 
 export type TagsNews_TagsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
+  after?: InputMaybe<Scalars['Cursor']['input']>;
+  before?: InputMaybe<Scalars['Cursor']['input']>;
   filter?: InputMaybe<News_TagsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
+  first?: InputMaybe<Scalars['Int']['input']>;
+  last?: InputMaybe<Scalars['Int']['input']>;
   orderBy?: InputMaybe<Array<News_TagsOrderBy>>;
 };
 
@@ -1679,14 +1681,14 @@ export type TagsConnection = {
 export type TagsDeleteResponse = {
   __typename?: 'tagsDeleteResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Tags>;
 };
 
 export type TagsEdge = {
   __typename?: 'tagsEdge';
-  cursor: Scalars['String'];
+  cursor: Scalars['String']['output'];
   node: Tags;
 };
 
@@ -1700,17 +1702,17 @@ export type TagsFilter = {
 };
 
 export type TagsInsertInput = {
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  description?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  tag?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  tag?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type TagsInsertResponse = {
   __typename?: 'tagsInsertResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Tags>;
 };
@@ -1724,17 +1726,17 @@ export type TagsOrderBy = {
 };
 
 export type TagsUpdateInput = {
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  description?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  tag?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  created_at?: InputMaybe<Scalars['Datetime']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['UUID']['input']>;
+  tag?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['Datetime']['input']>;
 };
 
 export type TagsUpdateResponse = {
   __typename?: 'tagsUpdateResponse';
   /** Count of the records impacted by the mutation */
-  affectedCount: Scalars['Int'];
+  affectedCount: Scalars['Int']['output'];
   /** Array of records impacted by the mutation */
   records: Array<Tags>;
 };
