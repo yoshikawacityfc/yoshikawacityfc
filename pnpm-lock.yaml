@@ -45,8 +45,8 @@ importers:
         specifier: 3.3.4
         version: 3.3.4(react-hook-form@7.49.3)
       '@supabase/supabase-js':
-        specifier: 2.39.4
-        version: 2.39.4
+        specifier: 2.39.6
+        version: 2.39.6
       '@vercel/analytics':
         specifier: 1.1.3
         version: 1.1.3
@@ -1813,8 +1813,8 @@ packages:
       '@supabase/node-fetch': 2.6.15
     dev: false
 
-  /@supabase/supabase-js@2.39.4:
-    resolution: {integrity: sha512-sLORcbtZX1/YX1lRJZZ+GjkkxUR4w+gQ4bUgcNWsHcRi/78wyK/pjpEz2xig6jV3HmaSK2EYpuRlG5b7S2pwmA==}
+  /@supabase/supabase-js@2.39.6:
+    resolution: {integrity: sha512-HlflDzem0+l3KYYTqHV0UsqkDooV9my5UcBCV2zvvTrl77UtW97uKTZWn9lSWMuiy+ZvRLsiuG+WTiBuKMQl0Q==}
     dependencies:
       '@supabase/functions-js': 2.1.5
       '@supabase/gotrue-js': 2.62.2
