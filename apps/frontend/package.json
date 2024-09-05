@@ -12,7 +12,7 @@
     "gen:cms-types": "npx microcms-typescript src/lib/cms/schema src/lib/cms/types.ts"
   },
   "dependencies": {
-    "@apollo/client": "3.8.10",
+    "@apollo/client": "3.11.8",
     "@fortawesome/fontawesome-svg-core": "6.4.2",
     "@fortawesome/free-brands-svg-icons": "6.4.2",
     "@fortawesome/free-regular-svg-icons": "6.4.2",
