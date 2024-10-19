@@ -43,7 +43,7 @@ importers:
         version: 1.7.18(react-dom@18.2.0)(react@18.2.0)
       '@hookform/resolvers':
         specifier: 3.3.4
-        version: 3.3.4(react-hook-form@7.49.3)
+        version: 3.3.4(react-hook-form@7.53.1)
       '@supabase/supabase-js':
         specifier: 2.39.6
         version: 2.39.6
@@ -75,8 +75,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       react-hook-form:
-        specifier: 7.49.3
-        version: 7.49.3(react@18.2.0)
+        specifier: 7.53.1
+        version: 7.53.1(react@18.2.0)
       zenn-content-css:
         specifier: 0.1.153
         version: 0.1.153
@@ -1554,12 +1554,12 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@hookform/resolvers@3.3.4(react-hook-form@7.49.3):
+  /@hookform/resolvers@3.3.4(react-hook-form@7.53.1):
     resolution: {integrity: sha512-o5cgpGOuJYrd+iMKvkttOclgwRW86EsWJZZRC23prf0uU2i48Htq4PuT73AVb9ionFyZrwYEITuOFGF+BydEtQ==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
-      react-hook-form: 7.49.3(react@18.2.0)
+      react-hook-form: 7.53.1(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:
@@ -4871,11 +4871,11 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-hook-form@7.49.3(react@18.2.0):
-    resolution: {integrity: sha512-foD6r3juidAT1cOZzpmD/gOKt7fRsDhXXZ0y28+Al1CHgX+AY1qIN9VSIIItXRq1dN68QrRwl1ORFlwjBaAqeQ==}
-    engines: {node: '>=18', pnpm: '8'}
+  /react-hook-form@7.53.1(react@18.2.0):
+    resolution: {integrity: sha512-6aiQeBda4zjcuaugWvim9WsGqisoUk+etmFEsSUMm451/Ic8L/UAb7sRtMj3V+Hdzm6mMjU1VhiSzYUZeBm0Vg==}
+    engines: {node: '>=18.0.0'}
     peerDependencies:
-      react: ^16.8.0 || ^17 || ^18
+      react: ^16.8.0 || ^17 || ^18 || ^19
     dependencies:
       react: 18.2.0
     dev: false
