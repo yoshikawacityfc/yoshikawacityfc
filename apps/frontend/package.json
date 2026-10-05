@@ -50,7 +50,7 @@
     "eslint": "8.56.0",
     "eslint-config-custom": "workspace:*",
     "microcms-typescript": "1.0.14",
-    "postcss": "8.4.35",
+    "postcss": "8.5.23",
     "scrollreveal": "4.0.9",
     "tailwindcss": "3.4.1",
     "tsconfig": "workspace:*",
